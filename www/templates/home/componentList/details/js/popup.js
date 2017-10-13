@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet) {
+	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet,$ionicHistory,$ionicModal) {
 		$scope.component = $stateParams.component;
 
 		function getData(data) {
@@ -49,6 +49,9 @@
 				$scope.displayPop();
 			}
 		}
+		/**
+		 *各种弹框 
+		 */
 		$scope.data = {};
 		// 一个确认对话框
 		$scope.ionicPopupConfirm = function() {
@@ -82,7 +85,6 @@
 				toastService.showToast('只能点击确认哟');
 			})
 		};
-
 		// 自定义弹窗
 		$scope.ionicPopupShow = function() {
 			var showPopup = $ionicPopup.show({
@@ -124,8 +126,10 @@
 				displayPop.close();
 			}, 2000)
 		}
-
-		//向上的滑动面板
+		
+		/**
+		 *向上的滑动面板
+		 */
 		$scope.ionicActionSheetShow = function() {
 			 var hideSheet = $ionicActionSheet.show({
                       buttons: [
@@ -159,6 +163,39 @@
                       hideSheet();
                   }, 2000);
 		}
-
+		/**
+		 *模态框
+		 */
+		$ionicModal.fromTemplateUrl('my-modal.html',{
+			scope: $scope,
+			animation : 'slide-in-up'
+		}).then(function(modal){
+			$scope.modal = modal;
+		})
+		$scope.openModal = function(){
+			$scope.modal.show();
+		}
+		$scope.closeModal = function(){
+			$scope.modal.hide();
+		}
+		//当我们用到模型时，清除它
+		$scope.$on('$destory',function(){
+			$scope.modal.remove();
+		});
+		//当隐藏的模型时执行动作
+		$scope.$on('modal.hide',function(){
+			//执行动作
+		});
+		//当移动模型时执行动作
+		$scope.$on('modal.removed',function(){
+			//执行动作
+		})
+		
+		
+		//返回按钮
+		$scope.Back = function(){
+			$ionicHistory.goBack();
+		}
+			
 	})
 }())

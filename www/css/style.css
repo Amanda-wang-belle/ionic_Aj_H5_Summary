@@ -1,90 +1,123 @@
 * {
 	-webkit-user-select: none;
 	-ms-touch-select: none;
-/*
+	/*
 	-ms-touch-action: none;
 */
 }
+
 html {
 	width: 100%;
 	height: 100%;
 }
+
 body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
 	font-family: cursive;
-	font-size:16px;
+	font-size: 16px;
 	color: #6c6c6c;
-	-webkit-touch-callout:none;
-	-webkit-tap-highlight-color:rgba(0,0,0,0);
-	-webkit-text-size-adjust:none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-text-size-adjust: none;
 }
+
+
 /*底部栏样式切换*/
-.tab_home_on{
+
+.tab_home_on {
 	background: url(../img/tab_home_on.png) no-repeat center;
-	background-size: 25px 25px;	
+	background-size: 25px 25px;
 }
-.tab_home_off{
+
+.tab_home_off {
 	background: url(../img/tab_home_off.png) no-repeat center;
-	background-size: 25px 25px;		
+	background-size: 25px 25px;
 }
-.tab_msg_on{
+
+.tab_msg_on {
 	background: url(../img/tab_msg_on.png) no-repeat center;
 	background-size: 25px 25px;
 }
-.tab_msg_off{
+
+.tab_msg_off {
 	background: url(../img/tab_msg_off.png) no-repeat center;
 	background-size: 25px 25px;
 }
-.tab_irrcs_on{
+
+.tab_irrcs_on {
 	background: url(../img/tab_irrcs_on.png) no-repeat center;
 	background-size: 25px 25px;
 }
-.tab_irrcs_off{
+
+.tab_irrcs_off {
 	background: url(../img/tab_irrcs_off.png) no-repeat center;
 	background-size: 25px 25px;
 }
-.tab_mine_on{
+
+.tab_mine_on {
 	background: url(../img/tab_mine_on.png) no-repeat center;
 	background-size: 25px 25px;
 }
-.tab_mine_off{
+
+.tab_mine_off {
 	background: url(../img/tab_mine_off.png) no-repeat center;
 	background-size: 25px 25px;
 }
+
+
 /**
  * 覆盖ionic自定义样式
  * /
 /*覆盖底部栏颜色*/
+
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
-    color: #63B8FF!important;
-    font-weight: bold;
+	color: #63B8FF!important;
+	font-weight: bold;
 }
+
+
 /*顶部栏背景色,字体颜色*/
-  [nav-bar-transition="ios"] [nav-bar="active"] .bar,
-  [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
-	background: #63B8FF; 
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar,
+[nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+	background: #63B8FF;
 	border-bottom: 1px solid #87CEEB;
-	}
-.bar.bar-stable .title {
-    color: #fff;
 }
-ul li{
+
+.bar.bar-stable .title {
+	color: #fff;
+}
+
+.bar .title.title-left {
+	text-align: center;
+}
+
+ul li {
 	list-style: none;
 }
+
+
 /*顶部栏Ionic返回按钮*/
+
 button .icon {
-    vertical-align: top;
-    pointer-events: none;
-    color: #fff;
+	vertical-align: top;
+	pointer-events: none;
+	color: #fff;
 }
+
+
 /*隐藏ionic返回键Back*/
+
 .bar .buttons span {
-    display: none;
+	display: none;
 }
+
+
 /*toast弹框*/
+
 #toastTest {
 	position: fixed;
 	top: 40%;
@@ -108,6 +141,7 @@ button .icon {
 	/*display: table;是必须要添加的,添加之后div会根据内容填充大小*/
 	border-radius: 8px;
 }
+
 #toastTest2 {
 	color: #FFFFFF;
 	background: #000000;
@@ -118,16 +152,49 @@ button .icon {
 	/*display: table;是必须要添加的,添加之后div会根据内容填充大小*/
 	border-radius: 8px;
 }
+
+
 /*改变$ionicPopup弹框的自定义样式*/
-.popup-container.active .popup ,.popup-container .popup{
-    border-radius: 30px;
+
+.popup-container.active .popup,
+.popup-container .popup {
+	border-radius: 30px;
 }
+
 .popup-body {
-    text-align: center;
+	text-align: center;
 }
+
 .button.button-positive {
-    background-color: #63B8FF;
+	background-color: #63B8FF;
 }
+
 .popup-buttons .button {
-    border-radius: 20px;
+	border-radius: 20px;
+}
+
+
+/*自定义标题样式*/
+
+.bar.bar-positive {
+	border: none;
+	background-color: #63B8FF;
+	background-image: none;
+	color: #fff;
+}
+
+
+/*自定义模态框样式*/
+
+.modalBk {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.modalContent {
+	width: 80%;
+	height: 80%;
+	background-color: #63B8FF;
+	margin-left: 10%;
+	top: 10%;
+	border-radius: 15px;
 }

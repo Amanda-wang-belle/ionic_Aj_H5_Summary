@@ -4,7 +4,16 @@
   @createDate  2017-10-12
   @content 各种类型的弹框
 -->
-<ion-view view-title={{component.name}} hide-tabs>
+<ion-view  hide-tabs hide-nav-bar="true">
+	<ion-header-bar align-title="left" class="bar-positive">
+		<div class="buttons">
+			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="component.name"></h1>
+		<div class="buttons" ng-click="openModal()">
+			<button class="button button-clear icon  ion-alert-circled"></button>
+		</div>
+	</ion-header-bar>
 	<ion-content>
 		<div ng-repeat="x in dataList">
 			<ion-item class="item-icon-right" style="white-space: normal;" ng-click="showOrHide(x)">
@@ -18,6 +27,16 @@
 				</ion-item>
 			</div>
 		</div>
-
 	</ion-content>
+	<!--模态框-->
+	<script id="my-modal.html" type="text/ng-template">
+		<div class="modal modalBk" ng-click="closeModal()">
+			<!--<ion-header-bar>
+				<h1 class="title">我的模型标题</h1>
+			</ion-header-bar>-->
+			<ion-content class="modalContent">
+				Hello!
+			</ion-content>
+		</div>
+	</script>
 </ion-view>

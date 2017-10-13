@@ -19,6 +19,18 @@ app.run(function($ionicPlatform) {
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
+		function plusReady(){}
+		
+		//监听plusready事件
+		if (window.plus) {
+			plusReady();
+		} else{
+			//加载API
+			document.addEventListener('plusready',plusReady,false);
+		}
+		
+		
+		
 	});
 })
 
