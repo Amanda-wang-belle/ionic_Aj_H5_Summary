@@ -215,14 +215,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 					return $ocLazyLoad.load('templates/mine/mine.js');
 				}]
 			}
-		})
-		
-		
-		
-		
-		
-		
-		
+		});
 		
 		
 		
@@ -232,6 +225,6 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 		
 
 	// if none of the above states are matched, use this as the fallback
-	$urlRouterProvider.otherwise('/tab/dash');
+	$urlRouterProvider.otherwise('/tab/home');
 
 });

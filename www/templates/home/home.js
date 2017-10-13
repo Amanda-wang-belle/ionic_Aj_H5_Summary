@@ -13,9 +13,6 @@
 		}
 		publicService.receiveJson(getData,"homeData");
 		
-		$scope.fool = function(){
-			alert("*′∀`)′∀`)*′∀`)*′∀`)，谁点谁是笨蛋");
-		}
 		
 		$scope.toDetail = function(x){
 			publicJump.jumpTo(x);

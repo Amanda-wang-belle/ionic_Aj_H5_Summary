@@ -15,7 +15,7 @@
 		</div>
 	</ion-header-bar>
 	<ion-content>
-		<div ng-repeat="x in dataList">
+		<div ng-repeat="x in dataList" style="position: relative;">
 			<ion-item class="item-icon-right" style="white-space: normal;" ng-click="showOrHide(x)">
 				<span ng-bind="x.name"></span>
 				<i class="icon ion-ios-arrow-down" id="idTop{{x.value}}"></i>
@@ -27,6 +27,9 @@
 				</ion-item>
 			</div>
 		</div>
+		<!--<div class="arrow"></div>-->
+		<div class="comeOnBaby" ng-click="guestWhere()"></div>
+		
 	</ion-content>
 	<!--模态框-->
 	<script id="my-modal.html" type="text/ng-template">

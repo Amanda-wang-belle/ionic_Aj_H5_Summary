@@ -196,6 +196,10 @@
 		$scope.Back = function(){
 			$ionicHistory.goBack();
 		}
+		/*一个小玩笑*/
+		$scope.guestWhere = function(){
+			toastService.showToast("*′∀`)′∀`)*′∀`)*′∀`)，猜猜模态框在哪");
+		}
 			
 	})
 }())
