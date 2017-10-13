@@ -55,8 +55,9 @@
 			confirmPopup.then(function(res) {
 				if(res) {
 					if(!$scope.data.wifi) {
+						$scope.ionicPopupConfirm();
 						//不允许用户关闭，除非他键入wifi密码
-						toastService.showToast('暂时没有办法控制confirm确认时候，不关闭弹框，可以用show');
+						toastService.showToast('不允许用户关闭，除非他键入wifi密码');
 					} else {
 						console.log($scope.data.wifi)
 						return $scope.data.wifi;
