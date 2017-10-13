@@ -1,0 +1,14 @@
+<!--
+  @author wang_szhan
+  @version 1.0.0
+  @createDate  2017-10-12
+  @content 功能性构件列表
+-->
+<ion-view view-title={{component.name}} hide-tabs>
+	<ion-content>
+		<ion-item ng-repeat = "x in dataList" class = "item-icon-right" style="white-space: normal;" ng-click="toDetail(x)">
+			<span ng-bind="x.name"></span>
+			<i class="icon ion-ios-arrow-forward"></i>
+		</ion-item>
+	</ion-content>
+</ion-view>
