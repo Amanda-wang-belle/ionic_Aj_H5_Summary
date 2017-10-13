@@ -40,6 +40,8 @@
 				$scope.ionicPopupAlert();
 			} else if(x.name == "ionicPopupShow自定义弹窗") {
 				$scope.ionicPopupShow();
+			} else if(x.name = "一定时间后消失的弹框"){
+				$scope.displayPop();
 			}
 		}
 		$scope.data = {};
@@ -106,6 +108,15 @@
 //			$timeout(function() {
 //				showPopup.close();
 //			}, 2000)
+		}
+		
+		$scope.displayPop = function(){
+			var displayPop = $ionicPopup.alert({
+				template: '我会在2秒钟之后消失哟'
+			})
+			$timeout(function() {
+				displayPop.close();
+			}, 2000)
 		}
 
 	})
