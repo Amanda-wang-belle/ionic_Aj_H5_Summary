@@ -152,7 +152,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 			},
 			resolve: {
 				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
-					return $ocLazyLoad.load('templates/home/componentList/details/popup.js');
+					return $ocLazyLoad.load('templates/home/componentList/details/js/popup.js');
 				}]
 			}
 		})
