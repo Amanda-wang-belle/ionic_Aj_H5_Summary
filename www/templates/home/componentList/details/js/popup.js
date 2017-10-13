@@ -8,12 +8,12 @@
 	'use strict'
 
 	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet,$ionicHistory,$ionicModal) {
-		$scope.component = $stateParams.component;
-
+		$scope.componentTitle = $stateParams.componentTitle;
+		$scope.componentData = $stateParams.componentData;
 		function getData(data) {
 			$scope.dataList = data;
 		}
-		publicService.receiveJson(getData, $scope.component.data);
+		publicService.receiveJson(getData, $scope.componentData);
 
 		//控制分支内容的隐现
 		$scope.showOrHide = function(x) {
@@ -194,7 +194,8 @@
 		
 		//返回按钮
 		$scope.Back = function(){
-			$ionicHistory.goBack();
+//			$ionicHistory.goBack();
+			history.back(-1);
 		}
 		/*一个小玩笑*/
 		$scope.guestWhere = function(){

@@ -131,11 +131,26 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 			}
 		})
 		//构件列表 wang_szhan 2017.10.11
+		/**
+		 * 两种不同传值方式的优缺点
+		 * 一、url:'com/:param1/:param2' 
+		 * 		此种方式传值，只可以传字符串，不可以传对象
+		 * 		但是可以后退的时候可以用 history.back(-1),回退的永远是上一级
+		 * 二、url:'com',
+		 * 	  params:{
+		 * 		'param1':null,
+		 * 		'param2':null
+		 *    }
+		 * 		此种方式传值，可以传字符串也可以传对象
+		 * 		但是需要用$ionicHistory.goBack(),回退的是历史页面，有缺陷
+		 */
+		 
 		.state('tab.componentList',{
-			url:'/componentList',
-			params:{
-				"component":null
-			},
+			url:'/componentList/:componentTitle/:componentData',
+//			url:'/componentList',
+//			params:{
+//				"component":null
+//			},
 			cache:'false',
 			views: {
 				'tab-home':{
@@ -151,10 +166,11 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 		})
 		//各种弹框页面 wang_szhan 2017.10.12
 		.state('tab.popup',{
-			url:'/popup',
-			params:{
-				"component":null
-			},
+			url:'/popup/:componentTitle/:componentData',
+//			url:'/popup',
+//			params:{
+//				"component":null
+//			},
 			cache:'false',
 			views: {
 				'tab-home':{

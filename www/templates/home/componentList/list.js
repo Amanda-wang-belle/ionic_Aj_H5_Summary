@@ -8,12 +8,12 @@
 	'use strict'
 
 	app.controller('componentListCtrl', function($scope, $http, $stateParams,$ionicPopup,$timeout,toastService,publicJump,publicService) {
-		$scope.component = $stateParams.component;
-
-		function getData(data){
+		$scope.componentTitle = $stateParams.componentTitle;
+		$scope.componentData = $stateParams.componentData;
+		function getData(data) {
 			$scope.dataList = data;
 		}
-		publicService.receiveJson(getData,$scope.component.data);
+		publicService.receiveJson(getData, $scope.componentData);
 		
 
 		$scope.toDetail = function(x){

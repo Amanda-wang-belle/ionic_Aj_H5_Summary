@@ -99,7 +99,8 @@
 				var page = "tab."+x.value;
 				if(x.value) {
 					$state.go(page, {
-						"component": x
+						"componentTitle": x.name,
+						"componentData": x.data,
 					});
 				} else {
 					toastService.showToast(x.data);
