@@ -47,17 +47,17 @@
 		$scope.ionicPopupConfirm = function() {
 			var confirmPopup = $ionicPopup.confirm({
 				title: '确认对话框',
-				template: '<input type="password" ng-model="data.wifi">'
+				template: '<input type="password" ng-model="data.wifi">',
+				scope: $scope,
 			})
 			confirmPopup.then(function(res) {
 				if(res) {
-//					toastService.showToast('You are sure');
 					if(!$scope.data.wifi) {
-								//不允许用户关闭，除非他键入wifi密码
-						toastService.showToast('不允许关闭，除非键入wifi密码');
+						//不允许用户关闭，除非他键入wifi密码
+						toastService.showToast('暂时没有办法控制confirm确认时候，不关闭弹框，可以用show');
 					} else {
-						return $scope.data.wifi;
 						console.log($scope.data.wifi)
+						return $scope.data.wifi;
 					}
 				} else {
 					toastService.showToast('You are not sure');
