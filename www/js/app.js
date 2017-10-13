@@ -2,6 +2,7 @@
  * @author wang_szhan
  * @version 1.0.0
  * 创建时间  2017-10-10 下午14:35
+ * test
  */
 var app = angular.module('starter', ['ionic', 'ui.router', 'oc.lazyLoad', 'LocalStorageModule'])
 
