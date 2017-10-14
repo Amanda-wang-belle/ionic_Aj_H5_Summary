@@ -192,7 +192,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 			views: {
 				'tab-home':{
 					templateUrl:'templates/home/componentList/details/footer.html',
-					controller:'popupCtrl'
+					controller:'footerCtrl'
 				}
 			},
 			resolve: {

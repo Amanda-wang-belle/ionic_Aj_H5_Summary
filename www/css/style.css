@@ -114,8 +114,13 @@ button .icon {
 .bar .buttons span {
 	display: none;
 }
-
-
+/*顶部栏Ionic底部栏样式*/
+.bar.bar-assertive {
+    border-color: none;
+    background-color: #63B8FF;
+    background-image: none;
+    color: #fff;
+}
 /*toast弹框*/
 
 #toastTest {

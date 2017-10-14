@@ -67,10 +67,23 @@
 	],
 	"modalData":[{"title":"一、不要在没有plus和mui的环境下调用相关API","content":"普通浏览器里没有plus环境，只有HBuilder真机运行、打包后、或流应用环境下才能运行plus api。在普通浏览器里运行时plus api时控制台必然会输出plus is not defined错误提示."},
 	{"title":"二、不要在plus和mui未完成初始化时调用相关API","content":"就像在dom初始化完成前(DOMContentLoaded)去操作dom，就会报错是一样的道理。plus需要初始化，在初始化完成后调用再调用。一般我们在plusready的回调事件里调用plus api。"}
-	]
+	],
+	"footerData":[{"name":"正常footer","value":"1","data":"敬请期待"},
+				  {"name":"footer中各按钮样式一样","value":"2","data":"敬请期待",
+				  "list":[{"name":"footer1个标题","value":"2","data":""},
+						{"name":"footer2个标题","value":"2","data":""},
+						{"name":"footer3个标题","value":"2","data":""},
+						{"name":"footer4个标题","value":"2","data":""},
+						{"name":"footer5个标题","value":"2","data":""},
+						{"name":"footer6个标题","value":"2","data":""}]
+				},{"name":"footer中各按钮样式不一样","value":"3","data":"",
+				  "list":[{"name":"footer1个标题","value":"2","data":""},
+						{"name":"footer2个标题","value":"2","data":""},
+						{"name":"footer3个标题","value":"2","data":""},
+						{"name":"footer4个标题","value":"2","data":""},
+						{"name":"footer5个标题","value":"2","data":""},
+						{"name":"footer6个标题","value":"2","data":""}]
+				}]
+	
 				
-	
-	
-	
-	
 }

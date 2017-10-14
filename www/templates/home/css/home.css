@@ -91,3 +91,9 @@
     height: 35%;
     display: none;
 }
+.displayNone{
+	display: none;
+}
+.displayBlock{
+	display: block;
+}
