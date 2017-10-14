@@ -70,12 +70,13 @@
 	],
 	"footerData":[{"name":"正常footer","value":"1","data":"敬请期待"},
 				  {"name":"footer中各按钮样式一样","value":"2","data":"敬请期待",
-				  "list":[{"name":"footer1个标题","value":"2","data":""},
-						{"name":"footer2个标题","value":"2","data":""},
-						{"name":"footer3个标题","value":"2","data":""},
-						{"name":"footer4个标题","value":"2","data":""},
-						{"name":"footer5个标题","value":"2","data":""},
-						{"name":"footer6个标题","value":"2","data":""}]
+				  "list":[{"name":"footer1个标题","value":1,"data":""},
+						{"name":"footer2个标题","value":2,"data":""},
+						{"name":"footer3个标题","value":3,"data":""},
+						{"name":"footer4个标题","value":4,"data":""},
+						{"name":"footer5个标题","value":5,"data":""},
+						{"name":"footer6个标题","value":6,"data":""},
+						{"name":"footer7个标题","value":7,"data":""}]
 				},{"name":"footer中各按钮样式不一样","value":"3","data":"",
 				  "list":[{"name":"footer1个标题","value":"2","data":""},
 						{"name":"footer2个标题","value":"2","data":""},
@@ -83,7 +84,15 @@
 						{"name":"footer4个标题","value":"2","data":""},
 						{"name":"footer5个标题","value":"2","data":""},
 						{"name":"footer6个标题","value":"2","data":""}]
-				}]
+				}],
+	"buttonData":[{"name":"提交","value":"submit"},
+				  {"name":"取消","value":"cancel"},
+				  {"name":"否决","value":"reject"},
+				  {"name":"批准","value":"approve"},
+				  {"name":"确认","value":"confirm"},
+				  {"name":"退回","value":"return"},
+				   {"name":"结束","value":"over"}
+	]
 	
 				
 }

@@ -1,0 +1,22 @@
+.footerContainer {
+ 	display: -moz-box;  /* Firefox */ 
+ 	display: -ms-flexbox;    /* IE10 */ 
+ 	display: -webkit-box;    /* Safari */  
+ 	display: -webkit-flex;    /* Chrome, WebKit */ 
+  	display: box;  
+  	display: flexbox;  
+  	display: flex;
+
+ 	justify-content: space-between;
+ 	width: 100%;
+ 	height: 100%;
+}
+ 
+.footerItem {
+ 	flex: 0 0 auto;
+ 	flex-shrink:1;
+ 	width: 100%;
+ 	height: 100%;
+ 	text-align: center;
+ 	padding-top: 10px;
+}
