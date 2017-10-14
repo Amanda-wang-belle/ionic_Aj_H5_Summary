@@ -39,7 +39,7 @@
 		</div>
 	</ion-footer-bar>
 
-	<ion-footer-bar  ng-class="footerIndex==3?'displayBlock':'displayNone'" style="height: 60px;padding: 0;">
+	<ion-footer-bar class="bar-assertive" ng-class="footerIndex==3?'displayBlock':'displayNone'" style="height: 60px;padding: 0;">
 		<div class="footerContainer">
 			<div class="footerItem3" ng-repeat="x in buttonData | orderBy:index">
 				<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
