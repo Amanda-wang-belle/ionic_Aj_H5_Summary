@@ -21,23 +21,26 @@
 .footerItem3{
  	text-align: center;
  	padding-top: 10px;
- 	background: #ECECEC;
+ 	background: #DDDDDD;
  	border: 1px solid #ddd;
 }
-/*底部栏各个按钮样式不一样*/
+/*底部栏各个按钮样式不一样，正数第n个按钮样式*/
 .footerContainer .footerItem3:nth-of-type(1){
 	flex-grow: 1;
-	background: #ECECEC;
+	background: #FFFFFF;
 }
 .footerContainer .footerItem3:nth-of-type(2){
 	flex-grow: 2;
 	background: #fe6400;
 }
-.footerContainer .footerItem3:nth-of-type(3){
+
+/*最后一个按钮样式*/
+.footerContainer .footerItem3:last-child{
 	flex-grow: 3;
-	background: #007AFF;
+	background: #ECECEC;
 }
-.footerContainer .footerItem3:nth-of-type(4){
-	flex-grow: 4;
+/*倒数第n个按钮样式*/
+/*.footerContainer .footerItem3:nth-last-child(2){
+	flex-grow: 2;
 	background: #FFFFFF;
-}
+}*/
