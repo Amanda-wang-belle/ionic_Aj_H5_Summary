@@ -185,6 +185,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		//各种弹框页面 wang_szhan 2017.10.12
+		.state('tab.footer',{
+			url:'/footer/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/footer.html',
+					controller:'popupCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/footer.js');
+				}]
+			}
+		})
 		//工作消息
 		.state('tab.msg',{
 			url:'/msg',
