@@ -1,0 +1,49 @@
+<!--
+  @author wang_szhan
+  @version 1.0.0
+  @createDate  2017-10-12
+  @content 各种类型的弹框
+-->
+<ion-view  hide-tabs hide-nav-bar="true">
+	<ion-header-bar align-title="left" class="bar-positive">
+		<div class="buttons">
+			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="componentTitle"></h1>
+		<div class="buttons" ng-click="openModal()">
+			<button class="button button-clear icon  ion-alert-circled"></button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div ng-repeat="x in dataList" style="position: relative;">
+			<ion-item class="item-icon-right" style="white-space: normal;" ng-click="showOrHide(x)">
+				<span ng-bind="x.name"></span>
+				<i class="icon ion-ios-arrow-down" id="idTop{{x.value}}"></i>
+			</ion-item>
+			<div id="idBottom{{x.value}}" style="display: none;">
+				<ion-item ng-repeat="y in x.list" class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="showToast(y)">
+					<span ng-bind="y.name"></span>
+					<i class="icon ion-ios-musical-notes"></i>
+				</ion-item>
+			</div>
+		</div>
+		<div class="arrow"></div>
+		<div class="comeOnBaby" ng-click="guestWhere()"></div>
+		
+	</ion-content>
+	<!--模态框-->
+	<script id="my-modal.html" type="text/ng-template">
+		<div class="modal modalBk" ng-click="closeModal()">
+			<!--<ion-header-bar>
+				<h1 class="title">我的模型标题</h1>
+			</ion-header-bar>-->
+			<ion-content class="modalContent">
+				<div ng-repeat="x in modalData" style="margin-top: 5px;">
+					<div ng-bind="x.title" style="color: #000000;"></div>
+					<div style="margin-top: 10px;" ng-bind="x.content">
+					</div>
+				</div>
+			</ion-content>
+		</div>
+	</script>
+</ion-view>
