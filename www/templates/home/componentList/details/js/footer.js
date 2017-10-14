@@ -25,9 +25,6 @@
 		//控制分支内容的隐现
 		$scope.showOrHide = function(x) {
 			$scope.buttonData = [];
-			//			$(".hideItem").css('display', 'none');
-			//			$(".iconTop").removeClass("ion-ios-arrow-up");
-			//			$(".iconTop").addClass("ion-ios-arrow-down");
 			if(x.value == "1") {
 				$scope.footerIndex = 1;
 			} else {
@@ -51,6 +48,7 @@
 			}
 
 		}
+
 		$scope.showFooter = function(x, y) {
 
 			if(x.value == "2") {
