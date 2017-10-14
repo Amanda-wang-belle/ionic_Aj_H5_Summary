@@ -80,11 +80,14 @@
 	75%  {left:0px; top:100px;}
 	100% {left:35%; top:0px;}
 }
-/*.arrow{
+.arrow{
 	background: url(../img/arrow.jpg) no-repeat center;
-	background-size: 100% 100%;
-	height: 50px;
-	position: absolute;
-	top: 44px;
-	
-}*/
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0px;
+    right: 35px;
+    z-index: 100;
+    width: 20%;
+    height: 35%;
+    display: none;
+}

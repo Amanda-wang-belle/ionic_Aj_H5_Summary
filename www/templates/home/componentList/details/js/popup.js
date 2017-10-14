@@ -174,6 +174,7 @@
 		})
 		$scope.openModal = function(){
 			$scope.modal.show();
+			$(".arrow").css('display','none');
 		}
 		$scope.closeModal = function(){
 			$scope.modal.hide();
@@ -200,6 +201,7 @@
 		/*一个小玩笑*/
 		$scope.guestWhere = function(){
 			toastService.showToast("*′∀`)′∀`)*′∀`)*′∀`)，猜猜模态框在哪");
+			$(".arrow").css('display','block');
 		}
 			
 	})
