@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-
+		
     <link rel="manifest" href="manifest.json">
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -14,8 +14,9 @@
 		
 		
 		
-		
-		
+		<!--在HBuilder7.5版本之后安卓版支持提前注入5+ API，
+		可以在plusready事件触发之前调用5+ API，操作方法是在页面中添加以下节点：-->
+		<script src="html5plus://ready"></script>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
