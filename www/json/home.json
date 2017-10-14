@@ -91,7 +91,8 @@
 				  {"name":"批准","value":"approve"},
 				  {"name":"确认","value":"confirm"},
 				  {"name":"退回","value":"return"},
-				   {"name":"结束","value":"over"}
+				  {"name":"结束","value":"over"}
+				 
 	]
 	
 				

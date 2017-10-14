@@ -15,7 +15,7 @@
 			$scope.dataList = data;
 		}
 		publicService.receiveJson(getData, $scope.componentData);
-		
+
 		function getData1(data) {
 			$scope.buttonDataAll = data;
 		}
@@ -38,19 +38,23 @@
 					$(idTop).removeClass("ion-ios-arrow-down");
 					$(idTop).addClass("ion-ios-arrow-up");
 				}
-				if (x.value == "2") {
+				if(x.value == "2") {
 					$scope.footerIndex = 2;
-				} else{
+				} else {
 					$scope.footerIndex = 3;
 				}
 			}
 
 		}
-		
-		$scope.showFooter = function(y){
-			$scope.buttonData = $scope.buttonDataAll.slice(0,y.value); 
+
+		$scope.showFooter = function(x, y) {
+			if(x.value == "2") {
+				$scope.footerIndex = 2;
+			} else {
+				$scope.footerIndex = 3;
+			}
+			$scope.buttonData = $scope.buttonDataAll.slice(0, y.value);
 		}
-		
 
 	})
 }())
