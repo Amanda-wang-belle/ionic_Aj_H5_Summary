@@ -12,7 +12,7 @@
 				<i class="icon ion-ios-arrow-down" id="idTop{{x.value}}"></i>
 			</ion-item>
 			<div id="idBottom{{x.value}}" class="hideItem" style="display: none;">
-				<ion-item ng-repeat="y in x.list" class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="showFooter(x,y)">
+				<ion-item ng-repeat="y in x.list " class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="showFooter(x,y)">
 					<span ng-bind="y.name"></span>
 					<i class="icon ion-heart"></i>
 				</ion-item>
@@ -41,7 +41,7 @@
 
 	<ion-footer-bar class="bar-assertive" ng-class="footerIndex==3?'displayBlock':'displayNone'" style="height: 60px;padding: 0;">
 		<div class="footerContainer">
-			<div class="footerItem3" ng-repeat="x in buttonData | orderBy:index">
+			<div class="footerItem3" ng-repeat="x in buttonData | orderBy:'index'">
 				<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
 				<div ng-bind="x.name"></div>
 			</div>

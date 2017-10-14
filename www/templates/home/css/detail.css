@@ -27,7 +27,7 @@
 /*底部栏各个按钮样式不一样，正数第n个按钮样式*/
 .footerContainer .footerItem3:nth-of-type(1){
 	flex-grow: 1;
-	background: #FFFFFF;
+	background: #000;
 }
 .footerContainer .footerItem3:nth-of-type(2){
 	flex-grow: 2;
