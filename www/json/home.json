@@ -78,20 +78,21 @@
 						{"name":"footer6个标题","value":6,"data":""},
 						{"name":"footer7个标题","value":7,"data":""}]
 				},{"name":"footer中各按钮样式不一样","value":"3","data":"",
-				  "list":[{"name":"footer1个标题","value":"2","data":""},
-						{"name":"footer2个标题","value":"2","data":""},
-						{"name":"footer3个标题","value":"2","data":""},
-						{"name":"footer4个标题","value":"2","data":""},
-						{"name":"footer5个标题","value":"2","data":""},
-						{"name":"footer6个标题","value":"2","data":""}]
+				  "list":[{"name":"footer1个标题","value":1,"data":""},
+						{"name":"footer2个标题","value":2,"data":""},
+						{"name":"footer3个标题","value":3,"data":""},
+						{"name":"footer4个标题","value":4,"data":""},
+						{"name":"footer5个标题","value":5,"data":""},
+						{"name":"footer6个标题","value":6,"data":""},
+						{"name":"footer7个标题","value":7,"data":""}]
 				}],
-	"buttonData":[{"name":"提交","value":"submit"},
-				  {"name":"取消","value":"cancel"},
-				  {"name":"否决","value":"reject"},
-				  {"name":"批准","value":"approve"},
-				  {"name":"确认","value":"confirm"},
-				  {"name":"退回","value":"return"},
-				  {"name":"结束","value":"over"}
+	"buttonData":[{"name":"提交","value":"submit","index":1},
+				  {"name":"取消","value":"cancel","index":7},
+				  {"name":"否决","value":"reject","index":3},
+				  {"name":"批准","value":"approve","index":5},
+				  {"name":"确认","value":"confirm","index":4},
+				  {"name":"退回","value":"return","index":6},
+				  {"name":"结束","value":"over","index":2}
 				 
 	]
 	

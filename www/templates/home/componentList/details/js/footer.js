@@ -24,6 +24,7 @@
 		$scope.footerIndex = 1;
 		//控制分支内容的隐现
 		$scope.showOrHide = function(x) {
+			$scope.buttonData = [];
 			if(x.value == "1") {
 				$scope.footerIndex = 1;
 			} else {
@@ -46,14 +47,15 @@
 			}
 
 		}
-
 		$scope.showFooter = function(x, y) {
+			
 			if(x.value == "2") {
 				$scope.footerIndex = 2;
 			} else {
 				$scope.footerIndex = 3;
 			}
 			$scope.buttonData = $scope.buttonDataAll.slice(0, y.value);
+			console.log($scope.buttonData);
 		}
 
 	})

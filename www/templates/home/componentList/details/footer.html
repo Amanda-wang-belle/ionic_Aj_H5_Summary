@@ -11,7 +11,7 @@
 				<span ng-bind="x.name"></span>
 				<i class="icon ion-ios-arrow-down" id="idTop{{x.value}}"></i>
 			</ion-item>
-			<div id="idBottom{{x.value}}" style="display: none;">
+			<div id="idBottom{{x.value}}" class="hideItem" style="display: none;">
 				<ion-item ng-repeat="y in x.list" class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="showFooter(x,y)">
 					<span ng-bind="y.name"></span>
 					<i class="icon ion-heart"></i>
@@ -20,7 +20,7 @@
 		</div>
 	</ion-content>
 
-	<ion-footer-bar align-title="left"  ng-class="footerIndex==1?'displayBlock':'displayNone'">
+	<ion-footer-bar align-title="left" class="bar-assertive" ng-class="footerIndex==1?'displayBlock':'displayNone'">
 		<div class="buttons">
 			<button class="button button-clear">左侧按钮</button>
 		</div>
@@ -29,14 +29,23 @@
 			<button class="button button-clear">右侧按钮</button>
 		</div>
 	</ion-footer-bar>
-	<ion-footer-bar  ng-class="footerIndex==2?'displayBlock':'displayNone'" style="height: 60px;">
+
+	<ion-footer-bar class="bar-assertive" ng-class="footerIndex==2?'displayBlock':'displayNone'" style="height: 60px;">
 		<div class="footerContainer">
-			<div class="footerItem"  ng-repeat="x in buttonData">
-				<div>
-					<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
-				</div>
-				<div>{{x.name}}</div>
+			<div class="footerItem" ng-repeat="x in buttonData | orderBy:index">
+				<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
+				<div ng-bind="x.name"></div>
 			</div>
 		</div>
 	</ion-footer-bar>
+
+	<ion-footer-bar  ng-class="footerIndex==3?'displayBlock':'displayNone'" style="height: 60px;padding: 0;">
+		<div class="footerContainer">
+			<div class="footerItem3" ng-repeat="x in buttonData | orderBy:index">
+				<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
+				<div ng-bind="x.name"></div>
+			</div>
+		</div>
+	</ion-footer-bar>
+
 </ion-view>
