@@ -19,10 +19,11 @@ app.run(function($ionicPlatform) {
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
+		//扩展API准备完成后要执行的操作
 		function plusReady(){}
 		
 		//监听plusready事件
-		if (window.plus) {
+		if (window.plus) {  //扩展API是否准备好，如果没有则监听“plusready"事件 
 			plusReady();
 		} else{
 			//加载API

@@ -52,13 +52,16 @@
 									{"name":"ionicPopupShow自定义弹窗","value":"","data":"～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～"},
 									{"name":"ionicPopupAlert提示对话框","value":"","data":"～(￣▽￣～)"},
 									{"name":"一定时间后消失的弹框","value":"","data":"～(￣▽￣～)"}
-				]},{"name":"各种plus.nativeUI弹框","value":"3","data":"敬请期待",
+				]},{"name":"各种plus.nativeUI调用手机原生控件的API接口弹框","value":"3","data":"敬请期待",
 							  "list":[{"name":"自定义toast弹框(短)","value":"","data":"这是一个比较短的tost哟"},
 									{"name":"自定义toast弹框(长)","value":"","data":"～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～这是一个比较长的tost哟，人家无论什么时候都是占据屏幕正中央哟～(￣▽￣～)(～￣▽￣)～"},
 									{"name":"toast宽度随着由内容填充(少)","value":"","data":"～(￣▽￣～)"},
 									{"name":"toast宽度随着由内容填充(多)","value":"","data":"～(￣▽￣～)(～￣▽￣)～～"}
 				]},{"name":"$ionicActionSheet向上滑动的面板","value":"3","data":"敬请期待"
 				}
+	],
+	"modalData":[{"title":"一、不要在没有plus和mui的环境下调用相关API","content":"普通浏览器里没有plus环境，只有HBuilder真机运行、打包后、或流应用环境下才能运行plus api。在普通浏览器里运行时plus api时控制台必然会输出plus is not defined错误提示."},
+	{"title":"二、不要在plus和mui未完成初始化时调用相关API","content":"就像在dom初始化完成前(DOMContentLoaded)去操作dom，就会报错是一样的道理。plus需要初始化，在初始化完成后调用再调用。一般我们在plusready的回调事件里调用plus api。"}
 	]
 				
 	

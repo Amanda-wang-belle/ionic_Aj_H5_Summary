@@ -14,6 +14,12 @@
 			$scope.dataList = data;
 		}
 		publicService.receiveJson(getData, $scope.componentData);
+		
+		function getData1(data) {
+			$scope.modalData = data;
+			console.log($scope.modalData);
+		}
+		publicService.receiveJson(getData1, "modalData");
 
 		//控制分支内容的隐现
 		$scope.showOrHide = function(x) {
