@@ -33,6 +33,10 @@
 			jQuerySlide.slideToggle($scope.idBottom,$scope.idTop);
 
 		}
+		
+		$scope.toDetail = function(x){
+			publicJump.jumpTo(x);
+		}
 
 	})
 }())
