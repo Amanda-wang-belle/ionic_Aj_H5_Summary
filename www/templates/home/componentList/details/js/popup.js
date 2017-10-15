@@ -173,7 +173,11 @@
 						//                    titleText: 'Modify your album',
 						cancelText: 'Cancel',
 						cancel: function() {
+							return true;
 							//                         toastService.showToast('close the actionSheet,you can stop me in the code');
+						},
+						destructiveButtonClicked: function(){
+							return true;
 						},
 						buttonClicked: function(index) {
 							switch(index) {
@@ -191,9 +195,9 @@
 						}
 					});
 
-					$timeout(function() {
-						hideSheet();
-					}, 2000);
+//					$timeout(function() {
+//						hideSheet();
+//					}, 2000);
 				}
 				/**
 				 *plus.nativeUi
