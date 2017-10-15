@@ -13,7 +13,7 @@
 					{"name":"各种弹框","value":"popup","data":"popupData"},
 					{"name":"模态框","value":"popup","data":"popupData"},
 					{"name":"ionic底部栏","value":"footer","data":"footerData"},
-					{"name":"轮播图","value":"","data":"敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待敬请期待"},
+					{"name":"轮播图","value":"carouselFigure","data":"carouselFigureData"},
 					{"name":"首页列表（仅留2条,如何长度超过指定宽度，超过部分以省略号表示）","value":"","data":"敬请期待"},
 					{"name":"图片上传（通过Date数据传输）","value":"","data":"敬请期待"},
 					{"name":"下载","value":"","data":"敬请期待"},
@@ -94,7 +94,21 @@
 				  {"name":"退回","value":"return","index":6},
 				  {"name":"结束","value":"over","index":2}
 				 
-	]
+	],
+	"carouselFigureData":[{"name":"单个ionic-slide轮播图","value":"2","data":"",
+				  "list":[{"name":"templates/home/img/slide1.jpg","value":"","data":""},
+				  		  {"name":"templates/home/img/slide2.jpg","value":"","data":""},
+				  		  {"name":"templates/home/img/slide3.jpg","value":"","data":""}
+				]
+	},{"name":"单个slide轮播图2","value":"3","data":"",
+				  "list":[{"name":"","value":"","data":""},
+				  		  {"name":"","value":"","data":""}
+				]
+	},{"name":"单个slide轮播图3","value":"4","data":"",
+				  "list":[{"name":"","value":"","data":""},
+				  		  {"name":"","value":"","data":""}
+				]
+	}]
 	
 				
 }

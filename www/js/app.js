@@ -185,7 +185,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		//各种弹框页面 wang_szhan 2017.10.12
+		//各种底部栏 wang_szhan 2017.10.13
 		.state('tab.footer',{
 			url:'/footer/:componentTitle/:componentData',
 			cache:'false',
@@ -198,6 +198,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 			resolve: {
 				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
 					return $ocLazyLoad.load('templates/home/componentList/details/js/footer.js');
+				}]
+			}
+		})
+		//各种轮播图 wang_szhan 2017.10.15
+		.state('tab.carouselFigure',{
+			url:'/carouselFigure/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/carouselFigure.html',
+					controller:'carouselFigureCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/carouselFigure.js');
 				}]
 			}
 		})
