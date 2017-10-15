@@ -206,3 +206,7 @@ button .icon {
 	font-size: 20px;
 	padding: 35px;
 }
+.w100{
+	width: 100%;
+	height: 100px;
+}

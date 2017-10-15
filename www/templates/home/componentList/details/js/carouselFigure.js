@@ -28,13 +28,9 @@
 		$scope.showOrHide = function(x) {
 			jQuerySlide.slideUp($scope.idBottom,$scope.idTop);
 			$scope.buttonData = [];
-			if(x.value == "1") {
-				$scope.footerIndex = 1;
-			} else {
-				$scope.idBottom = "#idBottom" + x.value;
-				$scope.idTop = "#idTop" + x.value;
-				jQuerySlide.slideToggle($scope.idBottom,$scope.idTop);
-			}
+			$scope.idBottom = "#idBottom" + x.value;
+			$scope.idTop = "#idTop" + x.value;
+			jQuerySlide.slideToggle($scope.idBottom,$scope.idTop);
 
 		}
 

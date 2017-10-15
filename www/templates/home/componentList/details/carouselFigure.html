@@ -11,7 +11,7 @@
 				<span ng-bind="x.name"></span>
 				<i class="icon ion-ios-arrow-down iconTop" id="idTop{{x.value}}"></i>
 			</ion-item>
-			<div id="idBottom{{x.value}}" class="hideItem" style="display: none;">
+			<div id="idBottom{{x.value}}" style="display: none;">
 				<ion-item ng-repeat="y in x.list " class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="showFooter(x,y)">
 					<span ng-bind="y.name"></span>
 					<i class="icon ion-heart"></i>

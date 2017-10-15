@@ -95,18 +95,14 @@
 				  {"name":"结束","value":"over","index":2}
 				 
 	],
-	"carouselFigureData":[{"name":"单个ionic-slide轮播图","value":"2","data":"",
-				  "list":[{"name":"templates/home/img/slide1.jpg","value":"","data":""},
-				  		  {"name":"templates/home/img/slide2.jpg","value":"","data":""},
-				  		  {"name":"templates/home/img/slide3.jpg","value":"","data":""}
+	"carouselFigureData":[{"name":"ionic——Slide Box滑动框","value":"1","data":"",
+				  "list":[{"name":"独自slide轮播","value":"slider","data":"slideSelfData"},
+				  		  {"name":"上下对应Ionic轮播效果","value":"slider","data":"slideDoubleData"}
 				]
-	},{"name":"单个slide轮播图2","value":"3","data":"",
-				  "list":[{"name":"","value":"","data":""},
-				  		  {"name":"","value":"","data":""}
-				]
-	},{"name":"单个slide轮播图3","value":"4","data":"",
-				  "list":[{"name":"","value":"","data":""},
-				  		  {"name":"","value":"","data":""}
+	},{"name":"swiper滑动框","value":"2","data":"",
+				  "list":[{"name":"无导航swiper滑动","value":"slider","data":"swiperNoData"},
+				  		  {"name":"有导航的swiper","value":"slider","data":"swiperYesData"},
+				  		  {"name":"上下对应的swiper滑动","value":"slider","data":"swiperDoubleData"}
 				]
 	}]
 	
