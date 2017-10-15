@@ -22,40 +22,52 @@
 		publicService.receiveJson(getData1, "buttonData");
 
 		$scope.footerIndex = 1;
+		$scope.idBottom = "";
+		$scope.idTop = "";
 		//控制分支内容的隐现
 		$scope.showOrHide = function(x) {
+			slideUp() ;
 			$scope.buttonData = [];
 			if(x.value == "1") {
 				$scope.footerIndex = 1;
 			} else {
-				var idBottom = "#idBottom" + x.value;
-				var idTop = "#idTop" + x.value;
-				if($(idBottom).css('display') == 'block') {
-					$(idBottom).slideUp();
-					$(idTop).removeClass("ion-ios-arrow-up");
-					$(idTop).addClass("ion-ios-arrow-down");
+				$scope.idBottom = "#idBottom" + x.value;
+				$scope.idTop = "#idTop" + x.value;
+				if($($scope.idBottom).css('display') == 'block') {
+					slideUp();
 				} else {
-					$(idBottom).slideDown();
-					$(idTop).removeClass("ion-ios-arrow-down");
-					$(idTop).addClass("ion-ios-arrow-up");
+					slideDown();
 				}
-
-				if(x.value == "2") {
-					$scope.footerIndex = 2;
-				} else {
-					$scope.footerIndex = 3;
-				}
+				showDifFooter(x.value);
 			}
 
 		}
-
-		$scope.showFooter = function(x, y) {
-
-			if(x.value == "2") {
+		//显示三个不同大页签的底部栏
+		function showDifFooter(value){
+			if(value == "2") {
 				$scope.footerIndex = 2;
 			} else {
 				$scope.footerIndex = 3;
 			}
+		}
+		//收起下拉内容
+		function slideUp() {
+			$($scope.idBottom).slideUp();
+			$($scope.idTop).removeClass("ion-ios-arrow-up");
+			$($scope.idTop).addClass("ion-ios-arrow-down");
+			$scope.idBottom = "";
+			$scope.idTop = "";
+		}
+		//放下下拉内容
+		function slideDown(){
+			$($scope.idBottom).slideDown();
+			$($scope.idTop).removeClass("ion-ios-arrow-down");
+			$($scope.idTop).addClass("ion-ios-arrow-up");
+		}
+		
+		//显示不同的footer
+		$scope.showFooter = function(x, y) {
+			showDifFooter(x.value);
 			$scope.buttonData = $scope.buttonDataAll.slice(0, y.value);
 			console.log($scope.buttonData);
 		}
