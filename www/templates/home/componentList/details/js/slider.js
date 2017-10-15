@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('carouselFigureCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide,publicJump) {
+	app.controller('sliderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 

@@ -201,7 +201,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		//各种轮播图 wang_szhan 2017.10.15
+		//各种轮播图列表 wang_szhan 2017.10.15
 		.state('tab.carouselFigure',{
 			url:'/carouselFigure/:componentTitle/:componentData',
 			cache:'false',
@@ -214,6 +214,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 			resolve: {
 				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
 					return $ocLazyLoad.load('templates/home/componentList/details/js/carouselFigure.js');
+				}]
+			}
+		})
+		//各种轮播图详情页面 wang_szhan 2017.10.15
+		.state('tab.slider',{
+			url:'/slider/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/slider.html',
+					controller:'sliderCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/slider.js');
 				}]
 			}
 		})
