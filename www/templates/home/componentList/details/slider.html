@@ -1,23 +1,23 @@
 <!--
   @author wang_szhan
   @version 1.0.0
-  @createDate  2017-10-12
-  @content 各种类型的弹框
+  @createDate  2017-10-15
+  @content 各种类型的轮播图
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
-		<div ng-repeat="x in dataList" style="position: relative;">
-			<ion-item class="item-icon-right" style="white-space: normal;" ng-click="showOrHide(x)">
-				<span ng-bind="x.name"></span>
-				<i class="icon ion-ios-arrow-down iconTop" id="idTop{{x.value}}"></i>
-			</ion-item>
-			<div id="idBottom{{x.value}}" style="display: none;">
-				<ion-item ng-repeat="y in x.list " class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="toDetail(y)">
-					<span ng-bind="y.name"></span>
-					<i class="icon ion-heart"></i>
-				</ion-item>
+		<div class="wh100" ng-class="slideShow==1?'displayBlock':'displayNone'">
+			<ion-slide-box id="slideBox" does-continue="true" auto-play="true" slide-interval="500" show-pager="false" on-slide-changed="go_changed(index)" class="wh100">
+				<ion-slide ng-repeat="x in dataList">
+					<img ng-src="{{x.name}}" class="slideImage" />
+				</ion-slide>
+			</ion-slide-box>
+			
+			<div ng-repeat="x in buttonListSlide" ng-click="showSlide(x.value)">
+				<div class="button button-calm" ng-bind="x.name"></div>
 			</div>
 		</div>
+
 	</ion-content>
 
 </ion-view>
