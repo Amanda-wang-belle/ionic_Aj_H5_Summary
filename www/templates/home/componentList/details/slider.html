@@ -14,11 +14,13 @@
 					<div ng-click="go($index)" ng-bind="x.name"></div>
 				</div>
 			</div>-->
-			<ion-slide-box ng-if="componentTitle=='ionic双向控制'"  active-slide="index" pager-click="go(index)">
-				<ion-slide ng-repeat="x in buttonListSlide2" style="width: 33.3%;">
-					<div ng-click="go($index)" ng-bind="x.name"></div>
-				</ion-slide>
-			</ion-slide-box>
+			<div class="swiper-container12" ng-if="componentTitle=='ionic双向控制'">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
+						<div ng-click="go($index)" ng-bind="x.name"></div>
+					</div>
+				</div>
+			</div>
 			
 			<ion-slide-box does-continue="{{doesContinue}}" auto-play="autoPlay" slide-interval="{{slideInterval}}" show-pager="showPager" on-slide-changed="go_changed(index)" active-slide="index" pager-click="go(index)" class="wh100">
 				<ion-slide ng-repeat="x in dataList">
