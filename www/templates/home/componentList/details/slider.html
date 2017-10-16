@@ -41,7 +41,9 @@
 				<!--scrollbar-->
 				<!--<div class="swiper-scrollbar"></div>-->
 			</div>
-
+			<div ng-repeat="x in buttonListSlide3" ng-click="showSlide(x.value)">
+				<div class="button button-calm slideButton" ng-bind="x.name"></div>
+			</div>
 		</div>
 
 	</ion-content>

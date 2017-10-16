@@ -116,10 +116,13 @@
 				  {"name":"速度变为500ms","value":"3","data":""},
 				  {"name":"速度变为5000ms","value":"30","data":""},
 				  {"name":"显示分页器","value":"4","data":""},
-				  {"name":"不显示分页器","value":"4","data":""},
-				  {"name":"第一张鹿晗","value":"4","data":""},
-				  {"name":"第二张鹿晗","value":"4","data":""},
-				  {"name":"第三张鹿晗","value":"4","data":""}
+				  {"name":"不显示分页器","value":"40","data":""},
+				  {"name":"第一张鹿晗","value":"5","data":""},
+				  {"name":"第二张鹿晗","value":"6","data":""},
+				  {"name":"第三张鹿晗","value":"7","data":""},
+				  {"name":"改变view个数1.5","value":"8","data":""},
+				  {"name":"恢复view个数1","value":"9","data":""},
+				  {"name":"开始滚动","value":"10","data":""}
 				 
 	]
 	
