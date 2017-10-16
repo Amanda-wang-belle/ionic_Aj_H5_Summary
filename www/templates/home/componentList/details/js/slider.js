@@ -53,7 +53,7 @@
 		$scope.showPager = true; //是否显示分页器
 
 		$scope.slideIndex = 0;
-		
+		/*头部的swiper标题*/
 		function mySwiperFigure12() {
 			mySwiper12 = new Swiper('.swiper-container12', {
 				autoplayDisableOnInteraction: false, //设置为true时，是否禁止autoplay，默认为true
@@ -61,7 +61,6 @@
 				slidesPerView: 3, //设置slide容器能够同时显示的slide数量（carouse模块）
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
-				initialSlide :0
 			})
 		}
 
@@ -76,8 +75,15 @@
 		}
 		//pager-click - 分页器点击事件
 		$scope.go = function(index) {
-			$ionicSlideBoxDelegate.slide(index);
+			if ($scope.componentTitle=='ionic双向控制') {
+				$ionicSlideBoxDelegate.slide(index);	
+			} else if ($scope.componentTitle=='swiper双向控制'){
+				mySwiper1.slideTo(index);
+				$scope.slideIndex = index;
+			}
+			
 		}
+		/*页面中的按钮效果*/
 		$scope.showSlide = function(value) {
 			if(value == 11) {
 				$scope.viewNumber = 1.5;
@@ -99,7 +105,7 @@
 		/************************swiper轮播图**************************************/
 		$scope.viewNumber = 1;
 		$scope.autoPlayS = false;
-
+		/*swiper轮播图*/
 		function mySwiperFigure() {
 			mySwiper1 = new Swiper('.swiper-container1', {
 				//				centeredSlides: true,  //设置为true时,活动块会居中，而不是默认状态下的居左
@@ -107,7 +113,7 @@
 				autoplay: $scope.autoPlayS, //自动切换时间间隔
 				slidesPerView: $scope.viewNumber, //设置slide容器能够同时显示的slide数量（carouse模块）
 				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
-				initialSlide :2,
+				
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
 				//分页器
@@ -118,8 +124,14 @@
 				nextButton: '.swiper-button-next',
 				prevButton: '.swiper-button-prev',
 				//				scrollBar:'.swiper-scrollbar'
+				onSlideChangeEnd: function(swiper){
+					$scope.slideIndex = swiper.activeIndex;	 //切换结束时，告诉我现在是第几个slide
+					toastService.showToast($scope.slideIndex);
+			      	mySwiper12.slideTo(swiper.activeIndex, 300, false); 
+			    }
 			})
 		}
+		/*上下轮播图互相对应的swiper轮播*/
 		function mySwiperFigure2() {
 			mySwiper2 = new Swiper('.swiper-container2', {
 				//				centeredSlides: true,  //设置为true时,活动块会居中，而不是默认状态下的居左
@@ -127,7 +139,7 @@
 				autoplay: $scope.autoPlayS, //自动切换时间间隔
 				slidesPerView: $scope.viewNumber, //设置slide容器能够同时显示的slide数量（carouse模块）
 				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
-				initialSlide :2,
+				
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
 				//分页器
