@@ -111,9 +111,16 @@
 				 
 	],
 	"buttonList":[{"name":"循环滑动","value":"1","data":""},
+				  {"name":"停止循环滑动","value":"10","data":""},
 				  {"name":"自动滑动","value":"2","data":""},
+				  {"name":"停止自动滑动","value":"20","data":""},
 				  {"name":"速度变为500ms","value":"3","data":""},
-				   {"name":"不显示分页器","value":"4","data":""}
+				  {"name":"速度变为5000ms","value":"30","data":""},
+				  {"name":"显示分页器","value":"4","data":""},
+				  {"name":"不显示分页器","value":"4","data":""},
+				  {"name":"第一张鹿晗","value":"4","data":""},
+				  {"name":"第二张鹿晗","value":"4","data":""},
+				  {"name":"第三张鹿晗","value":"4","data":""}
 				 
 	]
 	

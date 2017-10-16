@@ -1,50 +1,86 @@
 /*底部栏各个按钮样式一样*/
+
 .footerContainer {
- 	width: 100%;
- 	height: 100%;
- 	display: -webkit-flex;
- 	/*-webkit-flex-wrap: wrap;*/  /*当footerItem的width和height是固定px时候可用*/
- 	display: flex;
- 	/*flex-wrap: wrap;*/
- 	-webkit-justify-content: space-around;
- 	justify-content: space-around;
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+	/*-webkit-flex-wrap: wrap;*/
+	/*当footerItem的width和height是固定px时候可用*/
+	display: flex;
+	/*flex-wrap: wrap;*/
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
 }
- 
-.footerItem{
- 	flex: 0 0 auto;
- 	flex-shrink:1;
- 	width: 100%;
- 	height: 100%;
- 	text-align: center;
- 	padding-top: 10px;
+
+.footerItem {
+	flex: 0 0 auto;
+	flex-shrink: 1;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 10px;
 }
-.footerItem3{
- 	text-align: center;
- 	padding-top: 10px;
- 	background: #DDDDDD;
- 	border: 1px solid #ddd;
+
+.footerItem3 {
+	text-align: center;
+	padding-top: 10px;
+	background: #DDDDDD;
+	border: 1px solid #ddd;
 }
+
+
 /*底部栏各个按钮样式不一样，正数第n个按钮样式*/
-.footerContainer .footerItem3:nth-of-type(1){
+
+.footerContainer .footerItem3:nth-of-type(1) {
 	flex-grow: 1;
 	background: #000;
 }
-.footerContainer .footerItem3:nth-of-type(2){
+
+.footerContainer .footerItem3:nth-of-type(2) {
 	flex-grow: 2;
 	background: #fe6400;
 }
 
+
 /*最后一个按钮样式*/
-.footerContainer .footerItem3:last-child{
+
+.footerContainer .footerItem3:last-child {
 	flex-grow: 3;
 	background: #ECECEC;
 }
+
+
 /*倒数第n个按钮样式*/
+
+
 /*.footerContainer .footerItem3:nth-last-child(2){
 	flex-grow: 2;
 	background: #FFFFFF;
 }*/
-.slideImage{
+
+.slideImage {
 	height: 300px;
 	width: 100%;
+}
+
+.slideButton {
+	float: left;
+	width: 45%;
+	margin: 5px;
+}
+.current{
+	background: #ECECEC;
+	color: red;
+}
+.slide-tab li{
+	float: left;
+	width: 33.3%;
+	height: 100%;
+	line-height: 44px;
+	text-align: center;
+}
+.slideTab{
+	width: 100%;
+	height: 44px;
+	background: #63B8FF;
 }

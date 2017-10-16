@@ -7,19 +7,18 @@
 (function() {
 	'use strict'
 
-	app.controller('sliderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide) {
+	app.controller('sliderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide,$ionicSlideBoxDelegate) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
-		$scope.slideShow = "1";
-		slideShow($scope.componentTitle);
+		
 		function getData(data) {
 			$scope.dataList = data;
 			console.log($scope.dataList);
 		}
 		publicService.receiveJson(getData, $scope.componentData);
 		function getData1(data) {
-			$scope.buttonListSlide = data;
-			console.log($scope.buttonListSlide);
+			$scope.buttonListSlide1 = data.slice(0,8);
+			$scope.buttonListSlide2 = data.slice(8,11);
 		}
 		publicService.receiveJson(getData1, "buttonList");
 		
@@ -36,35 +35,26 @@
 
 		}
 		
-		function slideShow(title){
-			switch(title){
-				case "独自slide轮播":
-					$scope.slideShow = 1;
-					break;
-				case "上下对应Ionic轮播效果":
-					$scope.slideShow = 2;
-					break;
-				case "无导航swiper滑动":
-					$scope.slideShow = 3;
-					break;
-				case "有导航的swiper":
-					$scope.slideShow = 4;
-					break;
-				case "上下对应的swiper滑动":
-					$scope.slideShow = 5;
-					break;
-				default:
-					break;
-			}
-		}
+		/******************ion-slide-box*****************************/
+		$scope.doesContinue = true; //是否循环切换 
+		$scope.autoPlay = true;  //是否自动播放,默认4000ms
+		$scope.slideInterval = 5000; //自动播放的间隔时间
+		$scope.showPager = true;   //是否显示分页器
 		
+		$scope.slideIndex = 0;
+		//on-slide-changed  幻灯页切换事件
 		$scope.go_changed = function(index){
+			$scope.slideIndex = index;
 			toastService.showToast("这个鹿晗第"+(index+1)+"张图片");
 		}
-		$scope.showSlide = function(){
-			var aaa = $("#slideBox").prop('autoplay');
-			console.log(aaa);
+		//pager-click - 分页器点击事件
+		$scope.go = function(index){
+			 $ionicSlideBoxDelegate.slide(index);  
 		}
+		$scope.showSlide = function(value){
+			toastService.showToast("本人暂时无法通过事件改变ion-slide-box的does-continue等属性，希望各位可以提出好的建议");
+		}
+		
 
 	})
 }())
