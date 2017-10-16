@@ -29,10 +29,8 @@
 			<div class="swiper-container1">
 				<!--轮播图-->
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" ng-repeat="newImage in dataList">
-						<a href="">
-							<img ng-src="{{newImage.name}}" />
-						</a>
+					<div class="swiper-slide" ng-repeat="x in dataList" class="slideImage">
+						<img ng-src="{{x.name}}"  />
 					</div>
 				</div>
 				<!--分页器-->

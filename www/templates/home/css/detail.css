@@ -99,6 +99,12 @@
   -o-transform: scale(1);
   transform: scale(1);
 }
+.swiper-slide img {
+    width: auto;
+    height: 300px;
+    max-width: 100%;
+    max-height: 100%;
+}
 /*分页器*/
 #swiper-pagination1{
 	position: relative;
