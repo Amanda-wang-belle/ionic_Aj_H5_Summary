@@ -6,6 +6,7 @@
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
+		<!--slider轮播图-->
 		<div class="wh100" ng-if="componentTitle=='上下对应Ionic轮播效果'||componentTitle=='独自slide轮播'">
 			<div class="footerContainer height44" ng-if="componentTitle=='上下对应Ionic轮播效果'">
 				<div class="footerItem" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
@@ -20,6 +21,22 @@
 			<div ng-repeat="x in buttonListSlide1" ng-click="showSlide(x.value)" ng-if="componentTitle=='独自slide轮播'">
 				<div class="button button-calm slideButton" ng-bind="x.name"></div>
 			</div>
+		</div>
+
+		<!--swiper轮播图-->
+		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='上下对应的swiper滑动'">
+			<div calss="item">
+				<div class="swiper-container" class="wh100">
+					<div class="swiper-wrapper" class="wh100">
+						<div ng-repeat="x in dataList" class="swiper-slide">
+							<img ng-src="{{x.name}}" class="slideImage"/>
+						</div>
+					</div>
+					<div id="swiper-pagination">
+					</div>
+				</div>
+			</div>
+
 		</div>
 
 	</ion-content>
