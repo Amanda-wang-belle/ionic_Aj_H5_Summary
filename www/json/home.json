@@ -100,8 +100,7 @@
 				  		  {"name":"上下对应Ionic轮播效果","value":"slider","data":"slideData"}
 				]
 	},{"name":"swiper滑动框","value":"2","data":"",
-				  "list":[{"name":"无导航swiper滑动","value":"slider","data":"slideData"},
-				  		  {"name":"有导航的swiper","value":"slider","data":"slideData"},
+				  "list":[{"name":"独自slide轮播","value":"slider","data":"slideData"},
 				  		  {"name":"上下对应的swiper滑动","value":"slider","data":"slideData"}
 				]
 	}],
