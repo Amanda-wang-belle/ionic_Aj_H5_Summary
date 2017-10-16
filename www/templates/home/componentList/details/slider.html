@@ -6,7 +6,7 @@
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
-		<div class="wh100">
+		<div class="wh100" ng-if="componentTitle=='上下对应Ionic轮播效果'||componentTitle=='独自slide轮播'">
 			<div class="footerContainer height44" ng-if="componentTitle=='上下对应Ionic轮播效果'">
 				<div class="footerItem" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
 					<div ng-click="go($index)" ng-bind="x.name"></div>
