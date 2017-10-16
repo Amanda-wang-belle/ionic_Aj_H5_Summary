@@ -10,13 +10,20 @@
 	app.controller('sliderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide, $ionicSlideBoxDelegate) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
-
+		var mySwiper12;
+		var mySwiper1;
+		var mySwiper2;
 		function getData(data) {
 			$scope.dataList = data;
 			console.log($scope.dataList);
 			mySwiperFigure();
-			mySwiperFigure2();
 			mySwiperFigure12();
+			mySwiperFigure2();
+			if($scope.componentTitle=='双向控制(图片示例)'){
+				mySwiper1.params.control = mySwiper2;
+//				mySwiper2.params.control = mySwiper1;
+			}
+			
 		}
 		publicService.receiveJson(getData, $scope.componentData);
 
@@ -46,7 +53,7 @@
 		$scope.showPager = true; //是否显示分页器
 
 		$scope.slideIndex = 0;
-		var mySwiper12;
+		
 		function mySwiperFigure12() {
 			mySwiper12 = new Swiper('.swiper-container12', {
 				autoplayDisableOnInteraction: false, //设置为true时，是否禁止autoplay，默认为true
@@ -54,6 +61,7 @@
 				slidesPerView: 3, //设置slide容器能够同时显示的slide数量（carouse模块）
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
+				initialSlide :0
 			})
 		}
 
@@ -61,7 +69,9 @@
 		$scope.go_changed = function(index) {
 			$scope.slideIndex = index;
 			$ionicSlideBoxDelegate.slide(index);
-			mySwiper12.slideTo(index, 300, false);
+			if($scope.componentTitle=='ionic双向控制'){
+				mySwiper12.slideTo(index, 300, false);
+			}
 			toastService.showToast("这个鹿晗第" + (index + 1) + "张图片");
 		}
 		//pager-click - 分页器点击事件
@@ -91,12 +101,13 @@
 		$scope.autoPlayS = false;
 
 		function mySwiperFigure() {
-			var mySwiper = new Swiper('.swiper-container1', {
+			mySwiper1 = new Swiper('.swiper-container1', {
 				//				centeredSlides: true,  //设置为true时,活动块会居中，而不是默认状态下的居左
 				autoplayDisableOnInteraction: false, //设置为true时，是否禁止autoplay，默认为true
 				autoplay: $scope.autoPlayS, //自动切换时间间隔
 				slidesPerView: $scope.viewNumber, //设置slide容器能够同时显示的slide数量（carouse模块）
 				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
+				initialSlide :2,
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
 				//分页器
@@ -109,18 +120,22 @@
 				//				scrollBar:'.swiper-scrollbar'
 			})
 		}
-
 		function mySwiperFigure2() {
-			var mySwiper = new Swiper('.swiper-container2', {
+			mySwiper2 = new Swiper('.swiper-container2', {
 				//				centeredSlides: true,  //设置为true时,活动块会居中，而不是默认状态下的居左
 				autoplayDisableOnInteraction: false, //设置为true时，是否禁止autoplay，默认为true
-				autoplay: false, //自动切换时间间隔
-				slidesPerView: 3, //设置slide容器能够同时显示的slide数量（carouse模块）
+				autoplay: $scope.autoPlayS, //自动切换时间间隔
+				slidesPerView: $scope.viewNumber, //设置slide容器能够同时显示的slide数量（carouse模块）
+				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
+				initialSlide :2,
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
-				initialSlide: 0,
-
+				//分页器
+				pagination: '#swiper-pagination2',
+				paginationElement: 'li',
+				paginationClickable: true,
 			})
 		}
+
 	})
 }())

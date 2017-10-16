@@ -6,27 +6,29 @@
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
-		<!--slider轮播图-->
-		<div class="wh100" ng-if="componentTitle=='ionic双向控制'||componentTitle=='独自slide轮播'">
-		<div class="titleSlide">第一种 ion-scroll的方法</div>
-		<ion-scroll scrollbar-x="false" direction="x" style="width: 100%;">
-			<div style="width: 200%;" class="footerContainer height44" ng-if="componentTitle=='ionic双向控制'">
-				<div  class="footerItem" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
-					<div ng-click="go($index)" ng-bind="x.name"></div>
+		<div ng-if="componentTitle=='ionic双向控制'||componentTitle=='swiper双向控制'">
+			<div class="titleSlide">第一种 ion-scroll的方法</div>
+			<ion-scroll scrollbar-x="false" direction="x" style="width: 100%;">
+				<div style="width: 200%;" class="footerContainer height44">
+					<div class="footerItem" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
+						<div ng-click="go($index)" ng-bind="x.name"></div>
+					</div>
 				</div>
-			</div>
-		</ion-scroll>
-		
-		<div class="titleSlide">第二种 上边标题用 swiper</div>
-		
-			<div class="swiper-container12 height44" ng-if="componentTitle=='ionic双向控制'">
+			</ion-scroll>
+
+			<div class="titleSlide">第二种 上边标题用 swiper</div>
+
+			<div class="swiper-container12 height44">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
 						<div ng-click="go($index)" ng-bind="x.name"></div>
 					</div>
 				</div>
 			</div>
-			
+		</div>
+		<!--slider轮播图-->
+		<div class="wh100" ng-if="componentTitle=='ionic双向控制'||componentTitle=='独自slide轮播'">
+
 			<ion-slide-box does-continue="{{doesContinue}}" auto-play="autoPlay" slide-interval="{{slideInterval}}" show-pager="showPager" on-slide-changed="go_changed(index)" active-slide="index" pager-click="go(index)" class="wh100 top10">
 				<ion-slide ng-repeat="x in dataList">
 					<img ng-src="{{x.name}}" class="slideImage" />
@@ -38,7 +40,7 @@
 		</div>
 
 		<!--swiper轮播图-->
-		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='swiper双向控制'">
+		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='swiper双向控制'||componentTitle=='双向控制(图片示例)'">
 			<!--swiper轮播图-->
 			<div class="swiper-container1">
 				<!--轮播图-->
@@ -55,15 +57,18 @@
 				<!--scrollbar-->
 				<!--<div class="swiper-scrollbar"></div>-->
 			</div>
-			<div class="swiper-container2">
+			<div class="swiper-container2" ng-if="componentTitle=='双向控制(图片示例)'">
+				上边轮播图的转动控制下边，下边自己转动，不影响上边（可以改变）
+			<!--轮播图-->
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" ng-repeat="x in buttonListSlide2">
-						<div ng-click="go($index)" ng-bind="x.name"></div>
+					<div class="swiper-slide" ng-repeat="x in dataList" class="slideImage">
+						<img ng-src="{{x.name}}" />
 					</div>
 				</div>
+				<!--分页器-->
+				<div id="swiper-pagination2"></div>
 			</div>
-			
-			
+
 			<div ng-repeat="x in buttonListSlide3" ng-click="showSlide(x.value)" ng-if="componentTitle=='独自swiper轮播'">
 				<div class="button button-calm slideButton" ng-bind="x.name"></div>
 			</div>

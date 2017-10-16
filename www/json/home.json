@@ -101,7 +101,8 @@
 				]
 	},{"name":"swiper滑动框","value":"2","data":"",
 				  "list":[{"name":"独自swiper轮播","value":"slider","data":"slideData"},
-				  		  {"name":"swiper双向控制","value":"slider","data":"slideData"}
+				  		  {"name":"swiper双向控制","value":"slider","data":"slideData"},
+				  		  {"name":"双向控制(图片示例)","value":"slider","data":"slideData"}
 				]
 	}],
 	"slideData":[{"name":"templates/home/img/slide1.jpg","value":"","data":""},
@@ -129,7 +130,7 @@
 				  {"name":"改变view个数1.5","value":"11","data":""},
 				  {"name":"恢复view个数1","value":"12","data":""},
 				  {"name":"开始滚动","value":"13","data":""},
-				   {"name":"显示 arrow","value":"14","data":""}
+				  {"name":"显示 arrow","value":"14","data":""}
 				 
 	]
 	
