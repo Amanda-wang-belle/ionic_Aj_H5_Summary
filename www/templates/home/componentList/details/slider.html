@@ -25,16 +25,23 @@
 
 		<!--swiper轮播图-->
 		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='上下对应的swiper滑动'">
-			<div calss="item">
-				<div class="swiper-container" class="wh100">
-					<div class="swiper-wrapper" class="wh100">
-						<div ng-repeat="x in dataList" class="swiper-slide">
-							<img ng-src="{{x.name}}" class="slideImage"/>
-						</div>
-					</div>
-					<div id="swiper-pagination">
+			<!--swiper轮播图-->
+			<div class="swiper-container1">
+				<!--轮播图-->
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" ng-repeat="newImage in dataList">
+						<a href="">
+							<img ng-src="{{newImage.name}}" />
+						</a>
 					</div>
 				</div>
+				<!--分页器-->
+				<div id="swiper-pagination1"></div>
+				<!--navigation buttons-->
+				<!--<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>-->
+				<!--scrollbar-->
+				<!--<div class="swiper-scrollbar"></div>-->
 			</div>
 
 		</div>

@@ -77,14 +77,12 @@
 }
 /*swiper轮播图样式*/
 
-.swiper-container {
+
+.swiper-container1 {
 	width: 100%;
 	text-align: center;
 }
-
-.swiper-container .swiper-slide {
-	/*height: 100px !important;*/
-	/*width:350px !important;*/
+.swiper-container1 .swiper-slide{
 	opacity: 1;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
@@ -92,40 +90,27 @@
 	-o-transform: scale(1);
 	transform: scale(1);
 }
-
-.swiper-container .swiper-slide-active {
-	top: 0;
-	opacity: 1;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
+.swiper-container1 .swiper-slide-active {
+  top: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
-
-#swiper-pagination {
+/*分页器*/
+#swiper-pagination1{
 	position: relative;
-	/*background: #FFFFFF;*/
-	border: 0;
-	width: 100%;
-	margin-top: -25px;
-	height: 20px;
-	z-index: 20;
+	margin-top: -20px;
+	z-index: 10;
 }
-
-#swiper-pagination .swiper-pagination-bullet {
+#swiper-pagination1 .swiper-pagination-bullet{
 	width: 10px;
 	height: 5px;
-	margin: 0 2px;
-	display: inline-block;
-	background: #FFFFFF;
-	opacity: 1;
-	border-radius: 0;
+	border-radius: 5px;
 }
-
-#swiper-pagination .swiper-pagination-bullet-active {
-	background: #FE6400;
-	opacity: 1;
+#swiper-pagination1 .swiper-pagination-bullet-active{
+	background-color: #FE6400;
 }
-
 
