@@ -7,12 +7,19 @@
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
 		<!--slider轮播图-->
-		<div class="wh100" ng-if="componentTitle=='上下对应Ionic轮播效果'||componentTitle=='独自slide轮播'">
-			<div class="footerContainer height44" ng-if="componentTitle=='上下对应Ionic轮播效果'">
+		<div class="wh100" ng-if="componentTitle=='ionic双向控制'||componentTitle=='独自slide轮播'">
+			
+		<!--	<div class="footerContainer height44" ng-if="componentTitle=='ionic双向控制'">
 				<div class="footerItem" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
 					<div ng-click="go($index)" ng-bind="x.name"></div>
 				</div>
-			</div>
+			</div>-->
+			<ion-slide-box ng-if="componentTitle=='ionic双向控制'"  active-slide="index" pager-click="go(index)">
+				<ion-slide ng-repeat="x in buttonListSlide2" style="width: 33.3%;">
+					<div ng-click="go($index)" ng-bind="x.name"></div>
+				</ion-slide>
+			</ion-slide-box>
+			
 			<ion-slide-box does-continue="{{doesContinue}}" auto-play="autoPlay" slide-interval="{{slideInterval}}" show-pager="showPager" on-slide-changed="go_changed(index)" active-slide="index" pager-click="go(index)" class="wh100">
 				<ion-slide ng-repeat="x in dataList">
 					<img ng-src="{{x.name}}" class="slideImage" />
@@ -24,7 +31,7 @@
 		</div>
 
 		<!--swiper轮播图-->
-		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='上下对应的swiper滑动'">
+		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='swiper双向控制'">
 			<!--swiper轮播图-->
 			<div class="swiper-container1">
 				<!--轮播图-->
@@ -36,12 +43,21 @@
 				<!--分页器-->
 				<div id="swiper-pagination1"></div>
 				<!--navigation buttons-->
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev" ng-if="arrowShow"></div>
+				<div class="swiper-button-next" ng-if="arrowShow"></div>
 				<!--scrollbar-->
 				<!--<div class="swiper-scrollbar"></div>-->
 			</div>
-			<div ng-repeat="x in buttonListSlide3" ng-click="showSlide(x.value)">
+			<div class="swiper-container2">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" ng-repeat="x in buttonListSlide2">
+						<div ng-click="go($index)" ng-bind="x.name"></div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div ng-repeat="x in buttonListSlide3" ng-click="showSlide(x.value)" ng-if="componentTitle=='独自swiper轮播'">
 				<div class="button button-calm slideButton" ng-bind="x.name"></div>
 			</div>
 		</div>

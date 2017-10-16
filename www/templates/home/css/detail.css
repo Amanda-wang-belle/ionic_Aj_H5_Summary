@@ -75,14 +75,17 @@
 .height44{
 	height: 44px;
 }
+.slider-slide{
+	width: 33%;
+}
 /*swiper轮播图样式*/
 
 
-.swiper-container1 {
+.swiper-container1,.swiper-container2 {
 	width: 100%;
 	text-align: center;
 }
-.swiper-container1 .swiper-slide{
+.swiper-container1 .swiper-slide,.swiper-container2 .swiper-slide{
 	opacity: 1;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
@@ -90,7 +93,7 @@
 	-o-transform: scale(1);
 	transform: scale(1);
 }
-.swiper-container1 .swiper-slide-active {
+.swiper-container1 .swiper-slide-active, .swiper-container2 .swiper-slide-active{
   top: 0;
   opacity: 1;
   -webkit-transform: scale(1);

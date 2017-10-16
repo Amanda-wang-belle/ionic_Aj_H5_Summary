@@ -97,16 +97,19 @@
 	],
 	"carouselFigureData":[{"name":"ionic——Slide Box滑动框","value":"1","data":"",
 				  "list":[{"name":"独自slide轮播","value":"slider","data":"slideData"},
-				  		  {"name":"上下对应Ionic轮播效果","value":"slider","data":"slideData"}
+				  		  {"name":"ionic双向控制","value":"slider","data":"slideData"}
 				]
 	},{"name":"swiper滑动框","value":"2","data":"",
 				  "list":[{"name":"独自swiper轮播","value":"slider","data":"slideData"},
-				  		  {"name":"上下对应的swiper滑动","value":"slider","data":"slideData"}
+				  		  {"name":"swiper双向控制","value":"slider","data":"slideData"}
 				]
 	}],
 	"slideData":[{"name":"templates/home/img/slide1.jpg","value":"","data":""},
-				  {"name":"templates/home/img/slide2.jpg","value":"","data":""},
-				  {"name":"templates/home/img/slide3.jpg","value":"","data":""}
+				 {"name":"templates/home/img/slide2.jpg","value":"","data":""},
+				 {"name":"templates/home/img/slide3.jpg","value":"","data":""},
+				 {"name":"templates/home/img/slide4.jpg","value":"","data":""},
+				 {"name":"templates/home/img/slide5.jpg","value":"","data":""},
+				 {"name":"templates/home/img/slide6.jpg","value":"","data":""}
 				 
 	],
 	"buttonList":[{"name":"循环滑动","value":"1","data":""},
@@ -120,9 +123,13 @@
 				  {"name":"第一张鹿晗","value":"5","data":""},
 				  {"name":"第二张鹿晗","value":"6","data":""},
 				  {"name":"第三张鹿晗","value":"7","data":""},
-				  {"name":"改变view个数1.5","value":"8","data":""},
-				  {"name":"恢复view个数1","value":"9","data":""},
-				  {"name":"开始滚动","value":"10","data":""}
+				  {"name":"第四张ab","value":"8","data":""},
+				  {"name":"第五张ab","value":"9","data":""},
+				  {"name":"第六张ab","value":"10","data":""},
+				  {"name":"改变view个数1.5","value":"11","data":""},
+				  {"name":"恢复view个数1","value":"12","data":""},
+				  {"name":"开始滚动","value":"13","data":""},
+				   {"name":"显示 arrow","value":"14","data":""}
 				 
 	]
 	
