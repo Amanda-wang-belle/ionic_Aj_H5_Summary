@@ -61,7 +61,7 @@
 			var mySwiper = new Swiper('.swiper-container1', {
 				//				centeredSlides: true,  //设置为true时,活动块会居中，而不是默认状态下的居左
 				autoplayDisableOnInteraction: false, //设置为true时，是否禁止autoplay，默认为true
-				autoplay: false, //自动切换时间间隔
+				autoplay: 500, //自动切换时间间隔
 				slidesPerView: 1, //设置slide容器能够同时显示的slide数量（carouse模块）
 				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
