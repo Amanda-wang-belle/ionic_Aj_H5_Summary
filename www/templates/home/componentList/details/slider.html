@@ -6,12 +6,12 @@
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
-		<div class="wh100" >
-			<ul class="slide-tab slideTab" ng-if="componentTitle=='上下对应Ionic轮播效果'">
-				<li ng-repeat="x in buttonListSlide2"  ng-class="slideIndex == $index?'current':''">
+		<div class="wh100">
+			<div class="footerContainer height44" ng-if="componentTitle=='上下对应Ionic轮播效果'">
+				<div class="footerItem" ng-repeat="x in buttonListSlide2" ng-class="slideIndex == $index?'current':''">
 					<div ng-click="go($index)" ng-bind="x.name"></div>
-				</li>
-			</ul>
+				</div>
+			</div>
 			<ion-slide-box does-continue="{{doesContinue}}" auto-play="autoPlay" slide-interval="{{slideInterval}}" show-pager="showPager" on-slide-changed="go_changed(index)" active-slide="index" pager-click="go(index)" class="wh100">
 				<ion-slide ng-repeat="x in dataList">
 					<img ng-src="{{x.name}}" class="slideImage" />
