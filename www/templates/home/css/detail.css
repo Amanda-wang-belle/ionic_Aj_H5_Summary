@@ -68,21 +68,37 @@
 	width: 45%;
 	margin: 5px;
 }
-.current{
+
+.current {
 	border-bottom: 2px solid #63B8FF;
-	
 }
-.height44{
+
+.height44 {
 	height: 44px;
+	line-height: 44px;
+	text-align: center;
 }
+
+.titleSlide {
+	margin-top: 10px;
+	background: #63B8FF;
+	height: 44px;
+	line-height: 44px;
+}
+.top10{
+	margin-top: 10px;
+}
+
 /*swiper轮播图样式*/
 
-
-.swiper-container1,.swiper-container2 {
+.swiper-container1,
+.swiper-container2 {
 	width: 100%;
 	text-align: center;
 }
-.swiper-container1 .swiper-slide,.swiper-container2 .swiper-slide{
+
+.swiper-container1 .swiper-slide,
+.swiper-container2 .swiper-slide {
 	opacity: 1;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
@@ -90,33 +106,40 @@
 	-o-transform: scale(1);
 	transform: scale(1);
 }
-.swiper-container1 .swiper-slide-active, .swiper-container2 .swiper-slide-active{
-  top: 0;
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
+
+.swiper-container1 .swiper-slide-active,
+.swiper-container2 .swiper-slide-active {
+	top: 0;
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
 }
+
 .swiper-slide img {
-    width: auto;
-    height: 300px;
-    max-width: 100%;
-    max-height: 100%;
+	width: auto;
+	height: 300px;
+	max-width: 100%;
+	max-height: 100%;
 }
+
+
 /*分页器*/
-#swiper-pagination1{
+
+#swiper-pagination1 {
 	position: relative;
 	margin-top: -20px;
 	z-index: 10;
 }
-#swiper-pagination1 .swiper-pagination-bullet{
+
+#swiper-pagination1 .swiper-pagination-bullet {
 	width: 10px;
 	height: 5px;
 	border-radius: 5px;
 }
-#swiper-pagination1 .swiper-pagination-bullet-active{
+
+#swiper-pagination1 .swiper-pagination-bullet-active {
 	background-color: #FE6400;
 }
-
