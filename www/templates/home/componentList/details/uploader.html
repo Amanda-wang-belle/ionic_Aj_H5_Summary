@@ -13,6 +13,19 @@
 	</ion-header-bar>
 	<ion-content>
 
+		<div class="scfwtp-title">添加图片</div>
+		<div class="camera-bg">
+			<div class="camera" ng-repeat="x in pictureShow">
+				<img class="scfwtp-camera" ng-src="{{x}}" alt="正在加载" data-preview-src="" data-preview-group="1" />
+			</div>
+			<div class="camera" ng-click="captureImage()">
+				<img class="scfwtp-camera" src="templates/home/img/camera.png" />
+			</div>
+		</div>
 	</ion-content>
-
+	<div class="bar bar-footer" style="background-color: #F2F2F2;">
+		<button ng-click="submitPhoto()" class="button displayFooter" style="width: 100%;background-color: #F2F2F2;border-color:#004070;">
+			<span style="color: #004070;font-size: 20px;">确定上传</span>
+		</button>
+	</div>
 </ion-view>

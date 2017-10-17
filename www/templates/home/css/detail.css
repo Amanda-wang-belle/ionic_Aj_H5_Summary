@@ -284,3 +284,27 @@
 .back{
 	background-image: url(../img/home_dbrw_back.png);
 }
+/*图片上传样式*/
+.scfwtp-title{
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #e2e3e5;
+	color: #393838;
+	font-size: 16px;
+	padding: 10px 15px;
+}
+.camera-bg{
+	padding: 10px;
+	font-size: 0;
+	padding-bottom: 0;
+}
+.scfwtp-camera{
+	width: 100%;
+	height: calc(width);
+	margin: 0;
+	padding: 0;
+}
+.camera{
+	width: 33.3%;
+	padding: 5px;
+	display: inline-table;
+}
