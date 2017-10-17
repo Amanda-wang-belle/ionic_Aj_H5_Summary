@@ -21,6 +21,7 @@
 					data.imgS = "toReceive";
 				}
 			})
+			startloop();
 		}
 		publicService.receiveJson(getData, $scope.componentData);
 		
@@ -28,6 +29,15 @@
 		$scope.changeStyle = function(index){
 			$scope.taskStyle = index;
 		}
+		
+		function startloop(){
+			$('#featured-area ul').roundabout({
+				easing: 'easeInQuart',
+				duration: 10000,
+				loop: false
+			});
+		}
+		
 		
 	})
 }())

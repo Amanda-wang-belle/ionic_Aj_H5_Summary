@@ -17,7 +17,7 @@
 				<span>待办任务</span>
 				<i class="icon ion-ios-arrow-right"></i>
 			</ion-item>
-			<div  ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1">
+			<div ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1">
 				<div class="row toDoTask_{{x.imgS}} ">
 					<div class="col col-50">
 						<div class="lH34 overHid" ng-bind="x.projectName"></div>
@@ -41,7 +41,62 @@
 					<div class="lH34 overHid" ng-bind="x.projectName"></div>
 				</ion-item>
 			</ion-list>
-		</div>
+
+			<div ng-show="taskStyle == 3">
+				<div id="featured-area">
+					<ul>
+						<li>
+							<div class="taskImgThree" style="background-image: url(templates/home/img/home_dbrw_{{dataList[0].imgS}}.png);">
+								<div class="taskContent">
+									<div class="taskRow1 overWidHid" ng-bind="dataList[0].projectName" class="taskRow1"></div>
+									<div class="taskRow2 overWidHid" ng-bind="dataList[0].company" class="taskRow1"></div>
+									<div class="taskRow3Left">
+										<div class="margin10" ng-bind="dataList[0].flowId"></div>
+										<div class="margin10" ng-bind="dataList[0].processingPost"></div>
+									</div>
+									<div class="taskRow3Left">
+										<div  class="margin10" ng-bind="dataList[0].managerName"></div>
+										<div  class="margin10" ng-bind="dataList[0].startDate"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="taskImgThree" style="background-image: url(templates/home/img/home_dbrw_{{dataList[1].imgS}}.png);">
+								<div class="taskContent">
+									<div class="taskRow1 overWidHid" ng-bind="dataList[1].projectName" class="taskRow1"></div>
+									<div class="taskRow2 overWidHid" ng-bind="dataList[1].company" class="taskRow1"></div>
+									<div class="taskRow3Left">
+										<div class="margin10" ng-bind="dataList[1].flowId"></div>
+										<div class="margin10" ng-bind="dataList[1].processingPost"></div>
+									</div>
+									<div class="taskRow3Left">
+										<div  class="margin10" ng-bind="dataList[1].managerName"></div>
+										<div  class="margin10" ng-bind="dataList[1].startDate"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="taskImgThree" style="background-image: url(templates/home/img/home_dbrw_{{dataList[2].imgS}}.png);">
+								<div class="taskContent">
+									<div class="taskRow1 overWidHid" ng-bind="dataList[2].projectName" class="taskRow1"></div>
+									<div class="taskRow2 overWidHid" ng-bind="dataList[2].company" class="taskRow1"></div>
+									<div class="taskRow3Left">
+										<div class="margin10" ng-bind="dataList[2].flowId"></div>
+										<div class="margin10" ng-bind="dataList[2].processingPost"></div>
+									</div>
+									<div class="taskRow3Left">
+										<div  class="margin10" ng-bind="dataList[2].managerName"></div>
+										<div  class="margin10" ng-bind="dataList[2].startDate"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
 	</ion-content>
 
 </ion-view>

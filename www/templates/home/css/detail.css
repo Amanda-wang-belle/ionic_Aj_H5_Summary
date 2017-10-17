@@ -85,9 +85,11 @@
 	height: 44px;
 	line-height: 44px;
 }
-.top10{
+
+.top10 {
 	margin-top: 10px;
 }
+
 
 /*swiper轮播图样式*/
 
@@ -143,55 +145,133 @@
 #swiper-pagination1 .swiper-pagination-bullet-active {
 	background-color: #FE6400;
 }
+
+
 /*首页列表*/
-.listWord{
+
+.listWord {
 	padding: 15px;
-    font-size: 20px;
-    color: #63B8FF;
-    background: #fff;
-    border-radius: 37px;
-    margin: 10px auto;
+	font-size: 20px;
+	color: #63B8FF;
+	background: #fff;
+	border-radius: 37px;
+	margin: 10px auto;
 }
-.pad5{
+
+.pad5 {
 	padding: 5px;
 }
-.toDoTaskBk{
+
+.toDoTaskBk {
 	background: #ECECEC;
 }
-.toDoTask{
+
+.toDoTask {
 	width: 95%;
 	margin: 0px auto;
 }
-.borderNone{
+
+.borderNone {
 	border: none;
 	margin: 0;
 }
 
-.borTopRadius{
+.borTopRadius {
 	border-radius: 5px 5px 0px 0px;
 }
-.borBotRadius{
+
+.borBotRadius {
 	border-radius: 0px 0px 5px 5px;
 }
-.toDoTask_received{
+
+.toDoTask_received {
 	background: #effaf5;
 }
-.toDoTask_toReceive{
+
+.toDoTask_toReceive {
 	background: #fff8f6;
 }
-.toDoTask2{
+
+.toDoTask2 {
 	background: #FFFFFF;
 }
-.taskImg{
+
+.taskImg {
 	width: 70px;
 	height: 70px;
 }
-.lH34{
+
+.lH34 {
 	line-height: 34px;
 }
-.overHid{
+
+.overHid {
 	width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+.overWidHid{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/*首页待办任务三维立体旋转图*/
+
+#featured-area {
+	height: 200px;
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+
+.roundabout-holder {
+	list-style: none;
+	width: 260px;
+	height: 200px;
+	margin: 0px auto;
+}
+
+.roundabout-moveable-item {
+	height: 290px;
+	width: 400px;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.roundabout-in-focus {
+	cursor: auto;
+}
+
+.taskImgThree {
+	background-size: 100% 101%;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.taskContent {
+	padding-top: 8%;
+	padding-left: 8%;
+	color: white;
+}
+.taskRow1{
+	width: 95%;
+	font-size: 2em;
+	font-weight: bolder;
+}
+.taskRow2{
+	width: 80%;
+	font-size: 1.5em;
+	margin-top: 10px;
+}
+.taskRow3Left{
+	width: 50%;
+	float: left;
+	font-size: 1.5em;
+}
+.margin10{
+	margin-top: 10px;
 }
