@@ -151,7 +151,7 @@
 		
 		
 		/**********************测试ng-include*************************************************/
-		$scope.initSlideTabs = {
+		/*$scope.initSlideTabs = {
 			data:[
 				{"name":"欢迎","tpl":""},
 				{"name":"作者","tpl":""},
@@ -167,7 +167,7 @@
 		}
 		$scope.activeSlide = function(index){
 			$ionicSlideBoxDelegate.slide(index);
-		}
+		}*/
 
 	})
 }())
