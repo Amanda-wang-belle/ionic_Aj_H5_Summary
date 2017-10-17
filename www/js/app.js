@@ -249,7 +249,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		
+		//图片上传   wang_szhan 2017.10.17
+		.state('tab.uploader',{
+			url:'/uploader/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/uploader.html',
+					controller:'uploaderCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/uploader.js');
+				}]
+			}
+		})
 		
 		
 		

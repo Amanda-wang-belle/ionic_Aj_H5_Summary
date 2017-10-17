@@ -15,7 +15,7 @@
 					{"name":"ionic底部栏","value":"footer","data":"footerData"},
 					{"name":"轮播图","value":"carouselFigure","data":"carouselFigureData"},
 					{"name":"首页列表","value":"homeList","data":"homeListData"},
-					{"name":"图片上传（通过Date数据传输）","value":"","data":"敬请期待"},
+					{"name":"图片上传（通过Date数据传输）","value":"uploader","data":"uploaderData"},
 					{"name":"下载","value":"","data":"敬请期待"},
 					{"name":"版本更新","value":"","data":"敬请期待"},
 					{"name":"后台传base64,前台页面展示","value":"","data":"敬请期待"},
