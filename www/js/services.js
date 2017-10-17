@@ -142,6 +142,9 @@
 			}
 		}
 	}])
+	/**
+	 *调取json的公共方法 wang_szhan 20170112
+	 */
 	app.factory('publicService', ['$http', function($http) {
 		return {
 			receiveJson: function(fn, x) {
@@ -154,4 +157,7 @@
 			}
 		}
 	}])
+	/**
+	 *本地缓存 
+	 */
 }());
