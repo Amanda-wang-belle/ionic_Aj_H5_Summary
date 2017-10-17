@@ -97,7 +97,8 @@
 	],
 	"carouselFigureData":[{"name":"ionic——Slide Box滑动框","value":"1","data":"",
 				  "list":[{"name":"独自slide轮播","value":"slider","data":"slideData"},
-				  		  {"name":"ionic双向控制","value":"slider","data":"slideData"}
+				  		  {"name":"ionic双向控制","value":"slider","data":"slideData"},
+				  		  {"name":"ionic双向控制ng-include","value":"slider","data":""}
 				]
 	},{"name":"swiper滑动框","value":"2","data":"",
 				  "list":[{"name":"独自swiper轮播","value":"slider","data":"slideData"},
