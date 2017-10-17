@@ -233,6 +233,51 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		//首页列表   wang_szhan 2017.10.17
+		.state('tab.homeList',{
+			url:'/homeList/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/homeList.html',
+					controller:'homeListCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/homeList.js');
+				}]
+			}
+		})
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//工作消息
 		.state('tab.msg',{
 			url:'/msg',

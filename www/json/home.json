@@ -14,7 +14,7 @@
 					{"name":"模态框","value":"popup","data":"popupData"},
 					{"name":"ionic底部栏","value":"footer","data":"footerData"},
 					{"name":"轮播图","value":"carouselFigure","data":"carouselFigureData"},
-					{"name":"首页列表（仅留2条,如何长度超过指定宽度，超过部分以省略号表示）","value":"","data":"敬请期待"},
+					{"name":"首页列表（仅留2条,如何长度超过指定宽度，超过部分以省略号表示）","value":"homeList","data":"homeListData"},
 					{"name":"图片上传（通过Date数据传输）","value":"","data":"敬请期待"},
 					{"name":"下载","value":"","data":"敬请期待"},
 					{"name":"版本更新","value":"","data":"敬请期待"},
