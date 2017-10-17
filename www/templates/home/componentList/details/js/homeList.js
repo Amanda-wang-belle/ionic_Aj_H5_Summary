@@ -33,7 +33,7 @@
 		function startloop(){
 			$('#featured-area ul').roundabout({
 				easing: 'easeInQuart',
-				duration: 10000,
+				duration: 1000,
 				loop: false
 			});
 		}
