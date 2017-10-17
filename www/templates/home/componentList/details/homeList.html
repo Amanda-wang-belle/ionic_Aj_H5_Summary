@@ -6,46 +6,9 @@
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
-		<div ng-repeat="x in dataList" style="position: relative;">
-			<ion-item class="item-icon-right" style="white-space: normal;" ng-click="showOrHide(x)">
-				<span ng-bind="x.name"></span>
-				<i class="icon ion-ios-arrow-down iconTop" id="idTop{{x.value}}"></i>
-			</ion-item>
-			<div id="idBottom{{x.value}}" class="hideItem" style="display: none;">
-				<ion-item ng-repeat="y in x.list " class="item-icon-right" style="white-space: normal;padding-left: 50px;" ng-click="showFooter(x,y)">
-					<span ng-bind="y.name"></span>
-					<i class="icon ion-heart"></i>
-				</ion-item>
-			</div>
-		</div>
+		<div class="listWord">首页通常会放的待办任务列表，通常会保留两条数据，标题超过80%时以省略号表示</div>
 	</ion-content>
 
-	<ion-footer-bar align-title="left" class="bar-assertive" ng-class="footerIndex==1?'displayBlock':'displayNone'">
-		<div class="buttons">
-			<button class="button button-clear">左侧按钮</button>
-		</div>
-		<h1 class="title">Title!</h1>
-		<div class="buttons" ng-click="doSomething()">
-			<button class="button button-clear">右侧按钮</button>
-		</div>
-	</ion-footer-bar>
-
-	<ion-footer-bar class="bar-assertive" ng-class="footerIndex==2?'displayBlock':'displayNone'" style="height: 60px;">
-		<div class="footerContainer">
-			<div class="footerItem" ng-repeat="x in buttonData | orderBy:index">
-				<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
-				<div ng-bind="x.name"></div>
-			</div>
-		</div>
-	</ion-footer-bar>
-
-	<ion-footer-bar class="bar-assertive" ng-class="footerIndex==3?'displayBlock':'displayNone'" style="height: 60px;padding: 0;">
-		<div class="footerContainer">
-			<div class="footerItem3" ng-repeat="x in buttonData | orderBy:'index'">
-				<img width="20px" ng-src="templates\home\img\{{x.value}}.png" />
-				<div ng-bind="x.name"></div>
-			</div>
-		</div>
-	</ion-footer-bar>
+	
 
 </ion-view>

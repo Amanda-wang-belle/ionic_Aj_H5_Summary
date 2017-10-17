@@ -143,3 +143,8 @@
 #swiper-pagination1 .swiper-pagination-bullet-active {
 	background-color: #FE6400;
 }
+/*首页列表*/
+.listWord{
+	padding: 15px;
+	font-size: 20px;
+}
