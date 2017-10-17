@@ -1,6 +1,8 @@
 * {
 	-webkit-user-select: none;
 	-ms-touch-select: none;
+	margin: 0;
+	padding: 0;
 	/*
 	-ms-touch-action: none;
 */

@@ -12,35 +12,36 @@
 			<div class="button button-calm" ng-click="changeStyle(2)">第二种样式</div>
 			<div class="button button-calm" ng-click="changeStyle(3)">第三种样式</div>
 		</div>
-		<ion-item class="item-icon-right toDoTask"  ng-click="showOrHide(x)">
+		<div class="toDoTask">
+			<ion-item class="item-icon-right borderNone" ng-click="showOrHide(x)">
 				<span>待办任务</span>
 				<i class="icon ion-ios-arrow-right"></i>
-		</ion-item>
-		<div class="toDoTask" ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1">
-			<div class="row toDoTask_{{x.imgS}} ">
-				<div class="col col-50">
-					<div class="lH34 overHid" ng-bind="x.projectName"></div>
-					<div class="lH34 overHid" ng-bind="x.flowId"></div>
-					<div class="lH34 overHid" ng-bind="x.flowName"></div>
-				</div>
-				<div class="col col-50" style="text-align: center;">
-					<img ng-src="templates/home/img/{{x.imgS}}.png" class="taskImg" />
-					<div class="overHid" ng-bind="x.company"></div>
-				</div>
-			</div>
-			<div class="row toDoTask2 ">
-				<div class="col col-20" ng-bind="x.managerName"></div>
-				<div class="col col-30" ng-bind="x.startDate"></div>
-				<div class="col" ng-bind="x.processingPost"></div>
-			</div>
-		</div>
-		
-		<ion-list>
-			<ion-item ng-repeat="x in dataList | limitTo:3" ng-if="taskStyle == 2">
-				<div class="lH34 overHid" ng-bind="x.projectName"></div>
 			</ion-item>
-		</ion-list>
+			<div  ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1">
+				<div class="row toDoTask_{{x.imgS}} ">
+					<div class="col col-50">
+						<div class="lH34 overHid" ng-bind="x.projectName"></div>
+						<div class="lH34 overHid" ng-bind="x.flowId"></div>
+						<div class="lH34 overHid" ng-bind="x.flowName"></div>
+					</div>
+					<div class="col col-50" style="text-align: center;">
+						<img ng-src="templates/home/img/{{x.imgS}}.png" class="taskImg" />
+						<div class="overHid" ng-bind="x.company"></div>
+					</div>
+				</div>
+				<div class="row toDoTask2 ">
+					<div class="col col-20" ng-bind="x.managerName"></div>
+					<div class="col col-30" ng-bind="x.startDate"></div>
+					<div class="col" ng-bind="x.processingPost"></div>
+				</div>
+			</div>
 
+			<ion-list>
+				<ion-item ng-repeat="x in dataList | limitTo:3" ng-if="taskStyle == 2">
+					<div class="lH34 overHid" ng-bind="x.projectName"></div>
+				</ion-item>
+			</ion-list>
+		</div>
 	</ion-content>
 
 </ion-view>
