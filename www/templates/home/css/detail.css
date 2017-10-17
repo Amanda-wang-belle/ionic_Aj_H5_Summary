@@ -275,3 +275,12 @@
 .margin10{
 	margin-top: 10px;
 }
+.toReceive{
+	background-image: url(../img/home_dbrw_toReceive.png);
+}
+.received{
+	background-image: url(../img/home_dbrw_received.png);
+}
+.back{
+	background-image: url(../img/home_dbrw_back.png);
+}

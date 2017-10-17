@@ -14,10 +14,12 @@
 			$scope.dataList = data;
 			console.log($scope.dataList);
 			angular.forEach($scope.dataList,function(data){
-				if (data.state == "待接收") {
+				if (data.state == "处理中") {
 					data.imgS = "received";
-				} else{
+				} else if (data.state == "待接收"){
 					data.imgS = "toReceive";
+				} else {
+					data.imgS = "back";
 				}
 			})
 			startloop();
