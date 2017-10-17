@@ -4,7 +4,13 @@
   @createDate  2017-10-17
   @content 首页两条待办任务列表
 -->
-<ion-view hide-tabs view-title={{componentTitle}}>
+<ion-view hide-nav-bar="true" hide-tabs>
+	<ion-header-bar class="bar-positive">
+		<div class="buttons">
+			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="componentTitle"></h1>
+	</ion-header-bar>
 	<ion-content class="toDoTaskBk">
 		<!--第一种-->
 		<div class="listWord">
@@ -15,7 +21,7 @@
 		</div>
 		<div class="toDoTask">
 			<!--第二种-->
-			
+
 			<ion-item class="item-icon-right borderNone" ng-click="showOrHide(x)">
 				<span>待办任务</span>
 				<i class="icon ion-ios-arrow-right"></i>
@@ -34,7 +40,7 @@
 				</div>
 				<div class="row toDoTask2 ">
 					<div class="col col-20" ng-bind="x.managerName"></div>
-					<div class="col col-30" >{{x.startDate| date:'yyyy-MM-dd'}}</div>
+					<div class="col col-30">{{x.startDate| date:'yyyy-MM-dd'}}</div>
 					<div class="col" ng-bind="x.processingPost"></div>
 				</div>
 			</div>
@@ -58,8 +64,8 @@
 										<div class="margin10" ng-bind="dataList[0].processingPost"></div>
 									</div>
 									<div class="taskRow3Left">
-										<div  class="margin10" ng-bind="dataList[0].managerName"></div>
-										<div  class="margin10" ng-bind="dataList[0].startDate"></div>
+										<div class="margin10" ng-bind="dataList[0].managerName"></div>
+										<div class="margin10" ng-bind="dataList[0].startDate"></div>
 									</div>
 								</div>
 							</div>
@@ -74,8 +80,8 @@
 										<div class="margin10" ng-bind="dataList[1].processingPost"></div>
 									</div>
 									<div class="taskRow3Left">
-										<div  class="margin10" ng-bind="dataList[1].managerName"></div>
-										<div  class="margin10" ng-bind="dataList[1].startDate"></div>
+										<div class="margin10" ng-bind="dataList[1].managerName"></div>
+										<div class="margin10" ng-bind="dataList[1].startDate"></div>
 									</div>
 								</div>
 							</div>
@@ -90,8 +96,8 @@
 										<div class="margin10" ng-bind="dataList[2].processingPost"></div>
 									</div>
 									<div class="taskRow3Left">
-										<div  class="margin10" ng-bind="dataList[2].managerName"></div>
-										<div  class="margin10" ng-bind="dataList[2].startDate"></div>
+										<div class="margin10" ng-bind="dataList[2].managerName"></div>
+										<div class="margin10" ng-bind="dataList[2].startDate"></div>
 									</div>
 								</div>
 							</div>

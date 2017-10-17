@@ -4,9 +4,15 @@
   @createDate  2017-10-17
   @content 图片上传
 -->
-<ion-view hide-tabs view-title={{componentTitle}}>
+<ion-view hide-nav-bar="true" hide-tabs>
+	<ion-header-bar class="bar-positive">
+		<div class="buttons">
+			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="componentTitle"></h1>
+	</ion-header-bar>
 	<ion-content>
-		
+
 	</ion-content>
 
 </ion-view>

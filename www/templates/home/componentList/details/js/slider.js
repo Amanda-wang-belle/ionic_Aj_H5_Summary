@@ -13,19 +13,23 @@
 		var mySwiper12;
 		var mySwiper1;
 		var mySwiper2;
+
 		function getData(data) {
 			$scope.dataList = data;
 			console.log($scope.dataList);
 			mySwiperFigure();
 			mySwiperFigure12();
 			mySwiperFigure2();
-			if($scope.componentTitle=='双向控制(图片示例)'){
+			if($scope.componentTitle == '双向控制(图片示例)') {
 				mySwiper1.params.control = mySwiper2;
-//				mySwiper2.params.control = mySwiper1;
+				//				mySwiper2.params.control = mySwiper1;
 			}
-			
+
 		}
 		publicService.receiveJson(getData, $scope.componentData);
+		$scope.Back = function() {
+			history.back(-1);
+		}
 
 		function getData1(data) {
 			$scope.buttonListSlide1 = data.slice(0, 8);
@@ -68,20 +72,20 @@
 		$scope.go_changed = function(index) {
 			$scope.slideIndex = index;
 			$ionicSlideBoxDelegate.slide(index);
-			if($scope.componentTitle=='ionic双向控制'){
+			if($scope.componentTitle == 'ionic双向控制') {
 				mySwiper12.slideTo(index, 300, false);
 			}
 			toastService.showToast("这个鹿晗第" + (index + 1) + "张图片");
 		}
 		//pager-click - 分页器点击事件
 		$scope.go = function(index) {
-			if ($scope.componentTitle=='ionic双向控制') {
-				$ionicSlideBoxDelegate.slide(index);	
-			} else if ($scope.componentTitle=='swiper双向控制'){
+			if($scope.componentTitle == 'ionic双向控制') {
+				$ionicSlideBoxDelegate.slide(index);
+			} else if($scope.componentTitle == 'swiper双向控制') {
 				mySwiper1.slideTo(index);
 				$scope.slideIndex = index;
 			}
-			
+
 		}
 		/*页面中的按钮效果*/
 		$scope.showSlide = function(value) {
@@ -113,7 +117,7 @@
 				autoplay: $scope.autoPlayS, //自动切换时间间隔
 				slidesPerView: $scope.viewNumber, //设置slide容器能够同时显示的slide数量（carouse模块）
 				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
-				
+
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
 				//分页器
@@ -124,11 +128,11 @@
 				nextButton: '.swiper-button-next',
 				prevButton: '.swiper-button-prev',
 				//				scrollBar:'.swiper-scrollbar'
-				onSlideChangeEnd: function(swiper){
-					$scope.slideIndex = swiper.activeIndex;	 //切换结束时，告诉我现在是第几个slide
+				onSlideChangeEnd: function(swiper) {
+					$scope.slideIndex = swiper.activeIndex; //切换结束时，告诉我现在是第几个slide
 					toastService.showToast($scope.slideIndex);
-			      	mySwiper12.slideTo(swiper.activeIndex, 300, false); 
-			    }
+					mySwiper12.slideTo(swiper.activeIndex, 300, false);
+				}
 			})
 		}
 		/*上下轮播图互相对应的swiper轮播*/
@@ -139,7 +143,7 @@
 				autoplay: $scope.autoPlayS, //自动切换时间间隔
 				slidesPerView: $scope.viewNumber, //设置slide容器能够同时显示的slide数量（carouse模块）
 				loopedSlides: 8, //在loop模式下使用slidesPerView:'auto'，还需使用该参数设置需要用到的loop个数
-				
+
 				observer: true, //改变swiper的子元素时，自动初始化swiper,默认为false
 				observeParents: true, //将observe应用于Swiper的父元素，当Swiper父元素改变时，例如window.resize,Swiper更新
 				//分页器
@@ -148,8 +152,7 @@
 				paginationClickable: true,
 			})
 		}
-		
-		
+
 		/**********************测试ng-include*************************************************/
 		/*$scope.initSlideTabs = {
 			data:[

@@ -4,7 +4,13 @@
   @createDate  2017-10-15
   @content 轮播图列表
 -->
-<ion-view hide-tabs view-title={{componentTitle}}>
+<ion-view hide-nav-bar="true" hide-tabs>
+	<ion-header-bar class="bar-positive">
+		<div class="buttons">
+			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="componentTitle"></h1>
+	</ion-header-bar>
 	<ion-content>
 		<div ng-repeat="x in dataList" style="position: relative;">
 			<ion-item class="item-icon-right" style="white-space: normal;" ng-click="showOrHide(x)">
@@ -19,6 +25,5 @@
 			</div>
 		</div>
 	</ion-content>
-
 
 </ion-view>

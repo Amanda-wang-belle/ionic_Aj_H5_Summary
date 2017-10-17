@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('carouselFigureCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide,publicJump) {
+	app.controller('carouselFigureCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide, publicJump) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
@@ -16,6 +16,9 @@
 			console.log($scope.dataList);
 		}
 		publicService.receiveJson(getData, $scope.componentData);
+		$scope.Back = function() {
+			history.back(-1);
+		}
 
 		function getData1(data) {
 			$scope.buttonDataAll = data;
@@ -26,15 +29,15 @@
 		$scope.idTop = "";
 		//控制分支内容的隐现
 		$scope.showOrHide = function(x) {
-			jQuerySlide.slideUp($scope.idBottom,$scope.idTop);
+			jQuerySlide.slideUp($scope.idBottom, $scope.idTop);
 			$scope.buttonData = [];
 			$scope.idBottom = "#idBottom" + x.value;
 			$scope.idTop = "#idTop" + x.value;
-			jQuerySlide.slideToggle($scope.idBottom,$scope.idTop);
+			jQuerySlide.slideToggle($scope.idBottom, $scope.idTop);
 
 		}
-		
-		$scope.toDetail = function(x){
+
+		$scope.toDetail = function(x) {
 			publicJump.jumpTo(x);
 		}
 

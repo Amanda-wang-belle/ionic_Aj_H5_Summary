@@ -7,16 +7,17 @@
 (function() {
 	'use strict'
 
-	app.controller('homeListCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide) {
+	app.controller('homeListCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
+
 		function getData(data) {
 			$scope.dataList = data;
 			console.log($scope.dataList);
-			angular.forEach($scope.dataList,function(data){
-				if (data.state == "处理中") {
+			angular.forEach($scope.dataList, function(data) {
+				if(data.state == "处理中") {
 					data.imgS = "received";
-				} else if (data.state == "待接收"){
+				} else if(data.state == "待接收") {
 					data.imgS = "toReceive";
 				} else {
 					data.imgS = "back";
@@ -25,20 +26,21 @@
 			startloop();
 		}
 		publicService.receiveJson(getData, $scope.componentData);
-		
+		$scope.Back = function() {
+			history.back(-1);
+		}
 		$scope.taskStyle = 1;
-		$scope.changeStyle = function(index){
+		$scope.changeStyle = function(index) {
 			$scope.taskStyle = index;
 		}
-		
-		function startloop(){
+
+		function startloop() {
 			$('#featured-area ul').roundabout({
 				easing: 'easeInQuart',
 				duration: 1000,
 				loop: false
 			});
 		}
-		
-		
+
 	})
 }())

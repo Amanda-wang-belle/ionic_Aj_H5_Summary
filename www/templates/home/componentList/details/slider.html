@@ -4,7 +4,13 @@
   @createDate  2017-10-15
   @content 各种类型的轮播图
 -->
-<ion-view hide-tabs view-title={{componentTitle}}>
+<ion-view hide-nav-bar="true" hide-tabs>
+	<ion-header-bar class="bar-positive">
+		<div class="buttons">
+			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="componentTitle"></h1>
+	</ion-header-bar>
 	<ion-content>
 		<!------------------------------标题-------------------------------------->
 		<div ng-if="componentTitle=='ionic双向控制'||componentTitle=='swiper双向控制'">
@@ -60,7 +66,7 @@
 			</div>
 			<div class="swiper-container2" ng-if="componentTitle=='双向控制(图片示例)'">
 				上边轮播图的转动控制下边，下边自己转动，不影响上边（可以改变）
-			<!--轮播图-->
+				<!--轮播图-->
 				<div class="swiper-wrapper">
 					<div class="swiper-slide" ng-repeat="x in dataList" class="slideImage">
 						<img ng-src="{{x.name}}" />
@@ -74,9 +80,9 @@
 				<div class="button button-calm slideButton" ng-bind="x.name"></div>
 			</div>
 		</div>
-		
+
 		<!------------------------------测试ng-include-------------------------------------->
-	<!--	<div class="row">
+		<!--	<div class="row">
 			<ul class="slide-tab">
 				<li ng-class="slideIndex==$index?'current col-25':'col-25'" ng-repeat="item in initSlideTabs.data"><a href="#" ng-click="activeSlide($index)" ng-bind="item.name" style="float: left;"></a></li>
 			</ul>
