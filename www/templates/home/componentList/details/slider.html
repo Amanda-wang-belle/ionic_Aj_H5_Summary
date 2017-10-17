@@ -6,6 +6,7 @@
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
 	<ion-content>
+		<!------------------------------标题-------------------------------------->
 		<div ng-if="componentTitle=='ionic双向控制'||componentTitle=='swiper双向控制'">
 			<div class="titleSlide">第一种 ion-scroll的方法</div>
 			<ion-scroll scrollbar-x="false" direction="x" style="width: 100%;">
@@ -26,7 +27,7 @@
 				</div>
 			</div>
 		</div>
-		<!--slider轮播图-->
+		<!------------------------------slider轮播图-------------------------------------->
 		<div class="wh100" ng-if="componentTitle=='ionic双向控制'||componentTitle=='独自slide轮播'">
 
 			<ion-slide-box does-continue="{{doesContinue}}" auto-play="autoPlay" slide-interval="{{slideInterval}}" show-pager="showPager" on-slide-changed="go_changed(index)" active-slide="index" pager-click="go(index)" class="wh100 top10">
@@ -39,7 +40,7 @@
 			</div>
 		</div>
 
-		<!--swiper轮播图-->
+		<!--------------------------swiper轮播图---------------------------------------------->
 		<div class="wh100" ng-if="componentTitle=='独自swiper轮播'||componentTitle=='swiper双向控制'||componentTitle=='双向控制(图片示例)'">
 			<!--swiper轮播图-->
 			<div class="swiper-container1">
@@ -73,7 +74,18 @@
 				<div class="button button-calm slideButton" ng-bind="x.name"></div>
 			</div>
 		</div>
-
+		
+		<!------------------------------测试ng-include-------------------------------------->
+		<div class="row">
+			<ul class="slide-tab">
+				<li ng-class="slideIndex==$index?'current col-25':'col-25'" ng-repeat="item in initSlideTabs.data"><a href="#" ng-click="activeSlide($index)" ng-bind="item.name" style="float: left;"></a></li>
+			</ul>
+		</div>
+		<ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex" does-continue={{initSlideTabs.doesContinue}} show-pager={{initSlideTabs.showPager}}>
+			<ion-slide ng-repeat="item in initSlideTabs.data">
+				<div ng-include="item.tpl" class="padding"></div>
+			</ion-slide>
+		</ion-slide-box>
 	</ion-content>
 
 </ion-view>
