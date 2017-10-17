@@ -161,7 +161,9 @@
 .toDoTask{
 	width: 95%;
 	margin: 0px auto;
+	border: none;
 }
+
 .borTopRadius{
 	border-radius: 5px 5px 0px 0px;
 }
