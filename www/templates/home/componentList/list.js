@@ -14,7 +14,9 @@
 			$scope.dataList = data;
 		}
 		publicService.receiveJson(getData, $scope.componentData);
-		
+		$scope.Back = function() {
+			history.back(-1);
+		}
 
 		$scope.toDetail = function(x){
 			publicJump.jumpTo(x);
