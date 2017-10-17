@@ -1,14 +1,43 @@
 <!--
   @author wang_szhan
   @version 1.0.0
-  @createDate  2017-10-12
-  @content 各种类型的弹框
+  @createDate  2017-10-17
+  @content 首页两条待办任务列表
 -->
 <ion-view hide-tabs view-title={{componentTitle}}>
-	<ion-content>
-		<div class="listWord">首页通常会放的待办任务列表，通常会保留两条数据，标题超过80%时以省略号表示</div>
-	</ion-content>
+	<ion-content class="toDoTaskBk">
+		<div class="listWord">
+			<div class="pad5">首页通常会放的待办任务列表，通常会保留两到三条数据，标题超过80%时以省略号表示</div>
+			<div class="button button-calm" ng-click="changeStyle(1)">第一种样式</div>
+			<div class="button button-calm" ng-click="changeStyle(2)">第二种样式</div>
+			<div class="button button-calm" ng-click="changeStyle(3)">第三种样式</div>
+		</div>
+		
+		<div class="toDoTask" ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1">
+			<div class="row toDoTask_{{x.imgS}} borTopRadius">
+				<div class="col col-50">
+					<div class="lH34 overHid" ng-bind="x.projectName"></div>
+					<div class="lH34 overHid" ng-bind="x.flowId"></div>
+					<div class="lH34 overHid" ng-bind="x.flowName"></div>
+				</div>
+				<div class="col col-50" style="text-align: center;">
+					<img ng-src="templates/home/img/{{x.imgS}}.png" class="taskImg" />
+					<div class="overHid" ng-bind="x.company"></div>
+				</div>
+			</div>
+			<div class="row toDoTask2 borBotRadius">
+				<div class="col col-20" ng-bind="x.managerName"></div>
+				<div class="col col-30" ng-bind="x.startDate"></div>
+				<div class="col" ng-bind="x.processingPost"></div>
+			</div>
+		</div>
+		
+		<ion-list>
+			<ion-item ng-repeat="x in dataList | limitTo:3" ng-if="taskStyle == 2">
+				<div class="lH34 overHid" ng-bind="x.projectName"></div>
+			</ion-item>
+		</ion-list>
 
-	
+	</ion-content>
 
 </ion-view>

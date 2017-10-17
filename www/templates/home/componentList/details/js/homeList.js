@@ -13,7 +13,21 @@
 
 		function getData(data) {
 			$scope.dataList = data;
+			console.log($scope.dataList);
+			angular.forEach($scope.dataList,function(data){
+				if (data.state == "待接收") {
+					data.imgS = "received";
+				} else{
+					data.imgS = "toReceive";
+				}
+			})
 		}
 		publicService.receiveJson(getData, $scope.componentData);
+		
+		$scope.taskStyle = 1;
+		$scope.changeStyle = function(index){
+			$scope.taskStyle = index;
+		}
+		
 	})
 }())

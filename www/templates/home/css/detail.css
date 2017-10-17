@@ -146,5 +146,47 @@
 /*首页列表*/
 .listWord{
 	padding: 15px;
-	font-size: 20px;
+    font-size: 20px;
+    color: #63B8FF;
+    background: #fff;
+    border-radius: 37px;
+    margin: 10px auto;
+}
+.pad5{
+	padding: 5px;
+}
+.toDoTaskBk{
+	background: #ECECEC;
+}
+.toDoTask{
+	width: 95%;
+	margin: 0px auto;
+}
+.borTopRadius{
+	border-radius: 5px 5px 0px 0px;
+}
+.borBotRadius{
+	border-radius: 0px 0px 5px 5px;
+}
+.toDoTask_received{
+	background: #effaf5;
+}
+.toDoTask_toReceive{
+	background: #fff8f6;
+}
+.toDoTask2{
+	background: #FFFFFF;
+}
+.taskImg{
+	width: 70px;
+	height: 70px;
+}
+.lH34{
+	line-height: 34px;
+}
+.overHid{
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
