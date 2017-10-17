@@ -133,6 +133,21 @@
 				  {"name":"开始滚动","value":"13","data":""},
 				  {"name":"显示 arrow","value":"14","data":""}
 				 
+	],
+	"homeListData":[{"projectName":"租赁一期","state":"待接收","flowId":"00000001","flowName":"项目立项流程","processingPost":"项目经理","managerName":"赵大"},
+					{"projectName":"租赁二期","state":"处理中","flowId":"00000002","flowName":"项目尽调及审查审批流程","processingPost":"主办项目经理","managerName":"钱二"},
+					{"projectName":"租赁三期","state":"已退回","flowId":"00000003","flowName":"合同审批流程","processingPost":"主协办项目经理","managerName":"孙三"},
+					{"projectName":"租赁四期","state":"待接收","flowId":"00000004","flowName":"合同交接流程","processingPost":"项目经理","managerName":"李四"},
+					{"projectName":"租赁五期","state":"已退回","flowId":"00000005","flowName":"放款审批流程","processingPost":"主办项目经理","managerName":"周五"},
+					{"projectName":"租赁六期","state":"待接收","flowId":"00000006","flowName":"例外放款审批流程","processingPost":"主协办项目经理","managerName":"武六"},
+					{"projectName":"租赁七期","state":"处理中","flowId":"00000007","flowName":"例外放款跟踪流程","processingPost":"项目经理","managerName":"郑七"},
+					{"projectName":"租赁八期","state":"已退回","flowId":"00000008","flowName":"起租审批流程","processingPost":"主办项目经理","managerName":"李八"},
+					{"projectName":"租赁九期","state":"待接收","flowId":"00000009","flowName":"租前期管理流程","processingPost":"主协办项目经理","managerName":"周大"},
+					{"projectName":"租赁十期","state":"处理中","flowId":"00000010","flowName":"非租赁款付款流程","processingPost":"项目经理","managerName":"吴二"},
+					{"projectName":"租赁十一期","state":"已退回","flowId":"00000011","flowName":"项目变更流程","processingPost":"主协办项目经理","managerName":"郑三"},
+					{"projectName":"租赁十二期","state":"待接收","flowId":"00000012","flowName":"合同变更流程","processingPost":"项目经理","managerName":"王四"},
+					{"projectName":"租赁十三期","state":"已退回","flowId":"00000013","flowName":"租后检查流程","processingPost":"主办项目经理","managerName":"张三"},
+					{"projectName":"租赁十三期","state":"处理中","flowId":"00000014","flowName":"罚息减免流程","processingPost":"项目经理","managerName":"姜子牙"}
 	]
 	
 				
