@@ -148,6 +148,26 @@
 				paginationClickable: true,
 			})
 		}
+		
+		
+		/**********************测试ng-include*************************************************/
+		$scope.initSlideTabs = {
+			data:[
+				{"name":"欢迎","tpl":""},
+				{"name":"作者","tpl":""},
+				{"name":"广告","tpl":""}
+				],
+			doesContinue:true,
+			showPapge:true,
+			slideInterval:4000
+		}
+		$scope.slideIndex = 0;
+		$scope.slideChange = function(index){
+			$scope.slideIndex = index;
+		}
+		$scope.activeSlide = function(index){
+			$ionicSlideBoxDelegate.slide(index);
+		}
 
 	})
 }())
