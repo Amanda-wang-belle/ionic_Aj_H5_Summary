@@ -134,7 +134,7 @@
 				  {"name":"显示 arrow","value":"14","data":""}
 				 
 	],
-	"homeListData":[{"projectName":"上海工业制造有限公司租赁一期","state":"待接收","flowId":"00000001","flowName":"项目立项流程","processingPost":"项目经理","managerName":"赵大","company":"上海工业制造有限公司","startDate":"2010-01-01"},
+	"homeListData":[{"projectName":"上海工业制造有限公司租赁一期上海工业制造有限公司租赁一期上海工业制造有限公司租赁一期","state":"待接收","flowId":"00000001","flowName":"项目立项流程","processingPost":"项目经理","managerName":"赵大","company":"上海工业制造有限公司","startDate":"2010-01-01"},
 					{"projectName":"租赁二期","state":"处理中","flowId":"00000002","flowName":"项目尽调及审查审批流程","processingPost":"主办项目经理","managerName":"钱二","company":"上海工业制造有限公司","startDate":"2010-01-01"},
 					{"projectName":"租赁三期","state":"处理中","flowId":"00000003","flowName":"合同审批流程","processingPost":"主协办项目经理","managerName":"孙三","company":"上海工业制造有限公司","startDate":"2010-01-01"},
 					{"projectName":"租赁四期","state":"待接收","flowId":"00000004","flowName":"合同交接流程","processingPost":"项目经理","managerName":"李四","company":"上海工业制造有限公司","startDate":"2010-01-01"},
