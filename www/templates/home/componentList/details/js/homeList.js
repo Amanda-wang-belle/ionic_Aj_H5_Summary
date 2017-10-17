@@ -10,7 +10,6 @@
 	app.controller('homeListCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal,jQuerySlide) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
-
 		function getData(data) {
 			$scope.dataList = data;
 			console.log($scope.dataList);

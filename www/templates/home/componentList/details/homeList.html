@@ -13,6 +13,7 @@
 			<div class="button button-calm" ng-click="changeStyle(3)">第三种样式</div>
 		</div>
 		<div class="toDoTask">
+			<!--第一种-->
 			<ion-item class="item-icon-right borderNone" ng-click="showOrHide(x)">
 				<span>待办任务</span>
 				<i class="icon ion-ios-arrow-right"></i>
@@ -35,13 +36,13 @@
 					<div class="col" ng-bind="x.processingPost"></div>
 				</div>
 			</div>
-
+			<!--第二种-->
 			<ion-list>
 				<ion-item ng-repeat="x in dataList | limitTo:3" ng-if="taskStyle == 2">
 					<div class="lH34 overHid" ng-bind="x.projectName"></div>
 				</ion-item>
 			</ion-list>
-
+			<!--第三种-->
 			<div ng-show="taskStyle == 3">
 				<div id="featured-area">
 					<ul>
