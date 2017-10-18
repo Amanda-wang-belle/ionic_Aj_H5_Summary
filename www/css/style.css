@@ -95,7 +95,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 .bar .title {
 	color: #fff;
 	font-family: cursive;
-	font-family: STXinwei;
+	/*font-family: STXinwei;*/
 }
 
 .bar .title.title-left {
