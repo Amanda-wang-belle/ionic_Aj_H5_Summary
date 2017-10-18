@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('uploaderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide) {
+	app.controller('uploaderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide,locals) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
@@ -22,7 +22,7 @@
 		//传给后台
 		$scope.pictureUp = []
 		//页面显示
-		$scope.pictureShow = [];
+		$scope.pictureShow = locals.get("localPicture");
 		var localurl;
 
 		$scope.captureCamera = function() {
@@ -191,10 +191,13 @@
 			if(kongTest($scope.pictureUp)) {
 				plus.nativeUI.toast("请先上传图片！")
 			} else {
-				var arrData = $scope.pictureUp;
-				var i = 0;
-				$scope.submitPhotoIn(arrData, i);
-
+//				调接口的话,用下面注释的方法
+//				var arrData = $scope.pictureUp;
+//				var i = 0;
+//				$scope.submitPhotoIn(arrData, i);
+				
+				//本项目仅用于测试，故用本地缓存，可以在关闭之后重新打开APP的时候，清楚图片缓存，这个需要自己设置
+				locals.set("localPicture",$scope.pictureShow);
 			}
 		}
 
