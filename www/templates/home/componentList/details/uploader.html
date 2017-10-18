@@ -15,13 +15,16 @@
 
 		<div class="scfwtp-title">添加图片</div>
 		<div class="camera-bg">
-			<div class="camera" ng-repeat="x in pictureShow">
+			<div class="camera" ng-repeat="x in pictureShow track by $index">
 				<img class="scfwtp-camera" ng-src="{{x}}" alt="正在加载" data-preview-src="" data-preview-group="1" />
 			</div>
 			<div class="camera" ng-click="captureImage()">
 				<img class="scfwtp-camera" src="templates/home/img/camera.png" />
 			</div>
 		</div>
+		<!--<div class="camera"  ng-repeat="x in aaaa track by $index">
+				<img class="scfwtp-camera" ng-src="{{x}}" alt="正在加载" data-preview-src="" data-preview-group="1" />
+		</div>-->
 	</ion-content>
 	<div class="bar bar-footer" style="background-color: #F2F2F2;">
 		<button ng-click="submitPhoto()" class="button displayFooter" style="width: 100%;background-color: #F2F2F2;border-color:#004070;">

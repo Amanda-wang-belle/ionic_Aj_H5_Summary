@@ -7,7 +7,8 @@
 (function() {
 	'use strict'
 
-	app.controller('uploaderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide,locals) {
+	app.controller('uploaderCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide, locals) {
+
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
@@ -22,7 +23,13 @@
 		//传给后台
 		$scope.pictureUp = []
 		//页面显示
-		$scope.pictureShow = locals.get("localPicture");
+
+		if(locals.getObject("localPicture").length) {
+			$scope.pictureShow = locals.getObject("localPicture");
+		} else {
+			$scope.pictureShow = [];
+		}
+
 		var localurl;
 
 		$scope.captureCamera = function() {
@@ -102,9 +109,9 @@
 		function appendFile(path) {
 			var img = new Image();
 			img.src = path; // 传过来的图片路径在这里用。
-			var secret11 = userService.get("X-AUTH-TOKEN");
+			//			var secret11 = userService.get("X-AUTH-TOKEN");
 			img.onload = function() {
-				userService.set("X-AUTH-TOKEN", secret11);
+				//				userService.set("X-AUTH-TOKEN", secret11);
 				var that = this;
 				//生成比例 
 				var w = that.width,
@@ -189,15 +196,18 @@
 		//		 点击提交
 		$scope.submitPhoto = function() {
 			if(kongTest($scope.pictureUp)) {
-				plus.nativeUI.toast("请先上传图片！")
+				plus.nativeUI.toast("请先上传图片！");
 			} else {
-//				调接口的话,用下面注释的方法
-//				var arrData = $scope.pictureUp;
-//				var i = 0;
-//				$scope.submitPhotoIn(arrData, i);
-				
+				//				调接口的话,用下面注释的方法
+				//				var arrData = $scope.pictureUp;
+				//				var i = 0;
+				//				$scope.submitPhotoIn(arrData, i);
+
 				//本项目仅用于测试，故用本地缓存，可以在关闭之后重新打开APP的时候，清楚图片缓存，这个需要自己设置
-				locals.set("localPicture",$scope.pictureShow);
+
+				locals.setObject("localPicture", $scope.pictureShow);
+				plus.nativeUI.toast("保存成功！");
+				console.log(locals.getObject("localPicture").length);
 			}
 		}
 
