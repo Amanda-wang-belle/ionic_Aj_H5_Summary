@@ -4,7 +4,10 @@
   @createDate  2017-10-12
   @content 首页
 -->
-<ion-view view-title="移动端知识点归纳">
+<ion-view hide-nav-bar="true">
+	<ion-header-bar class="bar-positive">
+		<h1 class="title">移动端知识点归纳</h1>
+	</ion-header-bar>
 	<ion-content>
 		
 		<div class="homeBk">
@@ -12,7 +15,7 @@
 		</div>
 		<div class="marQuee">
 			<img src="templates/home/img/tip.png" class="tip"/>
-			<marquee style="width: 85%;">欢迎各位对已存在的构建进行指正修改，或添加新的构件， (=￣ω￣=)　撒花花，么么哒----wang_szhan</marquee>
+			<marquee style="width: 85%;">欢迎各位对已存在的构件进行指正修改，或添加新的构件， (=￣ω￣=)　撒花花，么么哒----wang_szhan</marquee>
 		</div>
 		<ul class="zhanghuList">
 			<li  ng-repeat = "x in dataList" ng-click="toDetail(x)">

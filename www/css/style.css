@@ -19,6 +19,8 @@ body {
 	width: 100%;
 	height: 100%;
 	font-family: cursive;
+	/*font-family: STXinwei;*/
+	/*font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
 	font-size: 16px;
 	color: #6c6c6c;
 	-webkit-touch-callout: none;
@@ -89,8 +91,11 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active {
 	border-bottom: 1px solid #87CEEB;
 }
 
-.bar.bar-stable .title {
+.bar.bar-stable .title,
+.bar .title {
 	color: #fff;
+	font-family: cursive;
+	font-family: STXinwei;
 }
 
 .bar .title.title-left {
@@ -116,13 +121,18 @@ button .icon {
 .bar .buttons span {
 	display: none;
 }
+
+
 /*顶部栏Ionic底部栏样式*/
+
 .bar.bar-assertive {
-    border-color: none;
-    background-color: #63B8FF;
-    background-image: none;
-    color: #fff;
+	border-color: none;
+	background-color: #63B8FF;
+	background-image: none;
+	color: #fff;
 }
+
+
 /*toast弹框*/
 
 #toastTest {
@@ -208,7 +218,8 @@ button .icon {
 	font-size: 20px;
 	padding: 35px;
 }
-.wh100{
+
+.wh100 {
 	width: 100%;
 	height: 100%;
 }
