@@ -18,6 +18,17 @@
 				<i class="icon  ion-ios-cloud-download iconTop"></i>
 			</ion-item>
 		</div>
+		<div style="width: 90%;margin: 10px auto;">
+			也可以通过自己输入地址来下载文件，文件类型包括word,ppt,excel等
+			<div>文件名称</div>
+			<input type="text" ng-model="file.name" style="border:1px solid #000000 ;" /> 文件的下载路径
+			<input type="text" ng-model="file.value" style="border:1px solid #000000 ;" />
+			<div style="margin:10px auto;">
+				<div class="button button-calm" ng-click="getfile(file)">开始下载</div>
+				<div class="button button-calm" ng-click="clearall()">清除下载任务</div>
+			</div>
+
+		</div>
 	</ion-content>
 
 </ion-view>
