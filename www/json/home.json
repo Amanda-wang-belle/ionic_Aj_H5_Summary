@@ -16,7 +16,7 @@
 					{"name":"轮播图","value":"carouselFigure","data":"carouselFigureData"},
 					{"name":"首页列表","value":"homeList","data":"homeListData"},
 					{"name":"图片上传（通过Date数据传输）","value":"uploader","data":"uploaderData"},
-					{"name":"下载","value":"","data":"敬请期待"},
+					{"name":"下载","value":"downloader","data":"downloaderData"},
 					{"name":"版本更新","value":"","data":"敬请期待"},
 					{"name":"后台传base64,前台页面展示","value":"uploader","data":"uploaderData"},
 					{"name":"header中有一、二、三个标题","value":"","data":"敬请期待"},
@@ -148,6 +148,15 @@
 					{"projectName":"租赁十二期","state":"待接收","flowId":"00000012","flowName":"合同变更流程","processingPost":"项目经理","managerName":"王四","company":"上海工业制造有限公司","startDate":"2010-01-01"},
 					{"projectName":"租赁十三期","state":"处理中","flowId":"00000013","flowName":"租后检查流程","processingPost":"主办项目经理","managerName":"张三","company":"上海工业制造有限公司","startDate":"2010-01-01"},
 					{"projectName":"租赁十三期","state":"处理中","flowId":"00000014","flowName":"罚息减免流程","processingPost":"项目经理","managerName":"姜子牙","company":"上海工业制造有限公司","startDate":"2010-01-01"}
+	],
+	"downloaderData":[{"name":"jpg格式图.jpg","value":"http://wx2.sinaimg.cn/mw690/6fb8cb35ly1fkmfi96tdkj20dw0kugmk.jpg","data":""},
+					  {"name":"美人手绘图.jpg","value":"http://wx2.sinaimg.cn/mw690/6fb8cb35ly1fkmfi9dnwaj20ci0bsdgo.jpg","data":""},
+					  {"name":"gif格式动图.gif","value":"http://wx4.sinaimg.cn/mw690/6fb8cb35ly1fkmfy8fxfrg20dw09u0un.gif","data":""},
+					  {"name":"word文档","value":"https://yiqixie.com/d/home/fcABR6PqPFugJpdnXG8h9EbXB","data":""},
+					  {"name":"pdf文档","value":"","data":""},
+					  {"name":"ppt文档","value":"","data":""},
+					  {"name":"txt文档","value":"","data":""},
+					  {"name":"mpp文档","value":"","data":""}
 	]
 	
 				

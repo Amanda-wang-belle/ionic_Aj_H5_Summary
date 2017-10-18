@@ -265,7 +265,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		
+		//下载   wang_szhan 2017.10.18
+		.state('tab.downloader',{
+			url:'/downloader/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/downloader.html',
+					controller:'downloaderCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/downloader.js');
+				}]
+			}
+		})
 		
 		
 		
