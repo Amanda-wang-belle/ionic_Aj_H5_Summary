@@ -7,9 +7,11 @@
 (function() {
 	'use strict'
 
-	app.controller('componentListCtrl', function($scope, $http, $stateParams,$ionicPopup,$timeout,toastService,publicJump,publicService) {
+	app.controller('componentListCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicJump, publicService, locals,userService,$rootScope) {
+
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
+
 		function getData(data) {
 			$scope.dataList = data;
 		}
@@ -18,11 +20,10 @@
 			history.back(-1);
 		}
 
-		$scope.toDetail = function(x){
+		$scope.toDetail = function(x) {
 			publicJump.jumpTo(x);
-			
+
 		}
 
-		
 	})
 }())
