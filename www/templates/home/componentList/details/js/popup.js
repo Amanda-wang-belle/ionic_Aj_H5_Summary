@@ -7,8 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide,locals) {
-		console.log(locals.get("firstpos"));
+	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide,userService,locals) {
 		
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
