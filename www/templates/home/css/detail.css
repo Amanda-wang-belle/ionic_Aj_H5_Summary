@@ -308,3 +308,24 @@
 	padding: 5px;
 	display: inline-table;
 }
+/*测试input select框的问题*/
+.td-list2{
+	background-color: white;
+}
+.td-list-item{
+	overflow: hidden;
+	border-bottom: 1px solid #F2F2F2;
+	padding: 10px 0;
+}
+.td-list-left{
+	float: left;
+    width: 40%;
+    padding-right: 3px;
+    color: #999999;
+}
+.td-list-right{
+    float: right;
+    width: 60%;
+    color: #333333;
+    text-align: right;
+}
