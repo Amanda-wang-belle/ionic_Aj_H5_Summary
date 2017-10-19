@@ -18,6 +18,7 @@
 		publicService.receiveJson(getData, $scope.componentData);
 		$scope.Back = function() {
 			history.back(-1);
+//			$ionicHistory.goBack();
 		}
 
 		//传给后台

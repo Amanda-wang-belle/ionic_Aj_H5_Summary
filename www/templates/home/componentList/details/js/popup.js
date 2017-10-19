@@ -304,8 +304,8 @@
 
 		//返回按钮
 		$scope.Back = function() {
-			//			$ionicHistory.goBack();
 			history.back(-1);
+//			$ionicHistory.goBack();
 		}
 		/*一个小玩笑*/
 		$scope.guestWhere = function() {

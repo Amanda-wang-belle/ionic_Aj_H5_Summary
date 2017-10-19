@@ -19,6 +19,7 @@
 		publicService.receiveJson(getData, $scope.componentData);
 		$scope.Back = function() {
 			history.back(-1);
+//			$ionicHistory.goBack();
 		}
 
 		var data = $stateParams.data;
