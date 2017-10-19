@@ -28,6 +28,7 @@
 		publicService.receiveJson(getData, $scope.componentData);
 		$scope.Back = function() {
 			history.back(-1);
+//			$ionicHistory.goBack();
 		}
 		$scope.taskStyle = 1;
 		$scope.changeStyle = function(index) {
