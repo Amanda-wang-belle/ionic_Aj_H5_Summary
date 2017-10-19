@@ -15,6 +15,7 @@
 	</ion-header-bar>
 	<ion-content>
 		<ion-item ng-repeat="x in dataList" class="item-icon-right" style="white-space: normal;" ng-click="toDetail(x)">
+			<span ng-bind="$index+1"></span>
 			<span ng-bind="x.name"></span>
 			<i class="icon ion-ios-arrow-forward"></i>
 		</ion-item>
