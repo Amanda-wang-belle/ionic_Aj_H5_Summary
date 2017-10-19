@@ -28,6 +28,24 @@ body {
 	-webkit-text-size-adjust: none;
 }
 
+select {
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  background: url(../img/triggle.png) no-repeat scroll right center transparent;
+  background-size: 22.5px 22.5px;
+  padding-right: 22px;
+  /*清除点击出现的外边框*/
+  outline: none;
+	border: none;
+	padding-left: 15%;
+	background-color: #FFFFFF !important;
+	vertical-align: middle;
+	color: #000000;
+}
+
+
 
 /*底部栏样式切换*/
 

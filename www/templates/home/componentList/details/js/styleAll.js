@@ -8,6 +8,8 @@
 	'use strict'
 
 	app.controller('styleAllCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide) {
+		$("#testSelect").attr('disabled','disabled');
+		 
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
