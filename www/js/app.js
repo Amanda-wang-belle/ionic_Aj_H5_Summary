@@ -281,6 +281,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		//版本检测更新   wang_szhan 2017.10.19
+		.state('tab.versionUpdate',{
+			url:'/versionUpdate/:componentTitle/:componentData',
+			cache:'false',
+			views: {
+				'tab-home':{
+					templateUrl:'templates/home/componentList/details/versionUpdate.html',
+					controller:'versionUpdateCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+					return $ocLazyLoad.load('templates/home/componentList/details/js/versionUpdate.js');
+				}]
+			}
+		})
 		
 		//所有的list   wang_szhan 2017.10.18
 		.state('tab.styleAll',{

@@ -32,7 +32,8 @@
 			"www/templates/home/css/detail.css",
 			"www/lib/ionic/js/angular/angular-local-storage.js",
 			"www/templates/home/componentList/details/js/downloader.js",
-			"www/templates/home/componentList/details/downloader.html"
+			"www/templates/home/componentList/details/downloader.html",
+			"www/templates/home/componentList/details/styleAll.html"
 		]
 	}
 }
