@@ -6,10 +6,11 @@
  */
 var app = angular.module('starter', ['ionic', 'ui.router', 'oc.lazyLoad', 'LocalStorageModule'])
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHistory) {
 	$ionicPlatform.ready(function() {
-		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-		// for form inputs)
+		/*因为要控制在返回上一页面的时候，如果有键盘，需要先隐藏键盘，
+		所以需要自定义android手机的物理返回键单击事件，自己定义返回按钮的优先级操作，
+		然后实现在首页面和登录页双击退出应用的操作。*/
 		if(window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 			cordova.plugins.Keyboard.disableScroll(true);
@@ -19,20 +20,51 @@ app.run(function($ionicPlatform) {
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
+
 		//扩展API准备完成后要执行的操作
-		function plusReady(){}
-		
+		function plusReady() {}
+
 		//监听plusready事件
-		if (window.plus) {  //扩展API是否准备好，如果没有则监听“plusready"事件 
+		if(window.plus) { //扩展API是否准备好，如果没有则监听“plusready"事件 
 			plusReady();
-		} else{
+		} else {
 			//加载API
-			document.addEventListener('plusready',plusReady,false);
+			document.addEventListener('plusready', plusReady, false);
 		}
-		
-		
-		
+
+		//物理返回按钮控制&&双击退出应用
+		$ionicPlatform.registerBackButtonAction(function(e) {
+			//判断处于哪个页面时双击退出
+			if($location.path() == 'tab.home') {
+				if($rootScope.backButtonPressedOnceToExit) {
+					ionic.Platform.exitApp();
+				} else {
+					$rootScope.backButtonPressedOnceToExit = true;
+					plus.nativeUI.showToast("再按一次推出系统");
+					setTimeout(function() {
+						$rootScope.backButtonPressedOnceToExit = false;
+					}, 20000);
+				}
+
+			} else if($ionicHistory.backView()) {
+				//			if($cordovaKeyboard.isVisible()) {
+				//				$cordovaKeyboard.close();
+				//			} else {
+				$ionicHistory.goBack();
+				//			}
+			} else {
+				$rootScope.backButtonPressedOnceToExit = true;
+				plus.nativeUI.showToast("再按一次推出系统");
+				setTimeout(function() {
+					$rootScope.backButtonPressedOnceToExit = false;
+				}, 20000);
+
+			}
+			e.preventDefault();
+			return false;
+		}, 101);
 	});
+
 })
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $httpProvider, $ocLazyLoadProvider, $provide, $compileProvider, $controllerProvider, $filterProvider, $httpProvider) {
@@ -64,7 +96,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 	$ionicConfigProvider.platform.android.backButton.previousTitleText('').icon('ion-android-arrow-back');
 	$ionicConfigProvider.platform.ios.views.transition('ios');
 	$ionicConfigProvider.platform.android.views.transition('android');
-	
+
 	$stateProvider
 
 		// setup an abstract state for the tabs directive
@@ -114,19 +146,19 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}
 			}
 		})
-		
+
 		//首页
-		.state('tab.home',{
-			url:'/home',
-			cache:'false',
+		.state('tab.home', {
+			url: '/home',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/home.html',
-					controller:'homeCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/home.html',
+					controller: 'homeCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/home.js');
 				}]
 			}
@@ -145,255 +177,224 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 		 * 		此种方式传值，可以传字符串也可以传对象
 		 * 		但是需要用$ionicHistory.goBack(),回退的是历史页面，有缺陷
 		 */
-		 
-		.state('tab.componentList',{
-			url:'/componentList/:componentTitle/:componentData',
-//			url:'/componentList',
-//			params:{
-//				"component":null
-//			},
-			cache:'false',
+
+		.state('tab.componentList', {
+			url: '/componentList/:componentTitle/:componentData',
+			//			url:'/componentList',
+			//			params:{
+			//				"component":null
+			//			},
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/list.html',
-					controller:'componentListCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/list.html',
+					controller: 'componentListCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/list.js');
 				}]
 			}
 		})
 		//各种弹框页面 wang_szhan 2017.10.12
-		.state('tab.popup',{
-			url:'/popup/:componentTitle/:componentData',
-//			url:'/popup',
-//			params:{
-//				"component":null
-//			},
-			cache:'false',
+		.state('tab.popup', {
+			url: '/popup/:componentTitle/:componentData',
+			//			url:'/popup',
+			//			params:{
+			//				"component":null
+			//			},
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/popup.html',
-					controller:'popupCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/popup.html',
+					controller: 'popupCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/popup.js');
 				}]
 			}
 		})
 		//各种底部栏 wang_szhan 2017.10.13
-		.state('tab.footer',{
-			url:'/footer/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.footer', {
+			url: '/footer/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/footer.html',
-					controller:'footerCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/footer.html',
+					controller: 'footerCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/footer.js');
 				}]
 			}
 		})
 		//各种轮播图列表 wang_szhan 2017.10.15
-		.state('tab.carouselFigure',{
-			url:'/carouselFigure/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.carouselFigure', {
+			url: '/carouselFigure/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/carouselFigure.html',
-					controller:'carouselFigureCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/carouselFigure.html',
+					controller: 'carouselFigureCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/carouselFigure.js');
 				}]
 			}
 		})
 		//各种轮播图详情页面 wang_szhan 2017.10.15
-		.state('tab.slider',{
-			url:'/slider/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.slider', {
+			url: '/slider/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/slider.html',
-					controller:'sliderCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/slider.html',
+					controller: 'sliderCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/slider.js');
 				}]
 			}
 		})
 		//首页列表   wang_szhan 2017.10.17
-		.state('tab.homeList',{
-			url:'/homeList/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.homeList', {
+			url: '/homeList/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/homeList.html',
-					controller:'homeListCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/homeList.html',
+					controller: 'homeListCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/homeList.js');
 				}]
 			}
 		})
 		//图片上传   wang_szhan 2017.10.17
-		.state('tab.uploader',{
-			url:'/uploader/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.uploader', {
+			url: '/uploader/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/uploader.html',
-					controller:'uploaderCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/uploader.html',
+					controller: 'uploaderCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/uploader.js');
 				}]
 			}
 		})
 		//下载   wang_szhan 2017.10.18
-		.state('tab.downloader',{
-			url:'/downloader/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.downloader', {
+			url: '/downloader/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/downloader.html',
-					controller:'downloaderCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/downloader.html',
+					controller: 'downloaderCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/downloader.js');
 				}]
 			}
 		})
 		//版本检测更新   wang_szhan 2017.10.19
-		.state('tab.versionUpdate',{
-			url:'/versionUpdate/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.versionUpdate', {
+			url: '/versionUpdate/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/versionUpdate.html',
-					controller:'versionUpdateCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/versionUpdate.html',
+					controller: 'versionUpdateCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/versionUpdate.js');
 				}]
 			}
 		})
-		
+
 		//所有的list   wang_szhan 2017.10.18
-		.state('tab.styleAll',{
-			url:'/styleAll/:componentTitle/:componentData',
-			cache:'false',
+		.state('tab.styleAll', {
+			url: '/styleAll/:componentTitle/:componentData',
+			cache: 'false',
 			views: {
-				'tab-home':{
-					templateUrl:'templates/home/componentList/details/styleAll.html',
-					controller:'styleAllCtrl'
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/styleAll.html',
+					controller: 'styleAllCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/home/componentList/details/js/styleAll.js');
 				}]
 			}
 		})
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		//工作消息
-		.state('tab.msg',{
-			url:'/msg',
-			cache:'false',
+		.state('tab.msg', {
+			url: '/msg',
+			cache: 'false',
 			views: {
-				'tab-msg':{
-					templateUrl:'templates/msg/msg.html',
-					controller:'msgCtrl'
+				'tab-msg': {
+					templateUrl: 'templates/msg/msg.html',
+					controller: 'msgCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/msg/msg.js');
 				}]
 			}
 		})
 		//报价测算
-		.state('tab.irrcs',{
-			url:'/irrcs',
-			cache:'false',
+		.state('tab.irrcs', {
+			url: '/irrcs',
+			cache: 'false',
 			views: {
-				'tab-irrcs':{
-					templateUrl:'templates/irrcs/irrcs.html',
-					controller:'irrcsCtrl'
+				'tab-irrcs': {
+					templateUrl: 'templates/irrcs/irrcs.html',
+					controller: 'irrcsCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/irrcs/irrcs.js');
 				}]
 			}
 		})
 		//我的账户
-		.state('tab.mine',{
-			url:'/mine',
-			cache:'false',
+		.state('tab.mine', {
+			url: '/mine',
+			cache: 'false',
 			views: {
-				'tab-mine':{
-					templateUrl:'templates/mine/mine.html',
-					controller:'mineCtrl'
+				'tab-mine': {
+					templateUrl: 'templates/mine/mine.html',
+					controller: 'mineCtrl'
 				}
 			},
 			resolve: {
-				loadMyCtrl:['$ocLazyLoad',function($ocLazyLoad){
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 					return $ocLazyLoad.load('templates/mine/mine.js');
 				}]
 			}
 		});
-		
-		
-		
-		
-		
-		
-		
 
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/tab/home');
