@@ -201,7 +201,7 @@
 		}
 	}]);
 	//公共调取后台接口的方法
-	app..factory("httpService", ['$q', '$http', 'value', function($q, $http, value) {
+	app.factory("httpService", ['$q', '$http', 'value', function($q, $http, value) {
 		//发送Json类型的数据，后台返回的数据也是Json类型的数据
 		var postJsonReceiveJson = function(url, dataJson) {
 			var deferred = $q.defer();
