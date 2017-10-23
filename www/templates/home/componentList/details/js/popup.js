@@ -92,7 +92,7 @@
 
 			} else if(x.name == 'beep'){
 				toastService.showToast("更多cordova弹框不再添加，各位自己去官网拿");
-//				$cordovaToast.showShortCenter("hello");
+//				$cordovaToast.show("hello");  //总是报toast undefined的错误，没找到原因
 			}
 		}
 		/**
