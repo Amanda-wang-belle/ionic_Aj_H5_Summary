@@ -5,16 +5,33 @@
   @content 各种类型标题
 -->
 <ion-view hide-nav-bar="true" hide-tabs>
-	<ion-header-bar class="bar-positive">
-		<div class="buttons">
+	<ion-header-bar class="bar-positive" ng-if="title == 1">
+		<div class="buttons" ng-if="left == 1">
 			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
 		</div>
 		<h1 class="title" ng-bind="componentTitle"></h1>
+		<div class="buttons" ng-if="right == 1">
+			<button class="button button-clear icon ion-ios-flame"></button>
+		</div>
 	</ion-header-bar>
-	<ion-content>
-		
-	</ion-content>
 
-	
+	<div class="bar bar-header" ng-if="title == 2" style="background: #63B8FF;">
+		<div class="buttons" ng-if="left == 1" >
+			<button style="color: #fff;" class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
+		</div>
+		<h1 class="title" ng-bind="componentTitle"></h1>
+		<div class="buttons" ng-if="right == 1">
+			<button style="color: #fff;" class="button button-clear icon ion-ios-circle-filled"></button>
+		</div>
+	</div>
+	<div class="has-header" ng-if="title == 2" style="background: #63B8FF;line-height: 30px; text-align: center;margin-top: 44px;color: #fff;">
+		<div>二级标题放在header之中，下拉刷新，上拉加载的时候标题都不会动</div>
+	</div>
+
+	<ion-content style="top: 100px;">
+		<div ng-repeat="x in dataList" ng-click="showTitle(x.value)" style="width: 95%;margin: 10px auto;">
+			<div class="button button-calm slideButton" ng-bind="x.name"></div>
+		</div>
+	</ion-content>
 
 </ion-view>
