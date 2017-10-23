@@ -92,6 +92,7 @@
 
 			} else if(x.name == 'beep'){
 				toastService.showToast("更多cordova弹框不再添加，各位自己去官网拿");
+//				$cordovaToast.showShortCenter("hello");
 			}
 		}
 		/**
@@ -363,4 +364,13 @@
 		}
 
 	})
-}())
+}()).run(function($ionicPlatform) {
+		$ionicPlatform.ready(function() {
+			if(window.cordova && window.cordova.plugins.Keyboard) {
+				cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+			}
+			if(window.StatusBar) {
+				StatusBar.styleDefault();
+			}
+		});
+	});
