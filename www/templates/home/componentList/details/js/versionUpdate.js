@@ -162,8 +162,8 @@
 		//调接口，将当前版本号发给后台，通过后台反馈是否需要更新
 		//如果需要更新，反馈安卓和Ios的下载地址
 		var postdata = function(version) {
-			var method = "versionIsUpdate";
-			var url = "/shyc-service/service/callService.do?";
+			var method = "";
+			var url = "";
 			var params = {};
 			params.version = version;
 			// 请求接口
