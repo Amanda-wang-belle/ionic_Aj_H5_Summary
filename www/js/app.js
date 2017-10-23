@@ -345,8 +345,24 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		//list不规则列表页面（刷新、加载）  wang_szhan 2017.10.23
+		.state('tab.list', {
+			url: '/list/:componentTitle/:componentData',
+			cache: 'false',
+			views: {
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/list.html',
+					controller: 'listCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+					return $ocLazyLoad.load('templates/home/componentList/details/js/list.js');
+				}]
+			}
+		})
 
-		//所有的list   wang_szhan 2017.10.18
+		//录入页面   wang_szhan 2017.10.18
 		.state('tab.styleAll', {
 			url: '/styleAll/:componentTitle/:componentData',
 			cache: 'false',
@@ -362,6 +378,34 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		//工作消息
 		.state('tab.msg', {
