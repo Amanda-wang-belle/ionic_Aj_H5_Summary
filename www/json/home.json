@@ -11,6 +11,7 @@
 				{"name":"待添加8","value":"","data":"待添加功能"}],
 	"functionData":[{"name":"$ionicActionSheet向上滑动的面板","value":"popup","data":"popupData"},
 					{"name":"各种弹框","value":"popup","data":"popupData"},
+					{"name":"cordova弹框","value":"popup","data":"popupData"},
 					{"name":"模态框","value":"popup","data":"popupData"},
 					{"name":"ionic底部栏","value":"footer","data":"footerData"},
 					{"name":"轮播图","value":"carouselFigure","data":"carouselFigureData"},
@@ -63,14 +64,11 @@
 									{"name":"pickDate: 弹出系统日期选择对话框","value":"","data":""},
 									{"name":"pickTime: 弹出系统时间选择对话框","value":"","data":""},
 									{"name":"prompt: 弹出系统输入对话框","value":"","data":""}
-				]},{"name":"$cordovaToast弹框","value":"4","data":"",
-							  "list":[{"name":"$cordovaToast.show(message, duration, position)","value":"","data":"$cordovaToast.show(message, duration, position)"},
-									{"name":"showShortTop(message) 显示顶部","value":"","data":"showShortTop(message) 显示顶部"},
-									{"name":"showShortCenter(message) 显示中间","value":"","data":"showShortCenter(message) 显示中间"},
-									{"name":"showShortBottom(message) 显示底部","value":"","data":"showShortBottom(message) 显示底部"},
-									{"name":"showLongTop(message) 显示顶部(长时间)","value":"","data":"showLongTop(message) 显示顶部(长时间)"},
-									{"name":"showLongCenter(message)显示中间(长时间)","value":"","data":"showLongCenter(message)显示中间(长时间)"},
-									{"name":"showLongBottom(message)显示底部(长时间)","value":"","data":"showLongBottom(message)显示底部(长时间)"}
+				]},{"name":"$cordova弹框","value":"4","data":"",
+							  "list":[{"name":"alert","value":"","data":""},
+							  		   {"name":"confirm","value":"","data":""},
+							  		   {"name":"prompt","value":"","data":""},
+							  		   {"name":"beep","value":"","data":""}
 				]},{"name":"$ionicActionSheet向上滑动的面板","value":"5","data":"敬请期待"
 				}
 	],

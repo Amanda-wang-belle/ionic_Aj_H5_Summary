@@ -7,8 +7,8 @@
 (function() {
 	'use strict'
 
-	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide,userService,locals) {
-		
+	app.controller('popupCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide, userService, locals, $cordovaToast, $cordovaDialogs) {
+
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
@@ -69,6 +69,29 @@
 				$scope.plusNativeUIprompt();
 			} else if(x.name == "toast: 显示自动消失的提示消息") {
 				$scope.plusNativeUItoast();
+			} else if(x.name == "alert") {
+				$cordovaDialogs.alert('message', 'title', 'button name')
+					.then(function() {
+						// callback success
+					});
+
+			} else if(x.name == "confirm") {
+				$cordovaDialogs.confirm('message', 'title', ['button 1', 'button 2'])
+					.then(function(buttonIndex) {
+						// no button = 0, 'OK' = 1, 'Cancel' = 2
+						var btnIndex = buttonIndex;
+					});
+
+			} else if(x.name == "prompt") {
+				$cordovaDialogs.prompt('msg', 'title', ['btn 1', 'btn 2'], 'default text')
+					.then(function(result) {
+						var input = result.input1;
+						// no button = 0, 'OK' = 1, 'Cancel' = 2
+						var btnIndex = result.buttonIndex;
+					});
+
+			} else if(x.name == 'beep'){
+				toastService.showToast("更多cordova弹框不再添加，各位自己去官网拿");
 			}
 		}
 		/**
@@ -302,10 +325,36 @@
 			//执行动作
 		})
 
+		/**
+		 * $cordova.Toast
+		 */
+		$scope.cordovaToast = function(x) {
+			switch(x.name) {
+				case "$cordovaToast.show(message, duration, position)":
+					$cordovaToast.show(x.data, 'long', 'center')
+						.then(function(success) {}, function(error) {});
+					break;
+				case "showShortTop(message) 显示顶部":
+					break;
+				case "showShortCenter(message) 显示中间":
+					break;
+				case "showShortBottom(message) 显示底部":
+					break;
+				case "showLongTop(message) 显示顶部(长时间)":
+					break;
+				case "showLongCenter(message)显示中间(长时间)":
+					break;
+				case "showLongBottom(message)显示底部(长时间)":
+					break;
+				default:
+					break;
+			}
+		}
+
 		//返回按钮
 		$scope.Back = function() {
 			history.back(-1);
-//			$ionicHistory.goBack();
+			//			$ionicHistory.goBack();
 		}
 		/*一个小玩笑*/
 		$scope.guestWhere = function() {
