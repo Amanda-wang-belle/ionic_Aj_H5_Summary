@@ -4,20 +4,23 @@
  * @createDate 2017-10-12
  * @content 首页
  */
-(function(){
+(function() {
 	'use strict'
-	
-	app.controller('homeCtrl',function($scope,$http,$state,publicJump,publicService){
-		function getData(data){
+
+	app.controller('homeCtrl', function($scope, $http, $state, publicJump, publicService, $cordovaDialogs) {
+		function getData(data) {
 			$scope.dataList = data;
 		}
-		publicService.receiveJson(getData,"homeData");
-		
-		
-		$scope.toDetail = function(x){
+		publicService.receiveJson(getData, "homeData");
+
+		$scope.toDetail = function(x) {
 			publicJump.jumpTo(x);
-			
+
 		}
-		
+		$cordovaDialogs.alert('message', 'title', 'button name')
+			.then(function() {
+				// callback success
+			});
+
 	})
 }())

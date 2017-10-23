@@ -4,7 +4,7 @@
  * 创建时间  2017-10-10 下午14:35
  * 
  */
-var app = angular.module('starter', ['ionic', 'ui.router', 'oc.lazyLoad', 'LocalStorageModule'])
+var app = angular.module('starter', ['ionic', 'ui.router', 'oc.lazyLoad', 'LocalStorageModule','ngCordova'])
 
 app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHistory) {
 	$ionicPlatform.ready(function() {

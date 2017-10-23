@@ -237,7 +237,8 @@
 					"www/templates/home/componentList/details/js/downloader.js",
 					"www/templates/home/componentList/details/downloader.html",
 					"www/templates/home/componentList/details/styleAll.html",
-					"www/templates/home/componentList/details/js/versionUpdate.js"
+					"www/templates/home/componentList/details/js/versionUpdate.js",
+					"www/lib/ngCordova/dist/ng-cordova.js"
 				],
 				"refer": [],
 				"priority": 0
