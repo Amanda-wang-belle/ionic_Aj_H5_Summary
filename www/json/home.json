@@ -20,7 +20,7 @@
 					{"name":"下载","value":"downloader","data":"downloaderData"},
 					{"name":"版本更新","value":"","data":"敬请期待"},
 					{"name":"后台传base64,前台页面展示","value":"uploader","data":"uploaderData"},
-					{"name":"header中有一、二、三个标题","value":"","data":"敬请期待"},
+					{"name":"header中有一、二、三个标题","value":"headers","data":"敬请期待"},
 					{"name":"header中放两级标题","value":"","data":"敬请期待"},
 					{"name":"单List页面（ 上拉加载、下拉刷新）","value":"","data":"敬请期待"},
 					{"name":"左右展示列表页面","value":"","data":"敬请期待"},
