@@ -194,10 +194,122 @@
 			remove: function(key) {
 				$window.localStorage.removeItem(key);
 			},
-			clearAll: function(){
+			clearAll: function() {
 				$window.localStorage.clear();
 			}
 
 		}
 	}]);
+	//公共调取后台接口的方法
+	app..factory("httpService", ['$q', '$http', 'value', function($q, $http, value) {
+		//发送Json类型的数据，后台返回的数据也是Json类型的数据
+		var postJsonReceiveJson = function(url, dataJson) {
+			var deferred = $q.defer();
+			var promise = deferred.promise;
+			promise = $http({
+				method: 'POST',
+				url: url,
+				data: dataJson
+			});
+			return promise;
+		};
+
+		//发送Json类型的数据，后台返回字符串
+		var postJsonReceiveString = function(url, dataJson) {
+			var deferred = $q.defer();
+			var promise = deferred.promise;
+			promise = $http({
+				method: 'POST',
+				url: url,
+				data: dataJson,
+				headers: {
+					'Accept': 'text/plain'
+				}
+			});
+			return promise;
+		};
+
+		//33发送字符串，后台返回Json数据类型
+		var postStringReceiveJson = function(operAtt, url, dataStr) {
+			var deferred = $q.defer();
+			var promise = deferred.promise;
+			promise = $http({
+				method: 'POST',
+				url: value.url + url,
+				params: {
+					serviceId: operAtt,
+					para: dataStr
+				},
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+				}
+			});
+			return promise;
+		};
+
+		//发送字符串，后台返回字符串
+		var postStringReceiveString = function(url, dataStr) {
+			var deferred = $q.defer();
+			var promise = deferred.promise;
+			promise = $http({
+				method: 'POST',
+				url: url,
+				data: dataStr,
+				headers: {
+					'Accept': 'text/plain',
+					'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+				}
+			});
+			return promise;
+		};
+
+		//发送字符串，后台返回Json数据类型，应用于路由中的resolve
+		var postStringReceiveJsonForResolve = function(url, dataStr) {
+			var deferred = $q.defer();
+			promise = $http({
+					method: 'POST',
+					url: url,
+					data: dataStr,
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+					}
+				}).success(function(data, status, headers, cfg) {
+					deferred.resolve(data);
+				})
+				.error(function(data, status, headers, cfg) {
+					deferred.reject(data);
+				});
+			return deferred.promise;
+		};
+
+		//发送字符串，后台返回字符串数据类型，应用于路由中的resolve
+		var postStringReceiveStringForResolve = function(url, dataStr) {
+			var deferred = $q.defer();
+			promise = $http({
+					method: 'POST',
+					url: url,
+					data: dataStr,
+					headers: {
+						'Accept': 'text/plain',
+						'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+					}
+				}).success(function(data, status, headers, cfg) {
+					deferred.resolve(data);
+				})
+				.error(function(data, status, headers, cfg) {
+					deferred.reject(data);
+				});
+			return deferred.promise;
+		};
+
+		return {
+			postJsonReceiveJson: postJsonReceiveJson,
+			postJsonReceiveString: postJsonReceiveString,
+			postStringReceiveJson: postStringReceiveJson,
+			postStringReceiveString: postStringReceiveString,
+			postStringReceiveJsonForResolve: postStringReceiveJsonForResolve,
+			postStringReceiveStringForResolve: postStringReceiveStringForResolve
+		};
+
+	}])
 }());
