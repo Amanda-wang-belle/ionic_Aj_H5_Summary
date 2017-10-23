@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('homeCtrl', function($scope, $http, $state, publicJump, publicService, $cordovaDialogs) {
+	app.controller('homeCtrl', function($scope, $http, $state, publicJump, publicService) {
 		function getData(data) {
 			$scope.dataList = data;
 		}
@@ -17,10 +17,10 @@
 			publicJump.jumpTo(x);
 
 		}
-		$cordovaDialogs.alert('message', 'title', 'button name')
-			.then(function() {
-				// callback success
-			});
+//		$cordovaDialogs.alert('message', 'title', 'button name')
+//			.then(function() {
+//				// callback success
+//			});
 
 	})
 }())

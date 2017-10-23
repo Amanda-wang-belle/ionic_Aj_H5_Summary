@@ -63,7 +63,15 @@
 									{"name":"pickDate: 弹出系统日期选择对话框","value":"","data":""},
 									{"name":"pickTime: 弹出系统时间选择对话框","value":"","data":""},
 									{"name":"prompt: 弹出系统输入对话框","value":"","data":""}
-				]},{"name":"$ionicActionSheet向上滑动的面板","value":"3","data":"敬请期待"
+				]},{"name":"$cordovaToast弹框","value":"4","data":"",
+							  "list":[{"name":"$cordovaToast.show(message, duration, position)","value":"","data":"$cordovaToast.show(message, duration, position)"},
+									{"name":"showShortTop(message) 显示顶部","value":"","data":"showShortTop(message) 显示顶部"},
+									{"name":"showShortCenter(message) 显示中间","value":"","data":"showShortCenter(message) 显示中间"},
+									{"name":"showShortBottom(message) 显示底部","value":"","data":"showShortBottom(message) 显示底部"},
+									{"name":"showLongTop(message) 显示顶部(长时间)","value":"","data":"showLongTop(message) 显示顶部(长时间)"},
+									{"name":"showLongCenter(message)显示中间(长时间)","value":"","data":"showLongCenter(message)显示中间(长时间)"},
+									{"name":"showLongBottom(message)显示底部(长时间)","value":"","data":"showLongBottom(message)显示底部(长时间)"}
+				]},{"name":"$ionicActionSheet向上滑动的面板","value":"5","data":"敬请期待"
 				}
 	],
 	"modalData":[{"title":"一、不要在没有plus和mui的环境下调用相关API","content":"普通浏览器里没有plus环境，只有HBuilder真机运行、打包后、或流应用环境下才能运行plus api。在普通浏览器里运行时plus api时控制台必然会输出plus is not defined错误提示."},
