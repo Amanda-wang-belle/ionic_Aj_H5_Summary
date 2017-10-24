@@ -242,7 +242,8 @@
 					"plugins/cordova-plugin-x-toast/www/Toast.js",
 					"www/templates/home/componentList/details/js/list.js",
 					"www/templates/home/componentList/details/js/headers.js",
-					"www/templates/home/componentList/details/js/listRandom.js"
+					"www/templates/home/componentList/details/js/listRandom.js",
+					"www/lib/ionic/js/angular-ui/angular-ui-router.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -357,7 +358,6 @@
 				"platforms/ios/CordovaLib/Classes/CDV.h",
 				"plugins/ionic-plugin-keyboard/www/android/keyboard.js",
 				"plugins/cordova-plugin-splashscreen/doc/de/index.md",
-				"www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
 				"plugins/cordova-plugin-statusbar/doc/it/index.md",
 				"plugins/cordova-plugin-device/doc/ru/index.md",
 				"plugins/cordova-plugin-splashscreen/doc/fr/index.md",

@@ -39,7 +39,8 @@
 			"plugins/cordova-plugin-x-toast/www/Toast.js",
 			"www/templates/home/componentList/details/js/list.js",
 			"www/templates/home/componentList/details/js/headers.js",
-			"www/templates/home/componentList/details/js/listRandom.js"
+			"www/templates/home/componentList/details/js/listRandom.js",
+			"www/lib/ionic/js/angular-ui/angular-ui-router.min.js"
 		]
 	}
 }
