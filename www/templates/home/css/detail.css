@@ -344,4 +344,9 @@
 	display: -webkit-inline-box;
 	display: -moz-inline-box;
 }
-
+.scrollDiv{
+	width: 150px;
+    text-align: center;
+    text-align: -webkit-center;
+}
+}

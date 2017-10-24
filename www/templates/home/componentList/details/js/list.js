@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('listCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide) {
+	app.controller('listCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide,$ionicScrollDelegate) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
@@ -88,7 +88,11 @@
 		} else {
 			toastService.showToast("网络异常");
 		}
-
+		//滚动到顶部
+		$scope.scrollTop = function(){
+			$ionicScrollDelegate.scrollTop();
+//			$ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
+		}
 		$scope.Back = function() {
 			history.back(-1);
 		}
