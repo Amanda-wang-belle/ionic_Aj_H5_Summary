@@ -9,22 +9,21 @@
 		<h1 class="title">移动端知识点归纳</h1>
 	</ion-header-bar>
 	<ion-content>
-		
+
 		<div class="homeBk">
 			<span>可提取构件</span>
 		</div>
 		<div class="marQuee">
-			<img src="templates/home/img/tip.png" class="tip"/>
-			<marquee style="width: 85%;">欢迎各位对已存在的构件进行指正修改，或添加新的构件， (=￣ω￣=)　撒花花，么么哒----wang_szhan</marquee>
+				<button class="button button-clear icon ion-volume-medium" style="color: #FFFFFF;float: left;"></button>
+			<!--<img src="templates/home/img/tip.png" class="tip" />-->
+			<marquee style="width: 85%;line-height: 50px;">欢迎各位对已存在的构件进行指正修改，或添加新的构件， (=￣ω￣=)　撒花花，么么哒----wang_szhan</marquee>
 		</div>
 		<ul class="zhanghuList">
-			<li  ng-repeat = "x in dataList" ng-click="toDetail(x)">
-				<img src="templates/home/img/homePage.png"/>
+			<li ng-repeat="x in dataList" ng-click="toDetail(x)">
+				<img src="templates/home/img/homePage.png" />
 				<p class="" ng-bind="x.name"></p>
 			</li>
 		</ul>
-		
-		
-		
+
 	</ion-content>
 </ion-view>
