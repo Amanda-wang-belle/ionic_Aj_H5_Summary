@@ -51,7 +51,7 @@
 						}
 					})
 					$scope.dataList = $scope.dataList.concat(dataChange);
-
+					/*此处是json，可以如此判断，如果是调接口，需要根据后台code等做判断*/
 					if(dataChange.length != 10) {
 						$scope.moredata = false;
 					} else {
