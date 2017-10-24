@@ -12,7 +12,7 @@
 		$scope.componentData = $stateParams.componentData;
 
 		function getData(data) {
-			$scope.dataList = data;
+			$scope.dataList = data[0].list;
 			console.log($scope.dataList);
 			angular.forEach($scope.dataList, function(data) {
 				if(data.state == "处理中") {
