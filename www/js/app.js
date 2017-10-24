@@ -361,6 +361,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		//根据后台数据随机生成页签和各页签下相应内容  wang_szhan 2017.10.24
+		.state('tab.listRandom', {
+			url: '/listRandom/:componentTitle/:componentData',
+			cache: 'false',
+			views: {
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/listRandom.html',
+					controller: 'listRandomCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+					return $ocLazyLoad.load('templates/home/componentList/details/js/listRandom.js');
+				}]
+			}
+		})
 
 		//录入页面   wang_szhan 2017.10.18
 		.state('tab.styleAll', {
