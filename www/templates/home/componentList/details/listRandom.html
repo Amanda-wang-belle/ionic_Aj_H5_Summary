@@ -11,9 +11,14 @@
 		</div>
 		<h1 class="title" ng-bind="componentTitle"></h1>
 	</ion-header-bar>
-	<ion-content>
-		
+	<ion-content overflow-scroll="true">
+
+		<div class="imc-scroll" style="">
+			<div class="scrollInline" ng-repeat="x in dataList" ng-class="slideIndex == $index?'current':''">
+				<div class="scrollInline" ng-click="go($index)" ng-bind="x.name"></div>
+			</div>
+		</div>
+
 	</ion-content>
 
-	
 </ion-view>

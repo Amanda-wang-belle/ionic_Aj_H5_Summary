@@ -18,6 +18,8 @@
 		$scope.Back = function() {
 			history.back(-1);
 		}
+		
+		$scope.slideIndex  = 0;
 
 
 	

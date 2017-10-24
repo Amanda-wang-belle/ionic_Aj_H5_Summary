@@ -239,7 +239,10 @@
 					"www/templates/home/componentList/details/styleAll.html",
 					"www/templates/home/componentList/details/js/versionUpdate.js",
 					"www/lib/ngCordova/dist/ng-cordova.js",
-					"plugins/cordova-plugin-x-toast/www/Toast.js"
+					"plugins/cordova-plugin-x-toast/www/Toast.js",
+					"www/templates/home/componentList/details/js/list.js",
+					"www/templates/home/componentList/details/js/headers.js",
+					"www/templates/home/componentList/details/js/listRandom.js"
 				],
 				"refer": [],
 				"priority": 0

@@ -329,3 +329,19 @@
     color: #333333;
     text-align: right;
 }
+.imc-scroll {
+   width: 100%;
+   /*height: 140px;*/
+   white-space: nowrap;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   overflow-scrolling: touch;
+   -webkit-overflow-scrolling: touch /*iOS 滚动弹簧效果 */;
+   background: #ECECEC;
+   line-height: 44px;
+ }
+.scrollInline{
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+}
+
