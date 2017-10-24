@@ -27,7 +27,10 @@
 		
 		$scope.slideIndex  = 0;
 
-
+		$scope.go = function(index){
+			$scope.slideIndex = index;
+			publicService.receiveJson(getData1, $scope.dataList[index].value);
+		}
 	
 	})
 }())

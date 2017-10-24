@@ -211,7 +211,8 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.overWidHid{
+
+.overWidHid {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -257,96 +258,133 @@
 	padding-left: 8%;
 	color: white;
 }
-.taskRow1{
+
+.taskRow1 {
 	width: 95%;
 	font-size: 2em;
 	font-weight: bolder;
 }
-.taskRow2{
+
+.taskRow2 {
 	width: 80%;
 	font-size: 1.5em;
 	margin-top: 10px;
 }
-.taskRow3Left{
+
+.taskRow3Left {
 	width: 50%;
 	float: left;
 	font-size: 1.5em;
 }
-.margin10{
+
+.margin10 {
 	margin-top: 10px;
 }
-.toReceive{
+
+.toReceive {
 	background-image: url(../img/home_dbrw_toReceive.png);
 }
-.received{
+
+.received {
 	background-image: url(../img/home_dbrw_received.png);
 }
-.back{
+
+.back {
 	background-image: url(../img/home_dbrw_back.png);
 }
+
+
 /*图片上传样式*/
-.scfwtp-title{
+
+.scfwtp-title {
 	background-color: #F6F6F6;
 	border-bottom: 1px solid #e2e3e5;
 	color: #393838;
 	font-size: 16px;
 	padding: 10px 15px;
 }
-.camera-bg{
+
+.camera-bg {
 	padding: 10px;
 	font-size: 0;
 	padding-bottom: 0;
 }
-.scfwtp-camera{
+
+.scfwtp-camera {
 	width: 100%;
 	height: calc(width);
 	margin: 0;
 	padding: 0;
 }
-.camera{
+
+.camera {
 	width: 33.3%;
 	padding: 5px;
 	display: inline-table;
 }
+
+
 /*测试input select框的问题*/
-.td-list2{
+
+.td-list2 {
 	background-color: white;
 }
-.td-list-item{
+
+.td-list-item {
 	overflow: hidden;
 	border-bottom: 1px solid #F2F2F2;
 	padding: 10px 0;
 }
-.td-list-left{
+
+.td-list-left {
 	float: left;
-    width: 40%;
-    padding-right: 3px;
-    color: #999999;
+	width: 40%;
+	padding-right: 3px;
+	color: #999999;
 }
-.td-list-right{
-    float: right;
-    width: 60%;
-    color: #333333;
-    text-align: right;
+
+.td-list-right {
+	float: right;
+	width: 60%;
+	color: #333333;
+	text-align: right;
 }
+
 .imc-scroll {
-   width: 100%;
-   /*height: 140px;*/
-   white-space: nowrap;
-   overflow-x: scroll;
-   overflow-y: hidden;
-   overflow-scrolling: touch;
-   -webkit-overflow-scrolling: touch /*iOS 滚动弹簧效果 */;
-   background: #ECECEC;
-   line-height: 44px;
- }
-.scrollInline{
+	width: 100%;
+	/*height: 140px;*/
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch/*iOS 滚动弹簧效果 */;
+	line-height: 44px;
+}
+
+.scrollInline {
 	display: -webkit-inline-box;
 	display: -moz-inline-box;
 }
-.scrollDiv{
+
+.scrollDiv {
 	width: 150px;
-    text-align: center;
-    text-align: -webkit-center;
+	text-align: center;
+	text-align: -webkit-center;
 }
+
+
+/*随机自动生成的list列表*/
+
+.randomTitle {
+	color: black;
+    line-height: 44px;
+    padding-left: 12px;
+    background: #ECECEC;
+}
+
+.randomList {
+    margin-top: 20px;
+}
+.td-list1{
+	padding: 0 12px;
 }

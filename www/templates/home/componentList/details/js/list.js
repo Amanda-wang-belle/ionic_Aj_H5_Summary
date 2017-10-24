@@ -15,7 +15,7 @@
 		 * init
 		 * */
 		var page = 0;
-		$scope.moredata = true;
+		$scope.moredata = false;
 		$scope.dataList = [];
 		var isLock = false; //锁，防止在网络慢的情况下多次加载
 
@@ -50,7 +50,10 @@
 							data.imgS = "toReceive";
 						}
 					})
+					
 					$scope.dataList = $scope.dataList.concat(dataChange);
+					console.log($scope.dataList);
+					
 					/*此处是json，可以如此判断，如果是调接口，需要根据后台code等做判断*/
 					if(dataChange.length != 10) {
 						$scope.moredata = false;
@@ -82,9 +85,12 @@
 		}
 
 		if(navigator.onLine) {
-			$scope.$on('stateChangeSuccess', function() {
-				$scope.loadMore();
-			});
+			//$scope.$on没起作用，没找到为什么
+//			$scope.$on('$stateChangeSuccess', function() {
+//				$scope.loadMore();
+//			});
+			$scope.loadMore();
+		
 		} else {
 			toastService.showToast("网络异常");
 		}

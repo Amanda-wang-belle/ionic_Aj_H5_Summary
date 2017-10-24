@@ -11,11 +11,23 @@
 		</div>
 		<h1 class="title" ng-bind="componentTitle"></h1>
 	</ion-header-bar>
-	<ion-content overflow-scroll="true">
+	<ion-content overflow-scroll="true" >
 
-		<div class="imc-scroll" style="">
+		<div class="imc-scroll">
 			<div class="scrollInline" ng-repeat="x in dataList" ng-class="slideIndex == $index?'current':''">
 				<div class="scrollInline  scrollDiv" ng-click="go($index)" ng-bind="x.name"></div>
+			</div>
+		</div>
+
+		<div ng-repeat="x in dataListData">
+			<div class="randomTitle" ng-bind="x.title"></div>
+			<div ng-repeat="y in x.list" class="randomList">
+				<div class="td-list1" ng-repeat="z in y.list">
+					<div class="td-list-item">
+							<div class="td-list-left" ng-bind="z.name" style="color:#004070"></div>
+							<div class="td-list-right" ng-bind="z.value" style="color:#004070"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 
