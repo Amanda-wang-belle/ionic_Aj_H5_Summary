@@ -85,10 +85,12 @@
 		}
 
 		if(navigator.onLine) {
-			//$scope.$on没起作用，没找到为什么
-//			$scope.$on('$stateChangeSuccess', function() {
-//				$scope.loadMore();
-//			});
+			//$scope.$on没起作用，没找到为什么  
+			
+/*			$scope.$on('$stateChangeSuccess', function() {
+//				当模板解析完成后触发
+				$scope.loadMore();
+			});*/
 			$scope.loadMore();
 		
 		} else {
