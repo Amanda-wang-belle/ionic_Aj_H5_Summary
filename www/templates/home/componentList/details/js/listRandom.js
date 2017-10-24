@@ -13,10 +13,16 @@
 
 		function getData(data) {
 			$scope.dataList = data;
+			publicService.receiveJson(getData1, $scope.dataList[0].value);
 		}
 		publicService.receiveJson(getData, $scope.componentData);
 		$scope.Back = function() {
 			history.back(-1);
+		}
+		
+		function getData1(data) {
+			$scope.dataListData = data;
+			console.log($scope.dataListData);
 		}
 		
 		$scope.slideIndex  = 0;
