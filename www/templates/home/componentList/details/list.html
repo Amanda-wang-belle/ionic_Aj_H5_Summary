@@ -35,8 +35,10 @@
 				<div class="col" ng-bind="x.processingPost"></div>
 			</div>
 		</div>
-
-		<ion-infinite-scroll ng-if="moredata" icon="ion-loading-c"  on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>
+		
+		<div ng-if="!moredata" style="line-height: 44px;text-align: center;">没有更多 数据了...</div>
+		
+		<ion-infinite-scroll ng-if="moredata"  on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>
 
 	</ion-content>
 
