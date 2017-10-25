@@ -16,9 +16,8 @@
 		<div class="buttons" ng-click="change()">
 			<button class="button button-clear icon ion-navicon"></button>
 		</div>
-		<div class="new">
-			<div class="button button-stable button33" ng-repeat="x in button">
-				{{x}}
+		<div class="slidePage">
+			<div class="button button-stable button33" ng-repeat="x in button" ng-bind="x">
 			</div>
 		</div>
 	</ion-header-bar>
