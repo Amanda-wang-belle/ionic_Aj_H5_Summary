@@ -392,21 +392,30 @@
 	background: #F2F2F2;
 }
 /*自定义下拉菜单*/
-
+/*header右侧按钮的下拉菜单*/
 .slidePage{
-	width: 100%;
 	position: fixed;
 	border: 1px solid #E0E0E0;
 	display: none;
-	background-color: #63B8FF;
-	opacity: 0.8;
-	top: 44px;
-	height: 150px;
-	margin-left: -5px;
+	background-color: #FFFFFF;
+	/*opacity: 0.8;*/
+	padding-bottom: 10px;
 }
+
 .button33{
 	width: 25%;
 	margin-left: 5%;
 	margin-top: 5px;
+	color: #000000;
+}
+.pad0{
+	padding: 0;
+}
+.color00{
+	color: #000000;
+}
+.line30{
+	line-height: 30px;
+	/*text-align: center;*/
 	color: #000000;
 }

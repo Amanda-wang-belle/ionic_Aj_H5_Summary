@@ -411,7 +411,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		
+		//自定义下拉菜单  wang_szhan 2017.10.25
+		.state('tab.slideUpDown', {
+			url: '/slideUpDown/:componentTitle/:componentData',
+			cache: 'false',
+			views: {
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/slideUpDown.html',
+					controller: 'slideUpDownCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+					return $ocLazyLoad.load('templates/home/componentList/details/js/slideUpDown.js');
+				}]
+			}
+		})
 		
 		
 		
