@@ -30,7 +30,6 @@
 					{"name":"金额输入长度限制(整数三位一逗号)","value":"styleAll","data":"styleAllData"},
 					{"name":"数字输入长度限制（只可输入数字）","value":"styleAll","data":"styleAllData"},
 					{"name":"数字输入长度限制（可输入数字和小数）","value":"styleAll","data":"styleAllData"},
-					
 					{"name":"阻止冒泡事件","value":"","data":"敬请期待"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
 					{"name":"控制底部栏tab的出现和隐藏","value":"home","data":"敬请期待"},
