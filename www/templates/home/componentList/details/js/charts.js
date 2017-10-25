@@ -19,14 +19,7 @@
 			history.back(-1);
 		}
 
-		$scope.change = function(){
-			var ul = $(".new"); // 列表id
-			if (ul.css("display")=="none") {
-				ul.slideDown(); // 下拉显示列表
-			} else{
-				ul.slideUp(); // 收回下拉列表
-			}
-		}
+		
 
 	})
 }())
