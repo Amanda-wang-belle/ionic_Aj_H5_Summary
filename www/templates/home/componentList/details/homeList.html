@@ -15,6 +15,7 @@
 		<!--第一种-->
 		<div class="listWord">
 			<div class="pad5">首页通常会放的待办任务列表，通常会保留两到三条数据，标题超过80%时以省略号表示</div>
+			<div class="margin10">第一个页面添加 了阻止冒泡事件，点击列表和点击蓝色字体的职位跳转不同页面（2个点击事件是重叠的）</div>
 			<div class="button button-calm" ng-click="changeStyle(1)">第一种样式</div>
 			<div class="button button-calm" ng-click="changeStyle(2)">第二种样式</div>
 			<div class="button button-calm" ng-click="changeStyle(3)">第三种样式</div>
@@ -26,7 +27,7 @@
 				<span>待办任务</span>
 				<i class="icon ion-ios-arrow-right"></i>
 			</ion-item>
-			<div ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1">
+			<div ng-repeat="x in dataList | limitTo:2" ng-if="taskStyle == 1" ng-click="jumpAll($event)">
 				<div class="row toDoTask_{{x.imgS}} ">
 					<div class="col col-50">
 						<div class="lH34 overHid" ng-bind="x.projectName"></div>
@@ -41,7 +42,7 @@
 				<div class="row toDoTask2 ">
 					<div class="col col-20" ng-bind="x.managerName"></div>
 					<div class="col col-30">{{x.startDate| date:'yyyy-MM-dd'}}</div>
-					<div class="col" ng-bind="x.processingPost"></div>
+					<div class="col" ng-bind="x.processingPost" style="color: #63B8FF;" ng-click="jumpInside($event)"></div>
 				</div>
 			</div>
 			<!--第二种-->

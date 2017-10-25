@@ -42,6 +42,16 @@
 				loop: false
 			});
 		}
+		
+		/*阻止冒泡事件*/
+		$scope.jumpAll = function(e){
+			toastService.showToast("大列表的跳转 ");
+			e.stopPropagation();
+		}
+		$scope.jumpInside = function(e){
+			toastService.showToast("点击列表中的某一项跳转");
+			e.stopPropagation();
+		}
 
 	})
 }())
