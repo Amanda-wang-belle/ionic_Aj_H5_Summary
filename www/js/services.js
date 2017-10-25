@@ -312,4 +312,122 @@
 		};
 
 	}])
+	app.directive('toLimit', function($parse) {
+		//字符串长度控制 
+		function len(s) {
+			s = String(s);
+			console.log(s.length + (s.match(/[^\x00-\xff]/g) || "").length);
+			return s.length + (s.match(/[^\x00-\xff]/g) || "").length; // 加上匹配到的全角字符长度
+		}
+		return {
+			//		    require: 'A',  
+			link: function(scope, element, attrs, ctrl) {
+				//控制输入框只能输入数字和小数点  
+				function limitLength() {
+					var limit = attrs.toLimit;
+					var val = element[0].value;
+					if(len(val) > limit) {
+						val = val.substring(0, limit);
+						while(len(val) > limit) {
+							val = val.substring(0, val.length - 1);
+						};
+						//					obj.value = val;
+						val = val.substring(0, limit);
+						element[0].value = val;
+						$parse(attrs['ngModel']).assign(scope, val);
+						console.log(val);
+						//						toast("最多输入" + limit + "个字哟");
+					}
+				}
+				scope.$watch(attrs.ngModel, function() {
+					limitLength();
+				})
+			}
+		};
+	})
+	app.directive('toChange', function($parse) {
+		/*效果: 将页面展示效果和ngModel分开
+			1 输入框只能输入数字和字母
+			2 输入整数和小数位数长度控制
+			3 整数3位一逗号*/
+		return {
+			link: function(scope, element, attrs, ctrl) {
+				var numberDigit = attrs.toChange;
+				var numberArr = numberDigit.split(",");
+				//小数位数
+				var decimalDigit = parseInt(numberArr[1]);
+				//整数位数
+				var integerDigit = parseInt(numberArr[0]) - decimalDigit;
+
+				//控制输入框只能输入数字和小数点
+				function limit() {
+					var limitV = element[0].value;
+					limitV = limitV.replace(/[^0-9.]/g, "");
+					//必须保证第一个为数字而不是. 
+					limitV = limitV.replace(/^\./g, "");
+					element[0].value = limitV;
+					$parse(attrs['ngModel']).assign(scope, limitV);
+					format();
+				}
+
+				//对输入数字的整数部分插入千位分隔符  
+				function format() {
+					var formatV = element[0].value;
+					//开头不能连续输入两个0，一位以上的数字首位不能为0
+					var first = formatV.substring(0, 1);
+					var second = formatV.substring(1, 2);
+					if("0" == first && "0" == second) {
+						formatV = "0";
+					}
+					//					else if("0" == first && second !="0"&& second !=""&& second !=undefined){
+					//						formatV = formatV.substring(1,formatV.length);
+					//					}
+					var array = new Array();
+					array = formatV.split(".");
+
+					//控制整数位数和小数位数
+					var x1 = array[0];
+					var x2 = array.length > 1 ? array[1] : '';
+					if(array.length == 1) {
+						//整数，没有小数点
+						if(x1.length > integerDigit) {
+							formatV = x1.substring(0, integerDigit);
+						}
+					} else {
+						//有小数点
+						if(x1.length > integerDigit) {
+							x1 = x1.substring(0, integerDigit);
+						}
+						if(x2.length > decimalDigit) {
+							x2 = x2.substring(0, decimalDigit);
+						}
+						formatV = x1 + "." + x2;
+
+					}
+					if(decimalDigit == 0) {
+						formatV = formatV.replace(".", "");
+					}
+					element[0].value = formatV;
+					console.log("整数位数---" + x1.length + ",---小数位数---" + x2.length);
+					console.log(formatV);
+
+					var re = /(-?\d+)(\d{3})/;
+					while(re.test(array[0])) {
+						array[0] = array[0].replace(re, "$1,$2")
+					}
+					var returnV = array[0];
+					for(var i = 1; i < array.length; i++) {
+						returnV += "." + array[i];
+					}
+					element[0].value = returnV;
+					$parse(attrs['ngModel']).assign(scope, formatV);
+				}
+
+				scope.$watch(attrs.ngModel, function() {
+					limit();
+				})
+			}
+		};
+
+	})
 }());
