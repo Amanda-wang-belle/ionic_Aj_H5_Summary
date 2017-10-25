@@ -22,56 +22,56 @@
 				</div>
 				<div class="item item-input">
 					<span class="input-label"><i class="icon ion-search padRt10"></i>项目名称<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proName" placeholder="字符串长度 限制(20)" limit-string="20"/>
+					<input type="text" ng-model="dataList.proName" placeholder="字符串长度 限制(20)" limit-string="20"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label"><i class="icon ion-edit placeholder-icon padRt10"></i>融资金额<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proMoney" placeholder="金额输入限制(16,5)" limit-money="16,5"/>
+					<input type="text" ng-model="dataList.proMoney" placeholder="金额输入限制(16,2)" limit-money="16,2"/>
 				</div>
 
 				<div class="item item-input">
 					<span class="input-label">录入时间<span class="colorFE6400">*</span></span>
-					<input type="date" id="sartDate" ng-model="sartDate" />
+					<input type="date" id="startDate" ng-model="dataList.startDate" style="padding-right: 5px;"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label">租期(月)<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="month"   limit-number = "2" placeholder="只能输入数字限制2个"/>
+					<input type="text" ng-model="dataList.month"   limit-number = "2" placeholder="只能输入数字限制2个"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label">项目数量(个)<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proNumbber"   limit-number = "+∞" placeholder="数字不限制长度"/>
+					<input type="text" ng-model="dataList.proNumbber"   limit-number = "+∞" placeholder="数字不限制长度"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label">截至时间<span class="colorFE6400">*</span></span>
-					<input type="date" id="endDate" ng-model="endDate" />
+					<input type="date" id="endDate" ng-model="dataList.endDate" style="padding-right: 5px;"/>
 				</div>
 				<div class="item item-input item-select">
 					<span class="input-label">租金计算方式</span>
-					<select ng-model="y.retMethod">
+					<select ng-model="dataList.retMethod">
 						<option value="00" selected="selected">等额租金</option>
 						<option value="03">等额平息</option>
 					</select>
 				</div>
 				<div class="item item-input">
 					<span class="input-label">利率(%)<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proRate"   limit-decimal="5,3" placeholder="可输入(5,3),无逗号"/>
+					<input type="text" ng-model="dataList.proRate"   limit-decimal="5,3" placeholder="可输入(5,3),无逗号"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label">大楼的高度 <span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="height"   limit-decimal="10,3" placeholder="可输入(10,3),无逗号"/>
+					<input type="text" ng-model="dataList.height"   limit-decimal="10,3" placeholder="可输入(10,3),无逗号"/>
 				</div>
 				<div class="item item-input item-select">
 					<span class="input-label">频次</span>
-					<select ng-model="y.rate">
+					<select ng-model="dataList.rate">
 						<option value="00" selected="selected">1个月</option>
-						<option value="00" selected="selected">2个月</option>
-						<option value="00" selected="selected">3个月</option>
+						<option value="01" selected="selected">2个月</option>
+						<option value="02" selected="selected">3个月</option>
 					</select>
 				</div>
 
 				<div class="item item-input" style="margin-bottom: 40px;">
 					<span class="input-label">左侧占50%，当内容过长时候，会自动换行<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proTest" />
+					<input type="text" ng-model="dataList.proTest" />
 				</div>
 			</div>
 		</div>

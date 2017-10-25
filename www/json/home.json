@@ -25,7 +25,7 @@
 					{"name":"单List页面（ 上拉加载、下拉刷新）","value":"list","data":"homeListData"},
 					{"name":"随机生成相应的页签和页面","value":"listRandom","data":"listRandomData"},
 					{"name":"自定义下拉菜单","value":"slideUpDown","data":"slideUpDownData"},
-					{"name":"ionic框架中录入项","value":"styleAll","data":"敬请期待"},
+					{"name":"ionic框架中录入项","value":"styleAll","data":"styleAllData"},
 					{"name":"阻止冒泡事件","value":"","data":"敬请期待"},
 					{"name":"自定义.directive指令，金额整数小数位数限制，输入框字符长度限制","value":"","data":"敬请期待"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
@@ -345,6 +345,11 @@
 	],
 	"slideUpDownData":{"list1":["查询一","查询二","查询三","查询四","查询五","查询六","查询七","查询八"],
 						"list2":["第一个选项待接收","第二个选项已处理","第三个选项已退回"]
+	},
+	"styleAllData":{
+		"proName":"苹果大大公司一期项目","proMoney":"8888888.6666","startDate":"2011-03-04",
+		"month":"10","proNumbber":"18","endDate":"2017-11-25","retMethod":"03","proRate":"10.2",
+		"height":"38.8","rate":"00"
 	}
 	
 				
