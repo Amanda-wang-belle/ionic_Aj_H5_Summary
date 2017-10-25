@@ -25,7 +25,7 @@
 					{"name":"单List页面（ 上拉加载、下拉刷新）","value":"list","data":"homeListData"},
 					{"name":"随机生成相应的页签和页面","value":"listRandom","data":"listRandomData"},
 					{"name":"自定义下拉菜单","value":"slideUpDown","data":"slideUpDownData"},
-					{"name":"ionic中input select checkbox raido的样式写法，取值","value":"styleAll","data":"敬请期待"},
+					{"name":"ionic框架中录入项","value":"styleAll","data":"敬请期待"},
 					{"name":"阻止冒泡事件","value":"","data":"敬请期待"},
 					{"name":"自定义.directive指令，金额整数小数位数限制，输入框字符长度限制","value":"","data":"敬请期待"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
