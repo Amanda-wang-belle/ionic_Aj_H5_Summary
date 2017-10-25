@@ -430,4 +430,26 @@
 		};
 
 	})
+	app.directive('limitNumber', function($parse) {
+		/*效果: 将页面展示效果和ngModel分开
+			1 输入框只能输入数字和字母
+			2 输入整数和小数位数长度控制
+			3 整数3位一逗号*/
+		return {
+			link: function(scope, element, attrs, ctrl) {
+
+				//控制输入框只能输入数字和小数点
+				function limit() {
+					var limitV = element[0].value;
+					limitV = limitV.replace(/[^0-9]/g, "");
+					element[0].value = limitV;
+					$parse(attrs['ngModel']).assign(scope, limitV);
+				}
+				scope.$watch(attrs.ngModel, function() {
+					limit();
+				})
+			}
+		};
+
+	})
 }());
