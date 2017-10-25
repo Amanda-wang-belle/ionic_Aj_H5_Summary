@@ -17,15 +17,16 @@
 				<div class="item" style="white-space: normal;">
 					(1)项目名称测试录入字符串的长度，此处设置最长输入20个字符<br />
 					(2)融资金额测试金额的输入，对可输入整数和 小数位数长度做了限制，超过不允许输入，此处设置（16，2）<br />
-					(3)通过val取值可以 直接得到”2017-07-18“的数据，
+					(3)通过val取值可以 直接得到”2017-07-18“的数据<br />
+					(4)输入框只能输入数字，并对数字长度限制
 				</div>
 				<div class="item item-input">
 					<span class="input-label"><i class="icon ion-search padRt10"></i>项目名称<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proName" placeholder="最长输入20个字符" to-limit="20"/>
+					<input type="text" ng-model="proName" placeholder="字符串长度 限制(20)" limit-string="20"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label"><i class="icon ion-edit placeholder-icon padRt10"></i>融资金额<span class="colorFE6400">*</span></span>
-					<input type="text" ng-model="proMoney" placeholder="测试数字的输入限制" to-change="16,2"/>
+					<input type="text" ng-model="proMoney" placeholder="金额输入限制(16,5)" limit-money="16,5"/>
 				</div>
 
 				<div class="item item-input">
@@ -34,7 +35,11 @@
 				</div>
 				<div class="item item-input">
 					<span class="input-label">租期(月)<span class="colorFE6400">*</span></span>
-					<input type="text"  maxlength="10"  limit-number />
+					<input type="text" ng-model="month"   limit-number = "2" placeholder="只能输入数字限制2个"/>
+				</div>
+				<div class="item item-input">
+					<span class="input-label">项目数量(个)<span class="colorFE6400">*</span></span>
+					<input type="text" ng-model="proNumbber"   limit-number = "+∞" placeholder="数字不限制长度"/>
 				</div>
 				<div class="item item-input">
 					<span class="input-label">截至时间<span class="colorFE6400">*</span></span>
@@ -46,6 +51,14 @@
 						<option value="00" selected="selected">等额租金</option>
 						<option value="03">等额平息</option>
 					</select>
+				</div>
+				<div class="item item-input">
+					<span class="input-label">利率(%)<span class="colorFE6400">*</span></span>
+					<input type="text" ng-model="proRate"   limit-decimal="5,3" placeholder="可输入(5,3),无逗号"/>
+				</div>
+				<div class="item item-input">
+					<span class="input-label">大楼的高度 <span class="colorFE6400">*</span></span>
+					<input type="text" ng-model="height"   limit-decimal="10,3" placeholder="可输入(10,3),无逗号"/>
 				</div>
 				<div class="item item-input item-select">
 					<span class="input-label">频次</span>

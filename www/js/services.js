@@ -312,7 +312,7 @@
 		};
 
 	}])
-	app.directive('toLimit', function($parse) {
+	app.directive('limitString', function($parse) {
 		//字符串长度控制 
 		function len(s) {
 			s = String(s);
@@ -324,7 +324,7 @@
 			link: function(scope, element, attrs, ctrl) {
 				//控制输入框只能输入数字和小数点  
 				function limitLength() {
-					var limit = attrs.toLimit;
+					var limit = attrs.limitString;
 					var val = element[0].value;
 					if(len(val) > limit) {
 						val = val.substring(0, limit);
@@ -345,14 +345,14 @@
 			}
 		};
 	})
-	app.directive('toChange', function($parse) {
+	app.directive('limitMoney', function($parse) {
 		/*效果: 将页面展示效果和ngModel分开
 			1 输入框只能输入数字和字母
 			2 输入整数和小数位数长度控制
-			3 整数3位一逗号*/
+			3 整数3位一逗号,对金额进行限制*/
 		return {
 			link: function(scope, element, attrs, ctrl) {
-				var numberDigit = attrs.toChange;
+				var numberDigit = attrs.limitMoney;
 				var numberArr = numberDigit.split(",");
 				//小数位数
 				var decimalDigit = parseInt(numberArr[1]);
@@ -431,20 +431,98 @@
 
 	})
 	app.directive('limitNumber', function($parse) {
+		/**
+		 *限制输入框只能输入数字，并对数字长度限制 
+		 */
+		return {
+			link: function(scope, element, attrs, ctrl) {
+				var numberLimit = attrs.limitNumber;
+				//控制输入框只能输入数字和小数点
+				function limitNumberLength() {
+					var limitV = element[0].value;
+					limitV = limitV.replace(/[^0-9]/g, "");
+					if(limitV.length>numberLimit){
+						limitV = limitV.substring(0, limitV.length-1);
+					}
+					element[0].value = limitV;
+					$parse(attrs['ngModel']).assign(scope, limitV);
+				}
+
+				scope.$watch(attrs.ngModel, function() {
+					limitNumberLength();
+				})
+			}
+		};
+
+	})
+	app.directive('limitDecimal', function($parse) {
 		/*效果: 将页面展示效果和ngModel分开
 			1 输入框只能输入数字和字母
 			2 输入整数和小数位数长度控制
-			3 整数3位一逗号*/
+			3 整数3位一逗号,对金额进行限制*/
 		return {
 			link: function(scope, element, attrs, ctrl) {
+				var numberDigit = attrs.limitDecimal;
+				var numberArr = numberDigit.split(",");
+				//小数位数
+				var decimalDigit = parseInt(numberArr[1]);
+				//整数位数
+				var integerDigit = parseInt(numberArr[0]) - decimalDigit;
 
 				//控制输入框只能输入数字和小数点
 				function limit() {
 					var limitV = element[0].value;
-					limitV = limitV.replace(/[^0-9]/g, "");
+					limitV = limitV.replace(/[^0-9.]/g, "");
+					//必须保证第一个为数字而不是. 
+					limitV = limitV.replace(/^\./g, "");
 					element[0].value = limitV;
 					$parse(attrs['ngModel']).assign(scope, limitV);
+					format();
 				}
+
+				//对输入数字的整数部分插入千位分隔符  
+				function format() {
+					var formatV = element[0].value;
+					//开头不能连续输入两个0，一位以上的数字首位不能为0
+					var first = formatV.substring(0, 1);
+					var second = formatV.substring(1, 2);
+					if("0" == first && "0" == second) {
+						formatV = "0";
+					}
+					var array = new Array();
+					array = formatV.split(".");
+
+					//控制整数位数和小数位数
+					var x1 = array[0];
+					var x2 = array.length > 1 ? array[1] : '';
+					if(array.length == 1) {
+						//整数，没有小数点
+						if(x1.length > integerDigit) {
+							formatV = x1.substring(0, integerDigit);
+						}
+					} else {
+						//有小数点
+						if(x1.length > integerDigit) {
+							x1 = x1.substring(0, integerDigit);
+						}
+						if(x2.length > decimalDigit) {
+							x2 = x2.substring(0, decimalDigit);
+						}
+						formatV = x1 + "." + x2;
+
+					}
+					if(decimalDigit == 0) {
+						formatV = formatV.replace(".", "");
+					}
+					element[0].value = formatV;
+					console.log("整数位数---" + x1.length + ",---小数位数---" + x2.length);
+					console.log(formatV);
+
+				
+					element[0].value = formatV;
+					$parse(attrs['ngModel']).assign(scope, formatV);
+				}
+
 				scope.$watch(attrs.ngModel, function() {
 					limit();
 				})
@@ -452,4 +530,5 @@
 		};
 
 	})
+
 }());
