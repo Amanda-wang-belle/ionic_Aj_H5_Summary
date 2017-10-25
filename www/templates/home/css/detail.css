@@ -205,7 +205,7 @@
 	line-height: 34px;
 }
 
-.overHid {
+.overHid {    /*不允许换行*/
 	width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -414,8 +414,42 @@
 .color00{
 	color: #000000;
 }
+.colorFE6400{
+	color: #FE6400;
+	padding-left: 5px;
+}
+.padRt10{
+	padding-right: 10px;
+}
 .line30{
 	line-height: 30px;
 	/*text-align: center;*/
 	color: #000000;
+}
+/*录入项*/
+.inputInfor{
+	width: 100%;
+	background: #FFFFFF;
+}
+.width95{
+	width: 95%;
+	margin: 10px auto;
+	
+}
+.input-label {
+    display: table;
+    padding: 7px 10px 7px 0px;
+    max-width: 200px;
+    width: 50%;
+    color: #444;
+    font-size: 16px;
+    white-space: normal;
+}
+.item-input input{
+	text-align: right;
+}
+.item{
+	border: none;
+	border-bottom: 1px solid #CCCCCC;
+	margin-top: 1px;
 }

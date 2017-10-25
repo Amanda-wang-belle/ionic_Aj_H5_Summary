@@ -11,115 +11,56 @@
 		</div>
 		<h1 class="title" ng-bind="componentTitle"></h1>
 	</ion-header-bar>
-	<ion-content style="top: 44px;background-color: #ECECEC;" class="has-footer">
-		<div class="item">
-			<div class="td-list-left colorFE6400">IRR(含税%)</div>
-			<div class="td-list-right">{{zxzx}}</div>
+	<ion-content style="background-color: #ECECEC;" class="has-footer">
+		<div class="inputInfor">
+			<div class="list list-inset width95">
+				<div class="item item-input">
+					<span class="input-label"><i class="icon ion-search padRt10"></i>项目名称<span class="colorFE6400">*</span></span>
+					<input type="text" ng-model="proName" placeholder="测试字符串长度" />
+				</div>
+				<div class="item item-input">
+					<span class="input-label"><i class="icon ion-edit placeholder-icon padRt10"></i>融资金额<span class="colorFE6400">*</span></span>
+					<input type="text" ng-model="proMoney" placeholder="测试数字的输入限制" />
+				</div>
+
+				<div class="item item-input">
+					<span class="input-label">录入时间<span class="colorFE6400">*</span></span>
+					<input type="date" id="sartDate" ng-model="sartDate" />
+				</div>
+				<div class="item item-input">
+					<span class="input-label">租期(月)<span class="colorFE6400">*</span></span>
+					<input type="text"  ng-model="limitMonth" />
+				</div>
+				<div class="item item-input">
+					<span class="input-label">截至时间<span class="colorFE6400">*</span></span>
+					<input type="date" id="sartDate" ng-model="endDate" />
+				</div>
+				<div class="item item-input item-select">
+					<span class="input-label">租金计算方式</span>
+					<select ng-model="y.retMethod">
+						<option value="00" selected="selected">等额租金</option>
+						<option value="03">等额平息</option>
+					</select>
+				</div>
+				<div class="item item-input item-select">
+					<span class="input-label">频次</span>
+					<select ng-model="y.retMethod">
+						<option value="00" selected="selected">1个月</option>
+						<option value="00" selected="selected">2个月</option>
+						<option value="00" selected="selected">3个月</option>
+					</select>
+				</div>
+
+				<div class="item item-input" style="margin-bottom: 40px;">
+					<span class="input-label">左侧占50%，当内容过长时候，会自动换行<span class="colorFE6400">*</span></span>
+					<input type="text" ng-model="proTest" />
+				</div>
+			</div>
 		</div>
-		<div style="background-color: white;margin-top: 15px;">
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">项目名称<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<input type="text" ng-model="y.projectName" maxlength="100" style="text-align: right;" />
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">录入时间<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<input type="date" ng-model="y.bgdtdate" ng-change="y.bgdt = tolocalday(y.bgdtdate)" style="text-align: right;" />
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">融资金额<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<input id="prjamt" type="text" ng-model="y.prjamt" to-change="16,2" ng-focus="clear('prjamt')" style="text-align: right;" />
-			</div>
-			<div class="item-input row" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;">租金计算方式<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select ng-model="y.retMethod" class="col-50" id="testSelect">
-					<option value="00" selected="selected">等额租金</option>
-					<option value="03">等额平息</option>
-				</select>
-			</div>
-			<div class="item-input row" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;">先付/后付<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select ng-model="y.proflg" class="col-50">
-					<option value="01" selected>后付</option>
-					<option value="00">先付</option>
-				</select>
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">租期(月)<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<input id="months" type="text" ng-model="y.months" style="text-align: right;" ng-change="limitmonth('months')" />
-			</div>
-			<div class="item-input row" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;">频次<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select ng-model="y.retperm" class="col-50">
-					<option value="1" selected>1个月</option>
-					<option value="2">2个月</option>
-					<option value="3">3个月</option>
-					<option value="6">6个月</option>
-					<option value="12">12个月</option>
-				</select>
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">利率(%)<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<input id="rate" type="text" ng-model="y.rate" ng-change="limitrate('rate')" ng-focus="clear('rate')" style="text-align: right;" />
-			</div>
-			<div class="item-input row" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;">利息计算方式<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select class="col-50" id="termorDay" ng-model="y.termorDay" ng-change="temorDayChange()">
-					<option value="01" selected>期利率</option>
-					<option value="00">日利率</option>
-				</select>
-			</div>
-			<div class="item-input row" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;">年计算天数<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select ng-model="y.ydays" class="col-50">
-					<option value="360">360</option>
-					<option value="365">365</option>
-				</select>
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">保证金比例(%)</span>
-				<input id="guramtPer" type="text" ng-model="y.guramtPer" ng-change="limitrate('guramtPer')" ng-focus="clear('guramtPer')" style="text-align: right;" />
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">手续费比例(%)</span>
-				<input id="svrfeePer" type="text" ng-model="y.svrfeePer" ng-change="limitrate('svrfeePer')" ng-focus="clear('svrfeePer')" style="text-align: right;" />
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label" style="width: 40%;">回购价款<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<input id="nominalprice" type="text" ng-model="y.nominalprice" to-change="12,2" ng-focus="clear('nominalprice')" style="text-align: right;" />
-			</div>
-			<div class="item-input" style="width: 94%;margin: auto;height: 100px;">
 
-			</div>
 
-			<!--<div class="item-input row" style="width: 99%;margin: auto;border-bottom: 1px solid #ECECEC;margin-left: 16px;">
-				<span class="input-label col-50" style="width: 60%;font-size:15px;">报价方案类型<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select class="selectCss" id="bjfalx" keyboardshow ng-model="y.SCHEMETYPE" ng-change="methodBJFALX()">
-					<option selected="selected" value="" style="width: 100px;">--请选择--</option>
-					<option ng-repeat=" x in SCHEMETYPE" value="{{x.name}}">{{x.value}}</option>
-				</select>
-			</div>-->
-
-			<!--<div class="item-input row marLef16" style="width: 99%;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;font-size:15px;">报价方案类型<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select class="selectCss" id="bjfalx" keyboardshow ng-model="y.SCHEMETYPE" ng-change="methodBJFALX()">
-					<option selected="selected" value="" style="width: 100px;">--请选择--</option>
-					<option ng-repeat=" x in SCHEMETYPE" value="{{x.name}}">{{x.value}}</option>
-				</select>
-			</div>-->
-
-			<div class="item-input row" style="width: 99%;margin-left: 16px;border-bottom: 1px solid #ECECEC;">
-				<span class="input-label col-50" style="width: 60%;font-size:15px;">资产性质<span class="ZL_color_fe6400 ZL_font_19" style="vertical-align: middle;">*</span></span>
-				<select class="selectCss" id="ASSETSNATURE" ng-model="y.ASSETSNATURE" ng-change="methodZCLX()">
-					<option selected="selected" value="" style="width: 100px;">--请选择--</option>
-					<option ng-repeat=" x in ASSETSNATURE" value="{{x.name}}">{{x.value}}</option>
-				</select>
-				<!--ASSETSNATURE-->
-			</div>
-
-		</div>
 	</ion-content>
 	<div class="bar bar-footer">
 		<button ng-click="save()" class="button" style="background-color: #BCA55F;color: white;width: 100%;">保存</button>
 	</div>
-
 </ion-view>
