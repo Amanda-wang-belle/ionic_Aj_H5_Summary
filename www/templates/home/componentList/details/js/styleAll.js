@@ -42,6 +42,7 @@
 		
 		$scope.save = function(){
 			console.log($scope.dataList.proName);
+			toastService.showToast("保存成功");
 		}
 
 	})

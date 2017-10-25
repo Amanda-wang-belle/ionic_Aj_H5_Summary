@@ -26,8 +26,12 @@
 					{"name":"随机生成相应的页签和页面","value":"listRandom","data":"listRandomData"},
 					{"name":"自定义下拉菜单","value":"slideUpDown","data":"slideUpDownData"},
 					{"name":"ionic框架中录入项","value":"styleAll","data":"styleAllData"},
+					{"name":"自定义.directive指令，字符串长度限制","value":"styleAll","data":"styleAllData"},
+					{"name":"金额输入长度限制(整数三位一逗号)","value":"styleAll","data":"styleAllData"},
+					{"name":"数字输入长度限制（只可输入数字）","value":"styleAll","data":"styleAllData"},
+					{"name":"数字输入长度限制（可输入数字和小数）","value":"styleAll","data":"styleAllData"},
+					
 					{"name":"阻止冒泡事件","value":"","data":"敬请期待"},
-					{"name":"自定义.directive指令，金额整数小数位数限制，输入框字符长度限制","value":"","data":"敬请期待"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
 					{"name":"控制底部栏tab的出现和隐藏","value":"home","data":"敬请期待"},
 					{"name":"图表统计","value":"charts","data":"敬请期待"},
