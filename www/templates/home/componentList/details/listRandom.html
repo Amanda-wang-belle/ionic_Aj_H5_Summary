@@ -9,9 +9,17 @@
 		<div class="buttons">
 			<button class="button button-clear icon ion-ios-arrow-left" ng-click="Back()"></button>
 		</div>
-		<h1 class="title" ng-bind="componentTitle"></h1>
-		<div class="buttons">
-			<button class="button button-clear icon ion-navicon" ></button>
+		<div class="title" >
+			<div ng-bind="componentTitle" style="height: 15px;"></div>
+			<div> (33/55)</div>
+		</div>
+		<div class="buttons" ng-click="change()">
+			<button class="button button-clear icon ion-navicon"></button>
+		</div>
+		<div class="new">
+			<div class="button button-stable button33" ng-repeat="x in button">
+				{{x}}
+			</div>
 		</div>
 	</ion-header-bar>
 	<ion-content overflow-scroll="true" class="colorGrey">
@@ -27,8 +35,8 @@
 			<div ng-repeat="y in x.list" class="randomList">
 				<div class="td-list1" ng-repeat="z in y.list" style="background: #fff;">
 					<div class="td-list-item">
-							<div class="td-list-left" ng-bind="z.name" style="color:#004070"></div>
-							<div class="td-list-right" ng-bind="z.value" style="color:#004070"></div>
+						<div class="td-list-left" ng-bind="z.name" style="color:#004070"></div>
+						<div class="td-list-right" ng-bind="z.value" style="color:#004070"></div>
 					</div>
 				</div>
 			</div>

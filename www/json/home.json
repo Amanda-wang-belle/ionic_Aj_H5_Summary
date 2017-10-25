@@ -30,7 +30,7 @@
 					{"name":"自定义.directive指令，金额整数小数位数限制，输入框字符长度限制","value":"","data":"敬请期待"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
 					{"name":"控制底部栏tab的出现和隐藏","value":"home","data":"敬请期待"},
-					{"name":"图表统计","value":"","data":"敬请期待"},
+					{"name":"图表统计","value":"charts","data":"敬请期待"},
 					{"name":"手势密码","value":"","data":"敬请期待"},
 					{"name":"列表的增加和删除","value":"","data":"敬请期待"},
 					{"name":"语音录入","value":"","data":"敬请期待"},

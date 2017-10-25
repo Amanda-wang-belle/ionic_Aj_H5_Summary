@@ -31,6 +31,17 @@
 			$scope.slideIndex = index;
 			publicService.receiveJson(getData1, $scope.dataList[index].value);
 		}
+		
+		
+		$scope.button = ["第一个 ","第二个","第三个","第四个","第五个","第六个","第七个","第八个"]
+		$scope.change = function(){
+			var ul = $(".new"); // 列表id
+			if (ul.css("display")=="none") {
+				ul.slideDown(); // 下拉显示列表
+			} else{
+				ul.slideUp(); // 收回下拉列表
+			}
+		}
 	
 	})
 }())

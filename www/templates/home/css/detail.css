@@ -391,3 +391,22 @@
 .colorGrey{
 	background: #F2F2F2;
 }
+/*自定义下拉菜单*/
+
+.new{
+	width: 100%;
+	position: fixed;
+	border: 1px solid #E0E0E0;
+	display: none;
+	background-color: #63B8FF;
+	opacity: 0.8;
+	top: 44px;
+	height: 150px;
+	margin-left: -5px;
+}
+.button33{
+	width: 25%;
+	margin-left: 5%;
+	margin-top: 5px;
+	color: #000000;
+}

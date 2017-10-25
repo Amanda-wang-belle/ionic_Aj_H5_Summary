@@ -395,7 +395,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 			}
 		})
 		
-		
+		//根据后台数据随机生成页签和各页签下相应内容  wang_szhan 2017.10.24
+		.state('tab.charts', {
+			url: '/charts/:componentTitle/:componentData',
+			cache: 'false',
+			views: {
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/charts.html',
+					controller: 'chartsCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+					return $ocLazyLoad.load('templates/home/componentList/details/js/charts.js');
+				}]
+			}
+		})
 		
 		
 		
