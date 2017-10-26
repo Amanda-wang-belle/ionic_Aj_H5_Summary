@@ -42,9 +42,15 @@
 					{"name":"侧边栏","value":"sideMenu","data":"敬请期待"},
 					{"name":"OCR文字识别","value":"sideMenu","data":"厦门云脉OCR SDK开发平台"}
 	],
-	"pageData":[{"name":"登陆页面","value":"","data":"敬请期待"},
-				{"name":"消息提醒页面","value":"","data":"敬请期待"},
-				{"name":"我的账户页面","value":"","data":"敬请期待"}
+	"pageData":[{"name":"登陆模版页面","value":"","data":"敬请期待"},
+				{"name":"注册模版页面","value":"","data":"敬请期待"},
+				{"name":"忘记密码模版页面","value":"","data":"敬请期待"},
+				{"name":"首页模板页面","value":"","data":"敬请期待"},
+				{"name":"消息提醒模版页面","value":"","data":"敬请期待"},
+				{"name":"待办任务列表模板页面","value":"","data":"敬请期待"},
+				{"name":"台账模板页面","value":"","data":"敬请期待"},
+				{"name":"工作台模板页面","value":"","data":"敬请期待"},
+				{"name":"我的账户模板页面","value":"","data":"敬请期待"}
 	],
 	"popupData":[{"name":"各种自定义toast弹框","value":"1","data":"敬请期待",
 				  "list":[{"name":"自定义toast弹框(短)","value":"","data":"这是一个比较短的tost哟"},
