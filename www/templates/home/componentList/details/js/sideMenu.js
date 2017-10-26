@@ -1,8 +1,8 @@
 /**
  * @author wang_szhan
  * @version 1.0.0
- * @createDate 2017-10-14
- * @content 各种类型的底部栏
+ * @createDate 2017-10-26
+ * @content 侧边栏
  */
 (function() {
 	'use strict'
