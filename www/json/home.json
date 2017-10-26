@@ -34,7 +34,7 @@
 					{"name":"阻止冒泡事件","value":"homeList","data":"homeListData"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
 					{"name":"控制底部栏tab的出现和隐藏","value":"home","data":"敬请期待"},
-					{"name":"图表统计","value":"charts","data":"敬请期待"},
+					{"name":"图表统计","value":"charts","data":"chartsData"},
 					{"name":"手势密码","value":"","data":"敬请期待"},
 					{"name":"语音录入","value":"","data":"敬请期待"},
 					{"name":"mp4等视频","value":"","data":"敬请期待"},
@@ -354,7 +354,9 @@
 		"proName":"苹果大大公司一期项目","proMoney":"8888888.6666","startDate":"2011-03-04",
 		"month":"10","proNumbber":"18","endDate":"2017-11-25","retMethod":"03","proRate":"10.2",
 		"height":"38.8","rate":"00"
-	}
+	},
+	"chartsData":[{"name":"曲线图","value":"normalData"},{"name":"柱形图","value":"columnData"},{"name":"饼图","value":"pieData"},{"name":"3D柱形图","value":"columnData3D"},{"name":"3D饼图","value":"pieData3D"}]
+	
 	
 				
 }
