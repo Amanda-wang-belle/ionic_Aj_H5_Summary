@@ -427,7 +427,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		
+		//侧边栏  wang_szhan 2017.10.26
+		.state('tab.sideMenu', {
+			url: '/sideMenu/:componentTitle/:componentData',
+			cache: 'false',
+			views: {
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/sideMenu.html',
+					controller: 'sideMenuCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+					return $ocLazyLoad.load('templates/home/componentList/details/js/sideMenu.js');
+				}]
+			}
+		})
 		
 		
 		

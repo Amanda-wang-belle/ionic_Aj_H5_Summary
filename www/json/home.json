@@ -1,7 +1,7 @@
 {
 	"homeData":[{"name":"功能性构件","value":"componentList","data":"functionData"},
 				{"name":"页面性构件","value":"componentList","data":"pageData"},	
-				{"name":"待添加1","value":"","data":"待添加功能"},	
+				{"name":"ionic项目组人员","value":"","data":"待添加功能"},	
 				{"name":"待添加2","value":"","data":"待添加功能"},	
 				{"name":"待添加3","value":"","data":"待添加功能"},	
 				{"name":"待添加4","value":"","data":"待添加功能"},	
@@ -30,15 +30,17 @@
 					{"name":"金额输入长度限制(整数三位一逗号)","value":"styleAll","data":"styleAllData"},
 					{"name":"数字输入长度限制（只可输入数字）","value":"styleAll","data":"styleAllData"},
 					{"name":"数字输入长度限制（可输入数字和小数）","value":"styleAll","data":"styleAllData"},
-					{"name":"列表的增加和删除","value":"","data":"敬请期待"},
 					{"name":"阻止冒泡事件","value":"homeList","data":"homeListData"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
 					{"name":"控制底部栏tab的出现和隐藏","value":"home","data":"敬请期待"},
+					{"name":"列表的增加和删除","value":"","data":"敬请期待"},
 					{"name":"图表统计","value":"charts","data":"chartsData"},
 					{"name":"手势密码","value":"","data":"敬请期待"},
 					{"name":"语音录入","value":"","data":"敬请期待"},
 					{"name":"mp4等视频","value":"","data":"敬请期待"},
-					{"name":"调百度地图","value":"","data":"敬请期待"}
+					{"name":"调百度地图","value":"","data":"敬请期待"},
+					{"name":"侧边栏","value":"sideMenu","data":"敬请期待"},
+					{"name":"OCR文字识别","value":"sideMenu","data":"厦门云脉OCR SDK开发平台"}
 	],
 	"pageData":[{"name":"登陆页面","value":"","data":"敬请期待"},
 				{"name":"消息提醒页面","value":"","data":"敬请期待"},
