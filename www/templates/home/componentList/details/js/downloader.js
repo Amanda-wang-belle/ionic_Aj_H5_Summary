@@ -23,6 +23,7 @@
 			"value":""
 		}
 		$scope.createDownload = function(x) {
+			//注意必须要 有name，并且name不能只为空，如.doc，这样打不开文件，必须要xxx.doc
 			var options = {
 				method: "GET",
 				filename: "_downloads/" + x.name,
