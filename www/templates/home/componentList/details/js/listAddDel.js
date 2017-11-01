@@ -19,6 +19,12 @@
 			history.back(-1);
 		}
 
+		$scope.dataList = [{
+			"name":"",
+			"sex":"",
+			"group":"",
+			"phone":"",
+		}]
 		
 
 	})
