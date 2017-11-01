@@ -19,7 +19,11 @@
 		</div>
 		<div class="imc-scroll">
 			<div id="container" style="width: 550px; height: 400px; margin: 30px auto"></div>
+			<img src="templates/home/img/bar3D.png" ng-if="slideIndex == 3">
+			<img src="templates/home/img/pie3D.png" ng-if="slideIndex == 4" />
 		</div>
+		
+		
 		<div id="sliders" ng-if="slideIndex == 3">
 			<table>
 				<tr>
@@ -36,6 +40,7 @@
 				</tr>
 			</table>
 		</div>
+
 	</ion-content>
 
 </ion-view>
