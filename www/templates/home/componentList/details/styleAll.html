@@ -68,7 +68,10 @@
 						<option value="02" selected="selected">3个月</option>
 					</select>
 				</div>
-
+				<div class="item item-input">
+					<span class="input-label">语音录入</span>
+					<input type="text" speech x-webkit-speech onwebkitspeechchange="alert(this.value)"/>
+				</div>
 				<div class="item item-input" style="margin-bottom: 40px;">
 					<span class="input-label">左侧占50%，当内容过长时候，会自动换行<span class="colorFE6400">*</span></span>
 					<input type="text" ng-model="dataList.proTest" />
