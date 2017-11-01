@@ -33,7 +33,7 @@
 					{"name":"阻止冒泡事件","value":"homeList","data":"homeListData"},
 					{"name":"本地缓存","value":"uploader","data":"uploaderData"},
 					{"name":"控制底部栏tab的出现和隐藏","value":"home","data":"敬请期待"},
-					{"name":"列表的增加和删除","value":"","data":"敬请期待"},
+					{"name":"列表的增加和删除","value":"listAddDel","data":"listAddDelData"},
 					{"name":"图表统计","value":"charts","data":"chartsData"},
 					{"name":"手势密码","value":"","data":"敬请期待"},
 					{"name":"语音录入","value":"","data":"敬请期待"},

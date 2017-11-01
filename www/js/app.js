@@ -427,6 +427,22 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
+		//列表的新增删除保存  wang_szhan 2017-11-1
+		.state('tab.listAddDel', {
+			url: '/listAddDel/:componentTitle/:componentData',
+			cache: 'false',
+			views: {
+				'tab-home': {
+					templateUrl: 'templates/home/componentList/details/listAddDel.html',
+					controller: 'listAddDelCtrl'
+				}
+			},
+			resolve: {
+				loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+					return $ocLazyLoad.load('templates/home/componentList/details/js/listAddDel.js');
+				}]
+			}
+		})
 		//侧边栏  wang_szhan 2017.10.26
 		.state('tab.sideMenu', {
 			url: '/sideMenu/:componentTitle/:componentData',
