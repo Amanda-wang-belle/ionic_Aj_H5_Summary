@@ -7,7 +7,7 @@
 (function() {
 	'use strict'
 
-	app.controller('listAddDelCtrl', function($scope,$http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide) {
+	app.controller('listAddDelCtrl', function($scope, $http, $stateParams, $ionicPopup, $timeout, toastService, publicService, $ionicActionSheet, $ionicHistory, $ionicModal, jQuerySlide) {
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
@@ -20,12 +20,22 @@
 		}
 
 		$scope.dataList = [{
-			"name":"",
-			"sex":"",
-			"group":"",
-			"phone":"",
+			"name": "",
+			"sex": "",
+			"group": "",
+			"phone": "",
 		}]
-		
+
+		//移动
+		$scope.moveItem = function(item, fromIndex, toIndex) {
+			//把该项移动到数组中
+			$scope.dataList.splice(fromIndex, 1);
+			$scope.dataList.splice(toIndex, 0, item);
+		};
+		//删除
+		$scope.onItemDelete = function(item) {
+			$scope.dataList.splice($scope.dataList.indexOf(item), 1);
+		};
 
 	})
 }())

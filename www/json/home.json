@@ -419,8 +419,10 @@
 				{"name":"3D柱图","value":{"title":"交互性3D柱状图","subtitle":"可通过滑动下方滑块测试","seriousName":"图例1",
 				"data":[29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]}},
 				{"name":"3D饼图","value":"pieData3D"}],
-	"listAddDelData":[{"name":"张三","sex":"女","group":"一部","phone":"17767789876"},
-					{"name":"李四","sex":"男","group":"二部","phone":"17767709876"}
+	
+	"listAddDelData":[[{"name":"姓名","value":"张三"},{"name":"性别","value":"女"},{"name":"部门","value":"一部"},{"name":"号码","value":"17752201230"}],
+						[{"name":"姓名","value":"李四"},{"name":"性别","value":"男"},{"name":"部门","value":"二部"},{"name":"号码","value":"17733201230"}],
+						[{"name":"姓名","value":"王五"},{"name":"性别","value":"女"},{"name":"部门","value":"三部"},{"name":"号码","value":"17788201230"}]
 	]
 	
 	

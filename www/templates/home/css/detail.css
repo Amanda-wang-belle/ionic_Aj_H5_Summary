@@ -205,7 +205,8 @@
 	line-height: 34px;
 }
 
-.overHid {    /*不允许换行*/
+.overHid {
+	/*不允许换行*/
 	width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -357,7 +358,8 @@
 	overflow-x: scroll;
 	overflow-y: hidden;
 	overflow-scrolling: touch;
-	-webkit-overflow-scrolling: touch/*iOS 滚动弹簧效果 */;
+	-webkit-overflow-scrolling: touch/*iOS 滚动弹簧效果 */
+	;
 	line-height: 44px;
 }
 
@@ -377,23 +379,30 @@
 
 .randomTitle {
 	color: black;
-    line-height: 44px;
-    padding-left: 12px;
-    background: #ECECEC;
+	line-height: 44px;
+	padding-left: 12px;
+	background: #ECECEC;
 }
 
 .randomList {
-    margin-top: 20px;
+	margin-top: 20px;
 }
-.td-list1{
+
+.td-list1 {
 	padding: 0 12px;
 }
-.colorGrey{
+
+.colorGrey {
 	background: #F2F2F2;
 }
+
+
 /*自定义下拉菜单*/
+
+
 /*header右侧按钮的下拉菜单*/
-.slidePage{
+
+.slidePage {
 	position: fixed;
 	border: 1px solid #E0E0E0;
 	display: none;
@@ -402,54 +411,95 @@
 	padding-bottom: 10px;
 }
 
-.button33{
+.button33 {
 	width: 25%;
 	margin-left: 5%;
 	margin-top: 5px;
 	color: #000000;
 }
-.pad0{
+
+.pad0 {
 	padding: 0;
 }
-.color00{
+
+.color00 {
 	color: #000000;
 }
-.colorFE6400{
+
+.colorFE6400 {
 	color: #FE6400;
 	padding-left: 5px;
 }
-.padRt10{
+
+.padRt10 {
 	padding-right: 10px;
 }
-.line30{
+
+.line30 {
 	line-height: 30px;
 	/*text-align: center;*/
 	color: #000000;
 }
+
+
 /*录入项*/
-.inputInfor{
+
+.inputInfor {
 	width: 100%;
 	background: #FFFFFF;
 }
-.width95{
+
+.width95 {
 	width: 95%;
 	margin: 10px auto;
-	
 }
+
 .input-label {
-    display: table;
-    padding: 7px 10px 7px 0px;
-    max-width: 200px;
-    width: 50%;
-    color: #444;
-    font-size: 16px;
-    white-space: normal;
+	display: table;
+	padding: 7px 10px 7px 0px;
+	max-width: 200px;
+	width: 50%;
+	color: #444;
+	font-size: 16px;
+	white-space: normal;
 }
-.item-input input{
+
+.item-input input {
 	text-align: right;
 }
-.item{
+
+.item {
 	border: none;
 	border-bottom: 1px solid #CCCCCC;
 	margin-top: 1px;
+}
+
+
+/*主色调*/
+
+.colorMain {
+	color: #63B8FF;
+}
+
+
+/*列表的增加和删除*/
+
+.inputDiv {
+	float: left;
+	margin-left: 20px;
+	margin-top: -10px;
+}
+
+.left {
+	float: left;
+}
+
+.inputInput {
+	border-radius: 15px;
+	width: 210px;
+}
+
+.inputTable {
+	display: table;
+	margin-top: 18px;
 }
