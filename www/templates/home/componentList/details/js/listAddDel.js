@@ -20,10 +20,17 @@
 		}
 
 		$scope.dataList = [{
-			"name": "",
-			"sex": "",
-			"group": "",
-			"phone": "",
+			"name": "姓名",
+			"value": ""
+		}, {
+			"name": "性别",
+			"value": ""
+		}, {
+			"name": "部门",
+			"value": ""
+		}, {
+			"name": "号码",
+			"value": ""
 		}]
 
 		//移动
@@ -36,6 +43,29 @@
 		$scope.onItemDelete = function(item) {
 			$scope.dataList.splice($scope.dataList.indexOf(item), 1);
 		};
-
+		//增加列表
+		$scope.addList = function() {
+			var dataList1 = [{
+				"name": "姓名",
+				"value": ""
+			}, {
+				"name": "性别",
+				"value": ""
+			}, {
+				"name": "部门",
+				"value": ""
+			}, {
+				"name": "号码",
+				"value": ""
+			}]
+			$scope.dataList.push(dataList1);
+		}
+		//左滑操作
+		$scope.edit = function(x){
+			toastService.showToast("you want to edit "+$scope.dataList.indexOf(x));
+		}
+		$scope.share = function(x){
+			toastService.showToast("you want to edit "+$scope.dataList.indexOf(x));
+		}
 	})
 }())
