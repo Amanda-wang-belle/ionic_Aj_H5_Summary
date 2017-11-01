@@ -35,15 +35,18 @@
 					$scope.lineCharts();
 					break;
 				case 1:
-					$scope.barCharts();
+					$scope.barCharts("bar");
 					break;
 				case 2:
-					$scope.pieCharts();
+					$scope.barCharts("column");
 					break;
 				case 3:
-					$scope.bar3D();
+					$scope.pieCharts();
 					break;
 				case 4:
+					$scope.bar3D();
+					break;
+				case 5:
 					$scope.pie3D();
 					break;
 				default:
@@ -95,11 +98,11 @@
 			})
 
 		}
-		//柱状图
-		$scope.barCharts = function() {
+		//条形图bar ，柱状图column
+		$scope.barCharts = function(type) {
 			$('#container').highcharts({
 				chart: {
-					type: 'bar'
+					type: type
 				},
 				title: {
 					text: $scope.chartData.title,
