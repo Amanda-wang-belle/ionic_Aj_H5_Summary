@@ -11,81 +11,140 @@
 		$scope.componentTitle = $stateParams.componentTitle;
 		$scope.componentData = $stateParams.componentData;
 
+		$scope.buttonData = [];
+
 		function getData(data) {
 			$scope.dataList = data;
+			for(var i = 0; i < $scope.dataList.length; i++) {
+				$scope.buttonData.push($scope.dataList[i].name);
+			}
+			$scope.slideIndex = 0;
+			$scope.chartData = $scope.dataList[0].value;
+			$scope.lineCharts();
 		}
 		publicService.receiveJson(getData, $scope.componentData);
 		$scope.Back = function() {
 			history.back(-1);
 		}
 
-		
-		var title = {
-			text: '月平均气温'
-		};
-		var subtitle = {
-			text: 'Source: runoob.com'
-		};
-		var xAxis = {
-			categories: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
-		};
-		var yAxis = {
-			title: {
-				text: 'Temperature (\xB0C)'
-			},
-			plotLines: [{
-				value: 0,
-				width: 1,
-				color: '#808080'
-			}]
-		};
-		var tooltip = {
-			valueSuffix: '\xB0C'
-		}
-		var legend = {
-			layout: 'vertical',
-			align: 'right',
-			verticalAlign: 'middle',
-			borderWidth: 0
-		};
-
-		var series = [{
-				name: 'Tokyo',
-				data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
-					26.5, 23.3, 18.3, 13.9, 9.6
-				]
-			},
-			{
-				name: 'New York',
-				data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
-					24.1, 20.1, 14.1, 8.6, 2.5
-				]
-			},
-			{
-				name: 'Berlin',
-				data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6,
-					17.9, 14.3, 9.0, 3.9, 1.0
-				]
-			},
-			{
-				name: 'London',
-				data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0,
-					16.6, 14.2, 10.3, 6.6, 4.8
-				]
+		$scope.chartChoose = function(index) {
+			$scope.slideIndex = index;
+			$scope.chartData = $scope.dataList[index].value;
+			switch(index) {
+				case 0:
+					$scope.lineCharts();
+					break;
+				case 1:
+					$scope.barCharts();
+					break;
+				case 2:
+					$scope.pieCharts();
+					break;
+				default:
+					break;
 			}
-		];
+		}
+		//折线图
+		$scope.lineCharts = function() {
+			$('#container').highcharts({
+				title: {
+					text: $scope.chartData.title,
+				},
+				subtitle: {
+					text: $scope.chartData.subtitle,
+				},
+				yAxis: {
+					title: {
+						text: $scope.chartData.yAxis,
+					}
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'middle'
+				},
+				plotOptions: {
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2010
+					}
+				},
+				series: $scope.chartData.series,
+				responsive: {
+					rules: [{
+						condition: {
+							maxWidth: 500
+						},
+						chartOptions: {
+							legend: {
+								layout: 'horizontal',
+								align: 'center',
+								verticalAlign: 'bottom'
+							}
+						}
+					}]
+				}
+			})
 
-		var json = {};
-
-		json.title = title;
-		json.subtitle = subtitle;
-		json.xAxis = xAxis;
-		json.yAxis = yAxis;
-		json.tooltip = tooltip;
-		json.legend = legend;
-		json.series = series;
-		
-		$('#container').highcharts(json);
+		}
+		//柱状图
+		$scope.barCharts = function() {
+			$('#container').highcharts({
+				chart: {
+					type: 'bar'
+				},
+				title: {
+					text: $scope.chartData.title,
+				},
+				subtitle: {
+					text: $scope.chartData.subtitle,
+				},
+				xAxis: {
+					categories: $scope.chartData.xAxis,
+					title: {
+						text: null
+					}
+				},
+				yAxis: {
+					min: 0,
+					title: {
+						text: $scope.chartData.yAxis,
+						align: 'high'
+					},
+					labels: {
+						overflow: 'justify'
+					}
+				},
+				tooltip: {
+					valueSuffix: $scope.chartData.tooltip
+				},
+				plotOptions: {
+					bar: {
+						dataLabels: {
+							enabled: true,
+							allowOverlap: true
+						}
+					}
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top',
+					x: -40,
+					y: 100,
+					floating: true,
+					borderWidth: 1,
+					backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+					shadow: true
+				},
+				credits: {
+					enabled: false
+				},
+				series:$scope.chartData.series
+			});
+		}
 
 	})
 }())

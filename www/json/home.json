@@ -363,7 +363,37 @@
 		"month":"10","proNumbber":"18","endDate":"2017-11-25","retMethod":"03","proRate":"10.2",
 		"height":"38.8","rate":"00"
 	},
-	"chartsData":[{"name":"曲线图","value":"normalData"},{"name":"柱形图","value":"columnData"},{"name":"饼图","value":"pieData"},{"name":"3D柱形图","value":"columnData3D"},{"name":"3D饼图","value":"pieData3D"}]
+	"chartsData":[{"name":"曲线图","value":{"title":"'2010 ~ 2016 年太阳能行业就业人员发展情况","subtitle":"数据来源：thesolarfoundation.com","yAxis":"就业人数","tooltip":"℃",
+					"series":[{
+						"name": "安装，实施人员",
+						"data": [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+					}, {
+						"name":"工人",
+						"data": [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+					}, {
+						"name": "销售",
+						"data": [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+					}, {
+						"name": "项目开发",
+						"data": [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+					}, {
+						"name": "其他",
+						"data": [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+					}]}},
+				{"name":"柱形图","value":{"title":"各洲不同时间的人口条形图","subtitle":"数据来源：Wikipedia.org","xAxis":["非洲", "美洲", "亚洲", "欧洲", "大洋洲"],"yAxis":"人口总量 (百万)","tooltip":"百万",
+					"series": [{
+					"name": "1800 年",
+					"data": [107, 31, 635, 203, 2]
+				}, {
+					"name": "1900 年",
+					"data": [133, 156, 947, 408, 6]
+				}, {
+					"name": "2008 年",
+					"data": [973, 914, 4054, 732, 34]
+				}]}},
+				{"name":"饼图","value":"pieData"},
+				{"name":"3D柱形图","value":"columnData3D"},
+				{"name":"3D饼图","value":"pieData3D"}]
 	
 	
 				

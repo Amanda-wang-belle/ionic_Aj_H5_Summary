@@ -12,6 +12,11 @@
 		<h1 class="title" ng-bind="componentTitle"></h1>
 	</ion-header-bar>
 	<ion-content overflow-scroll="true">
+		<div class="footerContainer" style="height: 44px;" >
+			<div class="footerItem" ng-repeat="x in buttonData" ng-class="slideIndex == $index?'current':''" ng-click="chartChoose($index)">
+				<div ng-bind="x"></div>
+			</div>
+		</div>
 		<div class="imc-scroll">
 			<div id="container" style="width: 550px; height: 400px; margin: 30px auto"></div>
 		</div>
