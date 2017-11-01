@@ -40,6 +40,10 @@
 				case 2:
 					$scope.pieCharts();
 					break;
+				case 3:
+					$scope.bar3D();
+				case 4:
+					$scope.pie3D();
 				default:
 					break;
 			}
@@ -142,7 +146,89 @@
 				credits: {
 					enabled: false
 				},
-				series:$scope.chartData.series
+				series: $scope.chartData.series
+			});
+		}
+		//饼状图
+		$scope.pieCharts = function() {
+			$('#container').highcharts({
+				chart: {
+					plotBackgroundColor: null,
+					plotBorderWidth: null,
+					plotShadow: false
+				},
+				title: {
+					text: $scope.chartData.title,
+				},
+				tooltip: {
+					headerFormat: '{series.name}<br>',
+					pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: true,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: true,
+							format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+							style: {
+								color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+							}
+						}
+					}
+				},
+				series: [{
+					type: 'pie',
+					name: $scope.chartData.seriousName,
+					data: $scope.chartData.data,
+				}]
+			});
+		}
+		//3D柱状图
+		$scope.bar3D = function() {
+			$(function() {
+				// Set up the chart
+				var chart = new Highcharts.Chart({
+					chart: {
+						renderTo: 'container',
+						type: 'column',
+						options3d: {
+							enabled: true,
+							alpha: 15,
+							beta: 15,
+							depth: 50,
+							viewDistance: 25
+						}
+					},
+					title: {
+						text: $scope.chartData.title,
+					},
+					subtitle: {
+						text: $scope.chartData.subtitle,
+					},
+					plotOptions: {
+						column: {
+							depth: 55
+						}
+					},
+					series: [{
+						name:$scope.chartData.seriousName,
+						data: $scope.chartData.data
+					}]
+				});
+
+				function showValues() {
+					$('#alpha-value').html(chart.options.chart.options3d.alpha);
+					$('#beta-value').html(chart.options.chart.options3d.beta);
+					$('#depth-value').html(chart.options.chart.options3d.depth);
+				}
+				// Activate the sliders
+				$('#sliders input').on('input change', function() {
+					chart.options.chart.options3d[this.id] = this.value;
+					showValues();
+					chart.redraw(false);
+				});
+				showValues();
 			});
 		}
 

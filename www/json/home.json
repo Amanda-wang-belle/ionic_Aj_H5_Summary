@@ -391,8 +391,22 @@
 					"name": "2008 年",
 					"data": [973, 914, 4054, 732, 34]
 				}]}},
-				{"name":"饼图","value":"pieData"},
-				{"name":"3D柱形图","value":"columnData3D"},
+				{"name":"饼图","value":{"title":"2014 某网站各浏览器浏览量占比","seriousName":"浏览器访问量占比",
+					"data":[
+						["Firefox", 45.0],
+						["IE", 26.8],
+						{
+							"name": "Chrome",
+							"y": 12.8,
+							"sliced": true,
+							"selected": true
+						},
+						["Safari", 8.5],
+						["Opera", 6.2],
+						["其他", 0.7]
+					]}},
+				{"name":"3D柱形图","value":{"title":"交互性3D柱状图","subtitle":"可通过滑动下方滑块测试","seriousName":"图例1",
+				"data":[29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]}},
 				{"name":"3D饼图","value":"pieData3D"}]
 	
 	
