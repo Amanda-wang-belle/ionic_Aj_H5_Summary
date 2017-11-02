@@ -96,6 +96,12 @@
 		//清除所有下载任务
 		$scope.clearall = function(){
 			plus.downloader.clear();
+
+			
+		}
+		$scope.downloadAno = function(){
+//			window.location.assign("http://wx2.sinaimg.cn/mw690/6fb8cb35ly1fkmfi96tdkj20dw0kugmk.jpg");
+			window.location.assign("templates/test.doc");
 		}
 
 	})
