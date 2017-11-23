@@ -37,6 +37,7 @@ app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHist
 				if($location.path() == '/tab/home' || $location.path() == '/tab/msg' || $location.path() == '/tab/irrcs' || $location.path() == '/tab/mine') {
 					plus.runtime.quit();
 				} else {
+					
 					history.back(-1);
 				}
 			}, false);
