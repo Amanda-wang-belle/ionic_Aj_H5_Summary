@@ -4,7 +4,7 @@
  * 创建时间  2017-10-10 下午14:35
  * 
  */
-var app = angular.module('starter', ['ionic', 'ui.router', 'oc.lazyLoad', 'LocalStorageModule','ngCordova'])
+var app = angular.module('starter', ['ionic', 'ui.router', 'oc.lazyLoad', 'LocalStorageModule', 'ngCordova'])
 
 app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHistory) {
 	$ionicPlatform.ready(function() {
@@ -21,8 +21,7 @@ app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHist
 			StatusBar.styleDefault();
 		}
 
-		//扩展API准备完成后要执行的操作
-		function plusReady() {}
+		
 
 		//监听plusready事件
 		if(window.plus) { //扩展API是否准备好，如果没有则监听“plusready"事件 
@@ -31,8 +30,19 @@ app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHist
 			//加载API
 			document.addEventListener('plusready', plusReady, false);
 		}
+		//扩展API准备完成后要执行的操作
+		function plusReady() {
+			// 监听键按下事件
+			plus.key.addEventListener('backbutton', function() {
+				if($location.path() == '/tab/sy' || $location.path() == '/tab/dbrw' || $location.path() == '/tab/xxcx' || $location.path() == '/tab/wd') {
+					plus.runtime.quit();
+				} else {
+					history.back(-1);
+				}
+			}, false);
+		}
 
-		//物理返回按钮控制&&双击退出应用
+		/*//物理返回按钮控制&&双击退出应用
 		$ionicPlatform.registerBackButtonAction(function(e) {
 			//判断处于哪个页面时双击退出
 			if($location.path() == 'tab.home') {
@@ -62,7 +72,7 @@ app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHist
 			}
 			e.preventDefault();
 			return false;
-		}, 101);
+		}, 101);*/
 	});
 
 })
@@ -394,7 +404,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		
+
 		//根据后台数据随机生成页签和各页签下相应内容  wang_szhan 2017.10.24
 		.state('tab.charts', {
 			url: '/charts/:componentTitle/:componentData',
@@ -459,30 +469,6 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $h
 				}]
 			}
 		})
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
 		//工作消息
 		.state('tab.msg', {
