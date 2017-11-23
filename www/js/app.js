@@ -34,7 +34,7 @@ app.run(function($ionicPlatform, $location, $rootScope, toastService, $ionicHist
 		function plusReady() {
 			// 监听键按下事件
 			plus.key.addEventListener('backbutton', function() {
-				if($location.path() == '/tab/sy' || $location.path() == '/tab/dbrw' || $location.path() == '/tab/xxcx' || $location.path() == '/tab/wd') {
+				if($location.path() == '/tab/home' || $location.path() == '/tab/msg' || $location.path() == '/tab/irrcs' || $location.path() == '/tab/mine') {
 					plus.runtime.quit();
 				} else {
 					history.back(-1);
