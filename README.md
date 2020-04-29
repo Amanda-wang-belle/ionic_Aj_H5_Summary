@@ -2,3 +2,12 @@
 项目截图如下： 
 ![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/1.png)
 ![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/2.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/3.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/4.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/5.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/6.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/7.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/8.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/9.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/10.png)
+![image](https://github.com/Amanda-wang-belle/ionic_Aj_H5_Summary/blob/master/www/projectImg/11.png)
